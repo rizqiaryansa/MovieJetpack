@@ -19,16 +19,16 @@ constructor(private val repository: MovieRepository) : BaseViewModel() {
     fun getMovies(type: MovieType) {
         disposable.add(repository.fetchMovies(type).doOnSubscribe {
             setIsLoading(true)
+        }.doAfterTerminate {
+            setIsLoading(false)
         }.subscribeOn(Schedulers.io()
         ).observeOn(AndroidSchedulers.mainThread()
         ).subscribe({
             _state.postValue(
                 ResultResponse.Success(it)
             )
-            setIsLoading(false)
         }, {
             _state.postValue(ResultResponse.Failure(it))
-            setIsLoading(false)
         }))
     }
 }

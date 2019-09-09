@@ -1,4 +1,4 @@
-package com.aryansa.rizqi.moviejetpack.model
+package com.aryansa.rizqi.moviejetpack.model.response
 
 import com.google.gson.annotations.SerializedName
 

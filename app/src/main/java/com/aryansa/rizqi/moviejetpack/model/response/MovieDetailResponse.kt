@@ -1,8 +1,10 @@
-package com.aryansa.rizqi.moviejetpack.model
+package com.aryansa.rizqi.moviejetpack.model.response
 
 import com.google.gson.annotations.SerializedName
 
 data class MovieDetailResponse(
+    @SerializedName("id")
+    val id: Int? = 0,
     @SerializedName("genres")
     val genres: List<Genre>? = null,
     @SerializedName("original_title")

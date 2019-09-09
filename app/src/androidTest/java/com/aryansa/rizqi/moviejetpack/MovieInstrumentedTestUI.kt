@@ -65,10 +65,10 @@ class MovieInstrumentedTestUI {
     fun checkToolbarImageDetail() {
         val detailMovie = onView(withId(R.id.rvMovies))
         detailMovie.check(matches(isDisplayed()))
-        detailMovie.perform(RecyclerViewActions.scrollToPosition<RecyclerView.ViewHolder>(10))
+        detailMovie.perform(RecyclerViewActions.scrollToPosition<RecyclerView.ViewHolder>(5))
         detailMovie.perform(
             RecyclerViewActions
-                .actionOnItemAtPosition<RecyclerView.ViewHolder>(10, click())
+                .actionOnItemAtPosition<RecyclerView.ViewHolder>(5, click())
         )
 
         onView(withId(R.id.toolbar_image)).check(matches(isDisplayed()))

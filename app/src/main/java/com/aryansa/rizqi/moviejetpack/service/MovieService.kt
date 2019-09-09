@@ -1,7 +1,7 @@
 package com.aryansa.rizqi.moviejetpack.service
 
-import com.aryansa.rizqi.moviejetpack.model.MovieDetailResponse
-import com.aryansa.rizqi.moviejetpack.model.MovieListResponse
+import com.aryansa.rizqi.moviejetpack.model.response.MovieDetailResponse
+import com.aryansa.rizqi.moviejetpack.model.response.MovieListResponse
 import io.reactivex.Single
 import retrofit2.http.GET
 import retrofit2.http.Path

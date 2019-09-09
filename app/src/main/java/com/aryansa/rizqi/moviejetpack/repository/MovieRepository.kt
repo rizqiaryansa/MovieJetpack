@@ -1,8 +1,8 @@
 package com.aryansa.rizqi.moviejetpack.repository
 
 import com.aryansa.rizqi.moviejetpack.BuildConfig
-import com.aryansa.rizqi.moviejetpack.model.MovieDetailResponse
-import com.aryansa.rizqi.moviejetpack.model.MovieListResponse
+import com.aryansa.rizqi.moviejetpack.model.response.MovieDetailResponse
+import com.aryansa.rizqi.moviejetpack.model.response.MovieListResponse
 import com.aryansa.rizqi.moviejetpack.service.MovieService
 import com.aryansa.rizqi.moviejetpack.util.MovieType
 import io.reactivex.Single

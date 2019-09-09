@@ -6,7 +6,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.ListAdapter
 import com.aryansa.rizqi.moviejetpack.R
 import com.aryansa.rizqi.moviejetpack.databinding.ItemGenreBinding
-import com.aryansa.rizqi.moviejetpack.model.Genre
+import com.aryansa.rizqi.moviejetpack.model.response.Genre
 import com.aryansa.rizqi.moviejetpack.util.AdapterDiffCallBack
 import com.aryansa.rizqi.moviejetpack.viewholder.GenreViewHolder
 

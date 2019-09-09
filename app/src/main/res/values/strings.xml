@@ -8,4 +8,10 @@
     <string name="overview">Overview</string>
     <string name="genre">Genre</string>
     <string name="release_date">Release date</string>
+    <string name="favorite_movie">Favorite Movie</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="add_movie_favorites">The movie has been added to favorites</string>
+    <string name="removed_movie_favorites">The movie has been removed from favorites</string>
 </resources>

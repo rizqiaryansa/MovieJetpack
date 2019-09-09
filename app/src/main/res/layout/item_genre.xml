@@ -5,7 +5,7 @@
 
     <data>
         <variable name="genre"
-                  type="com.aryansa.rizqi.moviejetpack.model.Genre"/>
+                  type="com.aryansa.rizqi.moviejetpack.model.response.Genre"/>
     </data>
 
 

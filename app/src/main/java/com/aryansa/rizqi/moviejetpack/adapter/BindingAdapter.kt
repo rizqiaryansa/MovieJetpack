@@ -1,5 +1,6 @@
 package com.aryansa.rizqi.moviejetpack.adapter
 
+import android.widget.ProgressBar
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.appcompat.widget.AppCompatRatingBar
 import androidx.databinding.BindingAdapter
@@ -37,4 +38,13 @@ fun ShimmerFrameLayout.setShimmer(boolean: Boolean) {
 @BindingAdapter("setRating")
 fun AppCompatRatingBar.setRating(value: Double) {
     rating = value.toFloat()
+}
+
+@BindingAdapter("setLoading")
+fun ProgressBar.setLoading(boolean: Boolean) {
+    if(boolean) {
+        visible()
+    } else {
+        gone()
+    }
 }

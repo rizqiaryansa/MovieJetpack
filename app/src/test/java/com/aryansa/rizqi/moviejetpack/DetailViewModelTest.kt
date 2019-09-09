@@ -2,7 +2,10 @@ package com.aryansa.rizqi.moviejetpack
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.Observer
-import com.aryansa.rizqi.moviejetpack.model.MovieDetailResponse
+import com.aryansa.rizqi.moviejetpack.db.MovieDao
+import com.aryansa.rizqi.moviejetpack.model.response.MovieDetailResponse
+import com.aryansa.rizqi.moviejetpack.repository.FavoriteRepository
+import com.aryansa.rizqi.moviejetpack.repository.FavoriteRepositoryImpl
 import com.aryansa.rizqi.moviejetpack.repository.MovieRepositoryImpl
 import com.aryansa.rizqi.moviejetpack.service.MovieService
 import com.aryansa.rizqi.moviejetpack.util.MovieType
@@ -42,7 +45,9 @@ class DetailViewModelTest {
     private lateinit var movieViewModel: DetailMovieViewModel
 
     private lateinit var repository: MovieRepositoryImpl
+    private lateinit var favoriteRepository: FavoriteRepository
     private val movieService = mock<MovieService>()
+    private val mockDao = mock<MovieDao>()
 
     @Mock
     private lateinit var mockObserver: Observer<ResultResponse>
@@ -51,7 +56,8 @@ class DetailViewModelTest {
     fun setUp() {
         MockitoAnnotations.initMocks(this)
         repository = MovieRepositoryImpl(movieService)
-        movieViewModel = DetailMovieViewModel(repository)
+        favoriteRepository = FavoriteRepositoryImpl(mockDao)
+        movieViewModel = DetailMovieViewModel(repository, favoriteRepository)
     }
 
     @After

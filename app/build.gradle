@@ -55,24 +55,32 @@ dependencies {
 
     compileOnly 'javax.annotation:jsr250-api:1.0'
 
-    implementation 'androidx.appcompat:appcompat:1.0.2'
-    implementation 'androidx.core:core-ktx:1.0.2'
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.core:core-ktx:1.1.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.0-beta2'
 
-    implementation 'com.google.android.material:material:1.1.0-alpha09'
-    
+    implementation 'com.google.android.material:material:1.1.0-alpha10'
+
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.0.0'
 
-    implementation "com.google.dagger:dagger:$daggerVersion"
-    implementation "com.google.dagger:dagger-android:$daggerVersion"
-    implementation "com.google.dagger:dagger-android-support:$daggerVersion"
+    api "com.google.dagger:dagger:$daggerVersion"
+    api "com.google.dagger:dagger-android:$daggerVersion"
+    api "com.google.dagger:dagger-android-support:$daggerVersion"
     kapt "com.google.dagger:dagger-compiler:$daggerVersion"
     kapt "com.google.dagger:dagger-android-processor:$daggerVersion"
 
     kaptTest "com.google.dagger:dagger:$daggerVersion"
     testImplementation "com.google.dagger:dagger:$daggerVersion"
+
+    //Room
+    implementation "androidx.room:room-runtime:2.1.0"
+    implementation "androidx.room:room-rxjava2:2.1.0"
+    kapt 'androidx.room:room-compiler:2.1.0'
+
+    implementation "androidx.paging:paging-runtime:$pagingVersion"
+    implementation "android.arch.paging:rxjava2:$pagingVersion"
 
     implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
     implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
@@ -88,7 +96,7 @@ dependencies {
     implementation 'io.reactivex.rxjava2:rxjava:2.2.9'
 
     implementation 'com.facebook.shimmer:shimmer:0.4.0'
-    implementation 'androidx.viewpager2:viewpager2:1.0.0-beta03'
+    implementation 'androidx.viewpager2:viewpager2:1.0.0-beta04'
 
     implementation 'androidx.test.espresso:espresso-idling-resource:3.2.0'
 
@@ -100,7 +108,7 @@ dependencies {
 
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-contrib:3.2.0'
-    testImplementation "androidx.arch.core:core-testing:2.0.1"
+    testImplementation "androidx.arch.core:core-testing:2.1.0"
     testImplementation 'org.mockito:mockito-core:3.0.0'
     testImplementation "com.google.truth:truth:0.42"
     androidTestImplementation 'org.mockito:mockito-android:3.0.0'

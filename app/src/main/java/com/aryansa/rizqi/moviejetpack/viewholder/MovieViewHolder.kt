@@ -2,7 +2,7 @@ package com.aryansa.rizqi.moviejetpack.viewholder
 
 import androidx.recyclerview.widget.RecyclerView
 import com.aryansa.rizqi.moviejetpack.databinding.ItemMovieBinding
-import com.aryansa.rizqi.moviejetpack.model.Movie
+import com.aryansa.rizqi.moviejetpack.model.response.Movie
 
 class MovieViewHolder(
     private val binding: ItemMovieBinding,

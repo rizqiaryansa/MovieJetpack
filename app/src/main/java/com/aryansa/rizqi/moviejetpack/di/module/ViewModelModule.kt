@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.aryansa.rizqi.moviejetpack.di.component.ViewModelKey
 import com.aryansa.rizqi.moviejetpack.factory.ViewModelFactory
 import com.aryansa.rizqi.moviejetpack.viewmodel.DetailMovieViewModel
+import com.aryansa.rizqi.moviejetpack.viewmodel.FavoriteViewModel
 import com.aryansa.rizqi.moviejetpack.viewmodel.MovieViewModel
 import dagger.Binds
 import dagger.Module
@@ -18,6 +19,11 @@ internal abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(MovieViewModel::class)
     internal abstract fun bindMovieViewModels(movieViewModel: MovieViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(FavoriteViewModel::class)
+    internal abstract fun bindFavoriteViewModels(favoriteViewModel: FavoriteViewModel): ViewModel
 
     @Binds
     @IntoMap

@@ -2,8 +2,8 @@ package com.aryansa.rizqi.moviejetpack
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.Observer
-import com.aryansa.rizqi.moviejetpack.model.Movie
-import com.aryansa.rizqi.moviejetpack.model.MovieListResponse
+import com.aryansa.rizqi.moviejetpack.model.response.Movie
+import com.aryansa.rizqi.moviejetpack.model.response.MovieListResponse
 import com.aryansa.rizqi.moviejetpack.repository.MovieRepositoryImpl
 import com.aryansa.rizqi.moviejetpack.service.MovieService
 import com.aryansa.rizqi.moviejetpack.util.*
@@ -71,11 +71,15 @@ class MainViewModelTest {
     @Test
     fun `check size movie list`() {
 
-        val responseMovie = MovieListResponse(mutableListOf(
-            Movie(originalTitle = "Fast & Furious Presents: Hobbs & Shaw",
-                voteAverage = 6.5,
-                releaseDate = "2019-08-01")
-        ))
+        val responseMovie = MovieListResponse(
+            mutableListOf(
+                Movie(
+                    originalTitle = "Fast & Furious Presents: Hobbs & Shaw",
+                    voteAverage = 6.5,
+                    releaseDate = "2019-08-01"
+                )
+            )
+        )
 
         whenever(movieService.getMovie(BuildConfig.TMDB_API_KEY)).thenReturn(Single.just(responseMovie))
         movieViewModel.getMovies(MovieType.MOVIE)
@@ -93,11 +97,15 @@ class MainViewModelTest {
     @Test
     fun `check size tv list`() {
 
-        val responseTv = MovieListResponse(mutableListOf(
-            Movie(originalName = "The Flash",
-                voteAverage = 6.6,
-                firstAirDate = "2014-10-07")
-        ))
+        val responseTv = MovieListResponse(
+            mutableListOf(
+                Movie(
+                    originalName = "The Flash",
+                    voteAverage = 6.6,
+                    firstAirDate = "2014-10-07"
+                )
+            )
+        )
 
         whenever(movieService.getTvShow(BuildConfig.TMDB_API_KEY)).thenReturn(Single.just(responseTv))
         movieViewModel.getMovies(MovieType.TV)

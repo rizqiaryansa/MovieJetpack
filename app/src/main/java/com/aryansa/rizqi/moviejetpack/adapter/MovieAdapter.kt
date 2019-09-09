@@ -6,7 +6,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.ListAdapter
 import com.aryansa.rizqi.moviejetpack.R
 import com.aryansa.rizqi.moviejetpack.databinding.ItemMovieBinding
-import com.aryansa.rizqi.moviejetpack.model.Movie
+import com.aryansa.rizqi.moviejetpack.model.response.Movie
 import com.aryansa.rizqi.moviejetpack.util.AdapterDiffCallBack
 import com.aryansa.rizqi.moviejetpack.viewholder.MovieViewHolder
 
