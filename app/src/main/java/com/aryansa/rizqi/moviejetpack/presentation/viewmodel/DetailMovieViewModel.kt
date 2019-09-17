@@ -7,8 +7,8 @@ import com.aryansa.rizqi.moviejetpack.R
 import com.aryansa.rizqi.moviejetpack.base.BaseViewModel
 import com.aryansa.rizqi.moviejetpack.domain.model.local.MovieEntity
 import com.aryansa.rizqi.moviejetpack.domain.model.remote.MovieDetailResponse
-import com.aryansa.rizqi.moviejetpack.data.repository.FavoriteRepository
-import com.aryansa.rizqi.moviejetpack.data.repository.MovieRepository
+import com.aryansa.rizqi.moviejetpack.domain.repository.FavoriteRepository
+import com.aryansa.rizqi.moviejetpack.domain.repository.MovieRepository
 import com.aryansa.rizqi.moviejetpack.utils.FavoriteResponse
 import com.aryansa.rizqi.moviejetpack.utils.MovieType
 import com.aryansa.rizqi.moviejetpack.utils.ResultResponse
@@ -18,7 +18,8 @@ import javax.inject.Inject
 
 class DetailMovieViewModel @Inject
     constructor(private val repository: MovieRepository,
-                private val favoriteRepository: FavoriteRepository): BaseViewModel() {
+                private val favoriteRepository: FavoriteRepository
+): BaseViewModel() {
 
     private val _state = MutableLiveData<ResultResponse>()
     val state: LiveData<ResultResponse> = _state

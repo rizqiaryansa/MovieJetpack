@@ -9,11 +9,11 @@
 
         <variable
                 name="viewModel"
-                type="com.aryansa.rizqi.moviejetpack.viewmodel.DetailMovieViewModel" />
+                type="com.aryansa.rizqi.moviejetpack.presentation.viewmodel.DetailMovieViewModel" />
 
         <variable
                 name="detail"
-                type="com.aryansa.rizqi.moviejetpack.model.response.MovieDetailResponse" />
+                type="com.aryansa.rizqi.moviejetpack.domain.model.remote.MovieDetailResponse" />
 
     </data>
 

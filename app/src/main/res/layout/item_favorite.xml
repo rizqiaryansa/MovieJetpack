@@ -6,7 +6,7 @@
 
     <data>
         <variable name="movie"
-                type="com.aryansa.rizqi.moviejetpack.model.entity.MovieEntity"/>
+                type="com.aryansa.rizqi.moviejetpack.domain.model.local.MovieEntity"/>
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

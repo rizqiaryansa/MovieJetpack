@@ -1,11 +1,11 @@
 package com.aryansa.rizqi.moviejetpack.di.module
 
 import com.aryansa.rizqi.moviejetpack.data.source.local.dao.MovieDao
-import com.aryansa.rizqi.moviejetpack.data.repository.FavoriteRepository
 import com.aryansa.rizqi.moviejetpack.data.repository.FavoriteRepositoryImpl
-import com.aryansa.rizqi.moviejetpack.data.repository.MovieRepository
 import com.aryansa.rizqi.moviejetpack.data.repository.MovieRepositoryImpl
 import com.aryansa.rizqi.moviejetpack.data.source.remote.MovieService
+import com.aryansa.rizqi.moviejetpack.domain.repository.FavoriteRepository
+import com.aryansa.rizqi.moviejetpack.domain.repository.MovieRepository
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton

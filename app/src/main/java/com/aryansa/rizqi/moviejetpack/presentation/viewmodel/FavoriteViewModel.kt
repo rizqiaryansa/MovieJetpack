@@ -3,7 +3,7 @@ package com.aryansa.rizqi.moviejetpack.presentation.viewmodel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.aryansa.rizqi.moviejetpack.base.BaseViewModel
-import com.aryansa.rizqi.moviejetpack.data.repository.FavoriteRepository
+import com.aryansa.rizqi.moviejetpack.domain.repository.FavoriteRepository
 import com.aryansa.rizqi.moviejetpack.utils.MovieType
 import com.aryansa.rizqi.moviejetpack.utils.ResultResponse
 import io.reactivex.android.schedulers.AndroidSchedulers

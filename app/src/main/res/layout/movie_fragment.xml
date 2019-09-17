@@ -6,7 +6,7 @@
     <data>
         <variable
                 name="viewModel"
-                type="com.aryansa.rizqi.moviejetpack.viewmodel.MovieViewModel"/>
+                type="com.aryansa.rizqi.moviejetpack.presentation.viewmodel.MovieViewModel"/>
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
