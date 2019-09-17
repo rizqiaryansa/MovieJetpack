@@ -25,7 +25,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 app:layoutDescription="@xml/scene_header"
-                tools:context=".view.activity.DetailActivity"
+                tools:context=".presentation.view.activity.DetailActivity"
                 tools:showPaths="true">
 
             <androidx.appcompat.widget.AppCompatImageView

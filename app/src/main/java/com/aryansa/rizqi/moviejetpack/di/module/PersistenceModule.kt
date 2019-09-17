@@ -2,8 +2,8 @@ package com.aryansa.rizqi.moviejetpack.di.module
 
 import android.app.Application
 import androidx.room.Room
-import com.aryansa.rizqi.moviejetpack.db.MovieDao
-import com.aryansa.rizqi.moviejetpack.db.MovieDatabase
+import com.aryansa.rizqi.moviejetpack.data.source.local.dao.MovieDao
+import com.aryansa.rizqi.moviejetpack.data.source.local.MovieDatabase
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton

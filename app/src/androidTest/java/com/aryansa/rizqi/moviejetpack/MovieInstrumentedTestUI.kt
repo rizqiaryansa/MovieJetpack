@@ -9,8 +9,8 @@ import androidx.test.espresso.contrib.RecyclerViewActions
 import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.rule.ActivityTestRule
-import com.aryansa.rizqi.moviejetpack.util.EspressoIdlingResource
-import com.aryansa.rizqi.moviejetpack.view.activity.MainActivity
+import com.aryansa.rizqi.moviejetpack.utils.EspressoIdlingResource
+import com.aryansa.rizqi.moviejetpack.presentation.view.activity.MainActivity
 import org.hamcrest.Matchers.allOf
 import org.junit.After
 import org.junit.Before

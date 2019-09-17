@@ -2,15 +2,15 @@ package com.aryansa.rizqi.moviejetpack
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.Observer
-import com.aryansa.rizqi.moviejetpack.model.response.Movie
-import com.aryansa.rizqi.moviejetpack.model.response.MovieListResponse
-import com.aryansa.rizqi.moviejetpack.repository.MovieRepositoryImpl
-import com.aryansa.rizqi.moviejetpack.service.MovieService
-import com.aryansa.rizqi.moviejetpack.util.*
+import com.aryansa.rizqi.moviejetpack.domain.model.remote.Movie
+import com.aryansa.rizqi.moviejetpack.domain.model.remote.MovieListResponse
+import com.aryansa.rizqi.moviejetpack.data.repository.MovieRepositoryImpl
+import com.aryansa.rizqi.moviejetpack.data.source.remote.MovieService
+import com.aryansa.rizqi.moviejetpack.utils.*
 import com.aryansa.rizqi.moviejetpack.utils.RxSchedulerRule
 import com.aryansa.rizqi.moviejetpack.utils.observeOnce
 import com.aryansa.rizqi.moviejetpack.utils.testObserver
-import com.aryansa.rizqi.moviejetpack.viewmodel.MovieViewModel
+import com.aryansa.rizqi.moviejetpack.presentation.viewmodel.MovieViewModel
 import com.google.common.truth.Truth
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.whenever

@@ -2,9 +2,9 @@ package com.aryansa.rizqi.moviejetpack.di.component
 
 import com.aryansa.rizqi.moviejetpack.di.module.FavoriteModule
 import com.aryansa.rizqi.moviejetpack.di.module.FragmentModule
-import com.aryansa.rizqi.moviejetpack.view.activity.DetailActivity
-import com.aryansa.rizqi.moviejetpack.view.activity.FavoriteActivity
-import com.aryansa.rizqi.moviejetpack.view.activity.MainActivity
+import com.aryansa.rizqi.moviejetpack.presentation.view.activity.DetailActivity
+import com.aryansa.rizqi.moviejetpack.presentation.view.activity.FavoriteActivity
+import com.aryansa.rizqi.moviejetpack.presentation.view.activity.MainActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 

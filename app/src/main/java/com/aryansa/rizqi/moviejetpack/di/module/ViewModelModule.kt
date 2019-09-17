@@ -4,9 +4,9 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.aryansa.rizqi.moviejetpack.di.component.ViewModelKey
 import com.aryansa.rizqi.moviejetpack.factory.ViewModelFactory
-import com.aryansa.rizqi.moviejetpack.viewmodel.DetailMovieViewModel
-import com.aryansa.rizqi.moviejetpack.viewmodel.FavoriteViewModel
-import com.aryansa.rizqi.moviejetpack.viewmodel.MovieViewModel
+import com.aryansa.rizqi.moviejetpack.presentation.viewmodel.DetailMovieViewModel
+import com.aryansa.rizqi.moviejetpack.presentation.viewmodel.FavoriteViewModel
+import com.aryansa.rizqi.moviejetpack.presentation.viewmodel.MovieViewModel
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap

@@ -2,18 +2,18 @@ package com.aryansa.rizqi.moviejetpack
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.Observer
-import com.aryansa.rizqi.moviejetpack.db.MovieDao
-import com.aryansa.rizqi.moviejetpack.model.response.MovieDetailResponse
-import com.aryansa.rizqi.moviejetpack.repository.FavoriteRepository
-import com.aryansa.rizqi.moviejetpack.repository.FavoriteRepositoryImpl
-import com.aryansa.rizqi.moviejetpack.repository.MovieRepositoryImpl
-import com.aryansa.rizqi.moviejetpack.service.MovieService
-import com.aryansa.rizqi.moviejetpack.util.MovieType
-import com.aryansa.rizqi.moviejetpack.util.ResultResponse
+import com.aryansa.rizqi.moviejetpack.data.source.local.dao.MovieDao
+import com.aryansa.rizqi.moviejetpack.domain.model.remote.MovieDetailResponse
+import com.aryansa.rizqi.moviejetpack.data.repository.FavoriteRepository
+import com.aryansa.rizqi.moviejetpack.data.repository.FavoriteRepositoryImpl
+import com.aryansa.rizqi.moviejetpack.data.repository.MovieRepositoryImpl
+import com.aryansa.rizqi.moviejetpack.data.source.remote.MovieService
+import com.aryansa.rizqi.moviejetpack.utils.MovieType
+import com.aryansa.rizqi.moviejetpack.utils.ResultResponse
 import com.aryansa.rizqi.moviejetpack.utils.RxSchedulerRule
 import com.aryansa.rizqi.moviejetpack.utils.observeOnce
 import com.aryansa.rizqi.moviejetpack.utils.testObserver
-import com.aryansa.rizqi.moviejetpack.viewmodel.DetailMovieViewModel
+import com.aryansa.rizqi.moviejetpack.presentation.viewmodel.DetailMovieViewModel
 import com.google.common.truth.Truth
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.whenever

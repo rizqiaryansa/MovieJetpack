@@ -1,7 +1,7 @@
 package com.aryansa.rizqi.moviejetpack.di.module
 
 import com.aryansa.rizqi.moviejetpack.BuildConfig
-import com.aryansa.rizqi.moviejetpack.service.MovieService
+import com.aryansa.rizqi.moviejetpack.data.source.remote.MovieService
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient

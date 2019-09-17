@@ -1,6 +1,6 @@
 package com.aryansa.rizqi.moviejetpack.di.module
 
-import com.aryansa.rizqi.moviejetpack.view.fragment.MovieFragment
+import com.aryansa.rizqi.moviejetpack.presentation.view.fragment.MovieFragment
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
