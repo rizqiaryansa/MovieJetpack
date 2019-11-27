@@ -25,6 +25,36 @@ def print_commit(commit):
 # def print_diff(commitA, commitB):
 #     print('-----')
 
+def writeFile(input):
+    # fileName = "/temp/input.txt"
+
+    patternStr = "--- a/app/src/main/res/layout/item_genre.xml"
+
+    patternStr = patternStr.replace("--- a/app/src/main/res/layout/", "")
+    patternStr = patternStr.replace("xml", "txt")
+
+    # for tmpStr: input:
+
+
+    # if(pattern == myFile):
+    #     name = myFile
+    #     fileName = "/temp/"
+
+
+    myFile = open(patternStr, 'w')
+
+    myFile.write(input)
+    myFile.close()
+
+def getIdView(input):
+
+    tmpStr = ""
+    patternIdView = "android:id="@+id/"
+
+    for(line in input):
+        if(line == patternIdView):
+            tempStr.append(line)
+
 
 # repo_path = os.getenv('GIT_REPO_PATH')
 # print_repository(repo_path)
@@ -62,7 +92,9 @@ if __name__ == "__main__":
 
         print(repo.git.diff('HEAD~1'))
 
-        
+        writeFile(repo.git.diff('HEAD~1'))
+
+
 
         # pass
         # commits = list(repo.iter_commits('master'))[:COMMITS_TO_PRINT]

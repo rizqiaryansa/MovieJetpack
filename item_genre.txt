@@ -1,0 +1,66 @@
+diff --git a/app/src/main/res/layout/item_genre.xml b/app/src/main/res/layout/item_genre.xml
+index 8204e6a..705ec31 100644
+--- a/app/src/main/res/layout/item_genre.xml
++++ b/app/src/main/res/layout/item_genre.xml
+@@ -10,9 +10,10 @@
+ 
+ 
+     <androidx.cardview.widget.CardView
++            android:id="@+id/cvGenre"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+-            android:layout_margin="@dimen/_8dp"
++            android:layout_margin="@dimen/_16dp"
+             app:cardCornerRadius="@dimen/_8dp">
+ 
+         <androidx.appcompat.widget.AppCompatTextView
+diff --git a/xml_id_script.py b/xml_id_script.py
+index 1bfbeed..917b37a 100644
+--- a/xml_id_script.py
++++ b/xml_id_script.py
+@@ -25,6 +25,29 @@ def print_commit(commit):
+ # def print_diff(commitA, commitB):
+ #     print('-----')
+ 
++def writeFile(input):
++    # fileName = "/temp/input.txt"
++
++    patternStr = "--- a/app/src/main/res/layout/item_genre.xml"
++
++    patternStr = patternStr.replace("--- a/app/src/main/res/layout/", "")
++    patternStr = patternStr.replace("xml", "txt")
++
++    print(str(patternStr))
++
++    # for tmpStr: input:
++
++
++    # if(pattern == myFile):
++    #     name = myFile
++    #     fileName = "/temp/"
++
++
++    myFile = open(patternStr, 'w')
++
++    myFile.write(input)
++    myFile.close()
++
+ 
+ # repo_path = os.getenv('GIT_REPO_PATH')
+ # print_repository(repo_path)
+@@ -58,9 +81,13 @@ if __name__ == "__main__":
+         # print(a_commit)
+         # print(b_commit)
+ 
+-        print(repo.git.diff(t))
++        # print(repo.git.diff(t))
++
++        print(repo.git.diff('HEAD~1'))
++
++        writeFile(repo.git.diff('HEAD~1'))
++
+ 
+-        # print(repo.git.diff('HEAD~1'))
+ 
+         # pass
+         # commits = list(repo.iter_commits('master'))[:COMMITS_TO_PRINT]
