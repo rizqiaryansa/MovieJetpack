@@ -1,8 +1,15 @@
 import os
+import os.path
 import git
 from git import Repo
 
 COMMITS_TO_PRINT = 5
+patternLayout = "res/layout/"
+patternIdView = "android:id=\"@+id/"
+patternBeforeFile = "---"
+patternAfterFile = "+++"
+patternBeforeIdView = "-"
+patteernAfterIdView = "+"
 
 def print_repository(repo):
     print('Repo description: {}'.format(repo.description))
@@ -28,33 +35,82 @@ def print_commit(commit):
 def writeFile(input):
     # fileName = "/temp/input.txt"
 
-    patternStr = "--- a/app/src/main/res/layout/item_genre.xml"
+    tempName = "dump_input.txt"
 
-    patternStr = patternStr.replace("--- a/app/src/main/res/layout/", "")
-    patternStr = patternStr.replace("xml", "txt")
+    if not os.path.exists(tempName):
+        myFile = open(tempName, 'w+')
+        myFile.write(input)
+        myFile.close()
 
-    # for tmpStr: input:
+    tempStr = ""
+
+    inputLine = ""
+
+    nameFileAfter = ""
+    nameFileBefore = ""
+
+    f = open(tempName, "r")
+    for line in f:
+        if(patternBeforeFile in line[:3]):
+            if patternLayout in line:
+                pathBefore = "before"
+                nameFileBefore = getFile(patternLayout, patternBeforeFile, line, pathBefore)
+        
+        if(patternAfterFile in line[:3]):
+            if patternLayout in line:
+                pathAfter = "after"
+                nameFileAfter = getFile(patternLayout, patternAfterFile, line, pathAfter)
+
+        if(patternBeforeIdView in line[:1]):
+            newId = getIdView(patternIdView, line)
+            createFile(pathBefore, nameFileBefore, newId)
+        
+        if(patteernAfterIdView in line[:1]):
+            newId = getIdView(patternIdView, line)
+            createFile(pathAfter, nameFileAfter, newId)
+
+def createFile(pathBefore, nameFile, input):
+    if not os.path.exists(pathBefore):
+           path = os.mkdir(pathBefore)
+
+    if os.path.isfile(nameFile):
+        with open(nameFile, 'a') as file:
+            file.write(input)
+    else:
+        myFile = open(nameFile, 'w')
+        myFile.write(input)
+        myFile.close()
+
+def getFile(patternLayout, patternFile, line, path):
+    nameFile = ""
+    posisiPattern = line.find(patternLayout)
+    lengthPattern = len(patternLayout)
+    posisiFile = posisiPattern + lengthPattern
+
+    if patternFile is patternBeforeFile:
+        nameFileBefore = line[posisiFile:]
+        pathBefore = path
+        nameFile = pathBefore + "/" + nameFileBefore
+    elif patternFile is patternAfterFile:
+        nameFileAfter = line[posisiFile:]
+        pathAfter = path
+        nameFile = pathAfter + "/" + nameFileAfter
+    
+    return nameFile
 
 
-    # if(pattern == myFile):
-    #     name = myFile
-    #     fileName = "/temp/"
+def getIdView(patternIdView, line):
+    newId = ""
+    if patternIdView in line:
+        posisiPatternIdView = line.find(patternIdView)
+        lengthPatternIdView = len(patternIdView)
+        posisiIdView = (posisiPatternIdView + lengthPatternIdView)
+        nameIdView = line[posisiIdView:]
+        nameLength = len(nameIdView)
+        newId = nameIdView[:nameLength-2]
+        print(newId)
 
-
-    myFile = open(patternStr, 'w')
-
-    myFile.write(input)
-    myFile.close()
-
-def getIdView(input):
-
-    tmpStr = ""
-    patternIdView = "android:id="@+id/"
-
-    for(line in input):
-        if(line == patternIdView):
-            tempStr.append(line)
-
+    return newId
 
 # repo_path = os.getenv('GIT_REPO_PATH')
 # print_repository(repo_path)
@@ -88,13 +144,11 @@ if __name__ == "__main__":
         # print(a_commit)
         # print(b_commit)
 
-        # print(repo.git.diff(t))
+        # print(repo.git.diff('HEAD~1'))
 
-        print(repo.git.diff('HEAD~1'))
+        # print(repo.git.diff('HEAD~1'))
 
-        writeFile(repo.git.diff('HEAD~1'))
-
-
+        writeFile(str(repo.git.diff('HEAD~1')))
 
         # pass
         # commits = list(repo.iter_commits('master'))[:COMMITS_TO_PRINT]

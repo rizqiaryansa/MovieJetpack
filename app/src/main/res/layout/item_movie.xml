@@ -15,7 +15,7 @@
             android:layout_height="wrap_content">
 
         <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/image_poster"
+                android:id="@+id/iv_image_poster"
                 android:contentDescription="@string/example_title"
                 android:scaleType="fitCenter"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -30,7 +30,7 @@
                 app:layout_constraintVertical_bias="0.0"/>
 
         <androidx.appcompat.widget.AppCompatTextView
-                tools:text="@string/example_title"
+                tools:text="@string/tv_example_title"
                 android:layout_width="match_parent"
                 android:textColor="@android:color/white"
                 android:layout_height="wrap_content"
@@ -47,7 +47,7 @@
                 android:fontFamily="@font/roboto_medium"/>
 
         <androidx.appcompat.widget.AppCompatTextView
-                tools:text="@string/example_year"
+                tools:text="@string/tv_example_year"
                 android:text="@{movie.getYearMovie()}"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
