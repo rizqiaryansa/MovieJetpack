@@ -58,9 +58,11 @@ if __name__ == "__main__":
         # print(a_commit)
         # print(b_commit)
 
-        print(repo.git.diff(t))
+        # print(repo.git.diff(t))
 
-        # print(repo.git.diff('HEAD~1'))
+        print(repo.git.diff('HEAD~1'))
+
+        
 
         # pass
         # commits = list(repo.iter_commits('master'))[:COMMITS_TO_PRINT]
