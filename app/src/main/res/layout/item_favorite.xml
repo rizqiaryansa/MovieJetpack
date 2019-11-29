@@ -49,7 +49,7 @@
                 android:textColor="@android:color/white"
                 android:layout_height="wrap_content"
                 android:text='@{movie.title}'
-                android:id="@+id/tv_year_movie_favorite"
+                android:id="@+id/tv_year_movie_favoritef"
                 android:ellipsize="end"
                 android:maxLines="2"
                 android:gravity="center"
