@@ -51,7 +51,7 @@
                 android:text="@{movie.getYearMovie()}"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/tvYearMovie"
+                android:id="@+id/tvYearMovie2"
                 android:padding="@dimen/_8dp"
                 android:textSize="16sp"
                 android:background="#80333333"
