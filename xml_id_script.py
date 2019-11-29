@@ -1,6 +1,8 @@
 import os
+import shutil
 import os.path
 import git
+import itertools
 from git import Repo
 
 COMMITS_TO_PRINT = 5
@@ -9,7 +11,14 @@ patternIdView = "android:id=\"@+id/"
 patternBeforeFile = "---"
 patternAfterFile = "+++"
 patternBeforeIdView = "-"
-patteernAfterIdView = "+"
+patternAfterIdView = "+"
+patternRemoveFile = "/dev/null"
+beforePath = "before/"
+afterPath = "after/"
+pathBefore = "before"
+pathAfter = "after"
+
+
 
 def print_repository(repo):
     print('Repo description: {}'.format(repo.description))
@@ -36,11 +45,14 @@ def writeFile(input):
     # fileName = "/temp/input.txt"
 
     tempName = "dump_input.txt"
+    testCase = "test_case.txt"
 
     if not os.path.exists(tempName):
-        myFile = open(tempName, 'w+')
-        myFile.write(input)
-        myFile.close()
+        createDumpFile(tempName, input)
+    # elif os.path.exists(tempName):
+    #     removedPackFile()
+    #     createDumpFile(tempName, input)
+
 
     tempStr = ""
 
@@ -48,38 +60,161 @@ def writeFile(input):
 
     nameFileAfter = ""
     nameFileBefore = ""
+    nameFileCompare = ""
+
+    setIdAfter = set()
+    setIdBefore = set()
+
+    newId = ""
+
+    fileCase = None
+
+    if(os.path.exists(testCase)):
+        with open(testCase, "r") as fCase:
+            strStrip = fCase.read().splitlines()
+            tempCase = set(strStrip)
+            print("tempCase: " + str(tempCase))
+
 
     f = open(tempName, "r")
     for line in f:
         if(patternBeforeFile in line[:3]):
             if patternLayout in line:
-                pathBefore = "before"
                 nameFileBefore = getFile(patternLayout, patternBeforeFile, line, pathBefore)
+                nameFileCompare = getNameFileXML(nameFileBefore)
         
         if(patternAfterFile in line[:3]):
             if patternLayout in line:
-                pathAfter = "after"
                 nameFileAfter = getFile(patternLayout, patternAfterFile, line, pathAfter)
+            elif patternRemoveFile in line:
+                if nameFileCompare in tempCase:
+                        print("Previous file has removed with name : " + nameFileCompare)
+                        nameFileCompare = ""
 
-        if(patternBeforeIdView in line[:1]):
-            newId = getIdView(patternIdView, line)
-            createFile(pathBefore, nameFileBefore, newId)
+        if(nameFileCompare in tempCase):
+            if(patternBeforeIdView == line[:1] and notPatternBefore(line)):
+                newId = getIdView(patternIdView, line)
+                if(newId.strip()):
+                    setIdBefore.add(newId.strip())
+                    createFile(pathBefore, nameFileBefore, newId)
+                    newId = ""
         
-        if(patteernAfterIdView in line[:1]):
-            newId = getIdView(patternIdView, line)
-            createFile(pathAfter, nameFileAfter, newId)
+            if(patternAfterIdView == line[:1]):
+                newId = getIdView(patternIdView, line)
+                if(newId.strip()):
+                    setIdAfter.add(newId.strip())
+                    createFile(pathAfter, nameFileAfter, newId)
+                    newId = ""
 
-def createFile(pathBefore, nameFile, input):
-    if not os.path.exists(pathBefore):
-           path = os.mkdir(pathBefore)
+        
+    setFileBefore = getFileFromPackage(pathBefore)
+    setFileAfter = getFileFromPackage(pathAfter)
+
+    checkIdView(setFileBefore, setFileAfter, beforePath, afterPath)
+
+
+def createDumpFile(tempName, input):
+    with open(tempName, 'w') as file:
+        file.write(input)
+    # myFile = open(tempName, 'w')
+    # myFile.close()
+
+def removedPackFile():
+    shutil.rmtree("after")
+    shutil.rmtree("before")
+    os.remove("dump_input.txt")
+    
+def checkIdView(beforeFile, afterFile, beforePath, afterPath):
+
+    if(len(beforeFile) == len(afterFile)):
+
+        for(before, after) in zip(beforeFile, afterFile):
+            beforeX = getFileWithoutPath(before, beforePath)
+            afterX = getFileWithoutPath(after, afterPath)
+
+            print(beforeX)
+            print(afterX)
+            if(beforeX == afterX):
+                beforeWithPath = getFileWithPath(beforeX, beforePath)
+                afterWithPath = getFileWithPath(afterX, afterPath)
+
+                beforeF = open(beforeWithPath, "r")
+                afterF = open(afterWithPath, "r")
+
+                setIdAfter = set()
+                setIdBefore = set()
+
+                for beforeLine in beforeF:
+                    setIdBefore.add(getNameWithoutNewLine(beforeLine))
+                
+                for afterLine in afterF:
+                    setIdAfter.add(getNameWithoutNewLine(afterLine))
+
+                print(str(setIdBefore))
+                print(str(setIdAfter))
+
+                for beforeIdView in setIdBefore:
+                    if beforeIdView not in setIdAfter:
+                        print("id view " + beforeIdView + " has been changed or removed from file " + getNameFileXML(beforeX))
+
+                # print(str(setIdBefore))
+                # print(str(setIdAfter))
+
+def getNameWithoutNewLine(line):
+    line = line.replace("\n", "")
+    return line
+
+def getFileWithPath(file, path):
+    file = path + file
+    return file
+
+def getFileWithoutPath(file, path):
+    file = file.replace(path, "")
+    return file
+
+def getFileFromPackage(path):
+    setFile = set()
+    for filename in os.listdir(path):
+        filePath = path + "/" + filename
+        setFile.add(filePath.strip())
+    
+    print(setFile)
+    return setFile
+
+def setValueFromFile(file):
+    with open(file, "r") as fCase:
+        strStrip = fCase.read().splitlines()
+        tempCase = set(strStrip)
+    
+    print(tempCase)
+    return tempCase
+
+
+def getNameFileXML(file):
+    file = file.replace("txt", "xml")
+    file = file.replace("before/", "")
+    file = file.strip()
+
+    return file
+
+def notPatternBefore(line):
+    if(line[:2] != "-+"):
+        return True
+    return False
+
+def createFile(path, nameFile, input):
+    if not os.path.exists(path):
+           os.mkdir(path)
 
     if os.path.isfile(nameFile):
         with open(nameFile, 'a') as file:
-            file.write(input)
+            file.write("\n" + input)
     else:
-        myFile = open(nameFile, 'w')
-        myFile.write(input)
-        myFile.close()
+        with open(nameFile, 'w') as fileW:
+            fileW.write(input)
+        # myFile = open(nameFile, 'w')
+        # myFile.write(input)
+        # myFile.close()
 
 def getFile(patternLayout, patternFile, line, path):
     nameFile = ""
@@ -96,6 +231,8 @@ def getFile(patternLayout, patternFile, line, path):
         pathAfter = path
         nameFile = pathAfter + "/" + nameFileAfter
     
+    nameFile = nameFile.replace("xml", "txt")
+    nameFile = nameFile.replace("\n", "")
     return nameFile
 
 
@@ -111,6 +248,8 @@ def getIdView(patternIdView, line):
         print(newId)
 
     return newId
+
+# def checkIdView():
 
 # repo_path = os.getenv('GIT_REPO_PATH')
 # print_repository(repo_path)
@@ -139,16 +278,25 @@ if __name__ == "__main__":
         # a_commit = gitRepo.commits()[0]
         # b_commit = gitRepo.commits()[1]
 
-        t = repo.head.commit.tree
+        # t = repo.head.commit.tree
         
         # print(a_commit)
         # print(b_commit)
 
-        # print(repo.git.diff('HEAD~1'))
+        # repos = git.Repo(repo_path)
+        # repos.git.commits()
 
-        # print(repo.git.diff('HEAD~1'))
+        commits_list = list(repo.iter_commits())
+
+        a_commit = commits_list[-1]
+        b_commit = "a4186acd2ad2a077a5887f8ac16c50a37ca872fc"
+
+        # beforeC = repo.head.commit
+        # afterC = "77a38266633ec3d224f5de799788adec94432492"
 
         writeFile(str(repo.git.diff('HEAD~1')))
+        # writeFile(repo.git.diff("HEAD","HEAD~1"))
+        # checkIdView()
 
         # pass
         # commits = list(repo.iter_commits('master'))[:COMMITS_TO_PRINT]

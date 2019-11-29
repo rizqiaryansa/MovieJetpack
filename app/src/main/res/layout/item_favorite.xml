@@ -15,7 +15,7 @@
             android:layout_height="wrap_content">
 
         <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/imgPosterFavorite"
+                android:id="@+id/img_poster_favorite"
                 android:contentDescription="@string/example_title"
                 android:scaleType="fitCenter"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -30,12 +30,26 @@
                 app:layout_constraintVertical_bias="0.0"/>
 
         <androidx.appcompat.widget.AppCompatTextView
+                tools:text="@string/example_year"
+                android:text="@{movie.releaseDate}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_8dp"
+                android:id="@+id/tv_title_movie_favorite"
+                android:textSize="16sp"
+                android:background="#80333333"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/imgPosterFavorite"
+                android:textColor="@color/colorWhite"
+                app:fontFamily="@font/roboto_medium"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
                 tools:text="@string/example_title"
                 android:layout_width="match_parent"
                 android:textColor="@android:color/white"
                 android:layout_height="wrap_content"
-                android:id="@+id/tvTitleMovieFavorite"
                 android:text='@{movie.title}'
+                android:id="@+id/tv_year_movie_favorite"
                 android:ellipsize="end"
                 android:maxLines="2"
                 android:gravity="center"
@@ -45,20 +59,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 android:fontFamily="@font/roboto_medium"/>
-
-        <androidx.appcompat.widget.AppCompatTextView
-                tools:text="@string/example_year"
-                android:text="@{movie.releaseDate}"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/tvYearMovieFavorite"
-                android:padding="@dimen/_8dp"
-                android:textSize="16sp"
-                android:background="#80333333"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/imgPosterFavorite"
-                android:textColor="@color/colorWhite"
-                app:fontFamily="@font/roboto_medium"/>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

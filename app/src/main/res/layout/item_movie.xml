@@ -29,12 +29,27 @@
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintVertical_bias="0.0"/>
 
+
         <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_year_movie"
+                tools:text="@string/tv_example_year"
+                android:text="@{movie.getYearMovie()}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_8dp"
+                android:textSize="16sp"
+                android:background="#80333333"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/image_poster"
+                android:textColor="@color/colorWhite"
+                app:fontFamily="@font/roboto_medium"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_title_movie"
                 tools:text="@string/tv_example_title"
                 android:layout_width="match_parent"
                 android:textColor="@android:color/white"
                 android:layout_height="wrap_content"
-                android:id="@+id/tvTitleMovie"
                 android:text='@{movie.originalTitle ?? movie.originalName}'
                 android:ellipsize="end"
                 android:maxLines="2"
@@ -45,20 +60,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 android:fontFamily="@font/roboto_medium"/>
-
-        <androidx.appcompat.widget.AppCompatTextView
-                tools:text="@string/tv_example_year"
-                android:text="@{movie.getYearMovie()}"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/tvYearMovie"
-                android:padding="@dimen/_8dp"
-                android:textSize="16sp"
-                android:background="#80333333"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/image_poster"
-                android:textColor="@color/colorWhite"
-                app:fontFamily="@font/roboto_medium"/>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
