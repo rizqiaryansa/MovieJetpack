@@ -87,7 +87,7 @@ def writeFile(input):
             if patternLayout in line:
                 nameFileAfter = getFile(patternLayout, patternAfterFile, line, pathAfter)
             elif patternRemoveFile in line:
-                if nameFileCompare in tempCase:
+                if nameFileCompare not in tempCase:
                         print("Previous file has removed with name : " + nameFileCompare)
                         nameFileCompare = ""
 
@@ -132,8 +132,8 @@ def checkIdView(beforeFile, afterFile, beforePath, afterPath):
             beforeX = getFileWithoutPath(before, beforePath)
             afterX = getFileWithoutPath(after, afterPath)
 
-            print(beforeX)
-            print(afterX)
+            # print(beforeX)
+            # print(afterX)
             if(beforeX == afterX):
                 beforeWithPath = getFileWithPath(beforeX, beforePath)
                 afterWithPath = getFileWithPath(afterX, afterPath)
@@ -150,8 +150,8 @@ def checkIdView(beforeFile, afterFile, beforePath, afterPath):
                 for afterLine in afterF:
                     setIdAfter.add(getNameWithoutNewLine(afterLine))
 
-                print(str(setIdBefore))
-                print(str(setIdAfter))
+                # print(str(setIdBefore))
+                # print(str(setIdAfter))
 
                 for beforeIdView in setIdBefore:
                     if beforeIdView not in setIdAfter:
@@ -245,7 +245,7 @@ def getIdView(patternIdView, line):
         nameIdView = line[posisiIdView:]
         nameLength = len(nameIdView)
         newId = nameIdView[:nameLength-2]
-        print(newId)
+        # print(newId)
 
     return newId
 
@@ -261,6 +261,9 @@ if __name__ == "__main__":
     repo_path = os.getenv('GIT_REPO_PATH')
     # Repo object used to programmatically interact with Git repositories
     repo = Repo(repo_path)
+
+    defaultBranch = "master"
+    
     # check that the repository loaded correctly
     if not repo.bare:
         print('Repo at {} successfully loaded.'.format(repo_path))
@@ -294,7 +297,7 @@ if __name__ == "__main__":
         # beforeC = repo.head.commit
         # afterC = "77a38266633ec3d224f5de799788adec94432492"
 
-        writeFile(str(repo.git.diff('HEAD~1')))
+        writeFile(str(repo.git.diff('master', 'sukasuka')))
         # writeFile(repo.git.diff("HEAD","HEAD~1"))
         # checkIdView()
 
