@@ -15,7 +15,7 @@
             android:layout_height="wrap_content">
 
         <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/iv_image_poster"
+                android:id="@+id/iv_image_posterf"
                 android:contentDescription="@string/example_title"
                 android:scaleType="fitCenter"
                 app:layout_constraintEnd_toEndOf="parent"
