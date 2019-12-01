@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable name="movie"
+                  type="com.aryansa.rizqi.moviejetpack.domain.model.remote.Movie"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/rootLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_image_poster"
+                android:contentDescription="@string/example_title"
+                android:scaleType="fitCenter"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:setImageUrl="@{movie.posterPath}"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                tools:src="@drawable/ic_launcher_background"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintVertical_bias="0.0"/>
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_year_movie"
+                tools:text="@string/tv_example_year"
+                android:text="@{movie.getYearMovie()}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_8dp"
+                android:textSize="16sp"
+                android:background="#80333333"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/image_poster"
+                android:textColor="@color/colorWhite"
+                app:fontFamily="@font/roboto_medium"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_title_movie"
+                tools:text="@string/tv_example_title"
+                android:layout_width="match_parent"
+                android:textColor="@android:color/white"
+                android:layout_height="wrap_content"
+                android:text='@{movie.originalTitle ?? movie.originalName}'
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:gravity="center"
+                android:layout_marginTop="@dimen/_8dp"
+                style="@android:style/TextAppearance.Medium"
+                app:layout_constraintTop_toBottomOf="@id/image_poster"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:fontFamily="@font/roboto_medium"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
