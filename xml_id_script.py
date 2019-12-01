@@ -18,8 +18,6 @@ afterPath = "after/"
 pathBefore = "before"
 pathAfter = "after"
 
-
-
 def print_repository(repo):
     print('Repo description: {}'.format(repo.description))
     print('Repo active branch is {}'.format(repo.active_branch))

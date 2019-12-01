@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+                name="viewModel"
+                type="com.aryansa.rizqi.moviejetpack.presentation.viewmodel.DetailMovieViewModel" />
+
+        <variable
+                name="detail"
+                type="com.aryansa.rizqi.moviejetpack.domain.model.remote.MovieDetailResponse" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <androidx.constraintlayout.motion.widget.MotionLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layoutDescription="@xml/scene_header"
+                tools:context=".presentation.view.activity.DetailActivity"
+                tools:showPaths="true">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/toolbar_image"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:background="@color/colorPrimary"
+                    android:scaleType="fitCenter"
+                    app:layout_constraintBottom_toTopOf="@id/contentDetail"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:setImageUrl="@{detail.posterPath}"
+                    tools:src="@drawable/img_placeholder_img" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/img_favorite"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:src="@drawable/ic_favorite_border"
+                    tools:src="@drawable/ic_favorite_border" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@android:id/home"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="@dimen/_16dp"
+                    android:paddingTop="@dimen/_16dp"
+                    android:paddingEnd="@dimen/_16dp"
+                    android:paddingBottom="@dimen/_16dp"
+                    android:src="@drawable/abc_ic_ab_back_material"
+                    android:tint="?android:attr/textColorPrimaryInverse"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_8dp"
+                    android:layout_marginLeft="@dimen/_8dp"
+                    android:layout_marginBottom="24dp"
+                    android:text="@{detail.getTitleMovie()}"
+                    android:textColor="?android:attr/textColorPrimaryInverse"
+                    android:textSize="32sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@id/toolbar_image"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/contentDetail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/toolbar_image">
+
+                <androidx.appcompat.widget.AppCompatRatingBar
+                        android:id="@+id/ratingStar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:isIndicator="true"
+                        android:numStars="5"
+                        app:layout_constraintBottom_toTopOf="@id/overview"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:setRating="@{safeUnbox(detail.getRatingVote())}" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/overview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_8dp"
+                        android:fontFamily="@font/roboto_medium"
+                        android:text="@string/overview"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="20sp"
+                        app:layout_constraintBottom_toTopOf="@+id/overviewDetail"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/ratingStar" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/overviewDetail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_8dp"
+                        android:text='@{detail.overview}'
+                        android:textColor="@color/colorWhite"
+                        android:textSize="16sp"
+                        app:layout_constraintBottom_toTopOf="@+id/releaseDate"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/overview"
+                        tools:text="@string/example_title" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/releaseDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_8dp"
+                        android:fontFamily="@font/roboto_medium"
+                        android:text="@string/release_date"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="20sp"
+                        app:layout_constraintBottom_toTopOf="@+id/releaseDateDetail"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/releaseDateDetail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_8dp"
+                        android:text="@{detail.getYearMovie()}"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/releaseDate"
+                        tools:text="@string/example_year" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/genre"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_8dp"
+                        android:fontFamily="@font/roboto_medium"
+                        android:text="@string/genre"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="20sp"
+                        app:layout_constraintBottom_toTopOf="@+id/rvGenre"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/releaseDateDetail" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvGenre"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/genre"
+                        tools:listitem="@layout/item_genre" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.motion.widget.MotionLayout>
+
+        <ProgressBar
+                android:id="@+id/pbDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:setLoading="@{safeUnbox(viewModel.loadingState)}" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
