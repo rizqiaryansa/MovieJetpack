@@ -60,53 +60,70 @@ def writeFile(input):
     nameFileBefore = ""
     nameFileCompare = ""
 
+    nameFileWithModul = ""
+
     setIdAfter = set()
     setIdBefore = set()
 
+    modul = ""
+
     newId = ""
 
-    fileCase = None
+    tempModul = list()
+
 
     if(os.path.exists(testCase)):
         with open(testCase, "r") as fCase:
             strStrip = fCase.read().splitlines()
             tempCase = set(strStrip)
             print("tempCase: " + str(tempCase))
+        
+        z = open(testCase, "r")
+
+        for lineModul in z:
+            strOnlyModul = lineModul.replace("\n", "").split("/")[0]
+            tempModul.append(strOnlyModul)
+        print("tempModule: " + str(tempModul))
 
 
     f = open(tempName, "r")
     for line in f:
         if(patternBeforeFile in line[:3]):
             if patternLayout in line:
+                # print(line[6:].split("/")[0])
+                modul = str(line[6:].split("/")[0])
                 nameFileBefore = getFile(patternLayout, patternBeforeFile, line, pathBefore)
                 nameFileCompare = getNameFileXML(nameFileBefore)
+                    # nameFileWithModul = line[6:10] + 
         
         if(patternAfterFile in line[:3]):
             if patternLayout in line:
+                # print(line[6:].split("/")[0])
+                modul = str(line[6:].split("/")[0])
                 nameFileAfter = getFile(patternLayout, patternAfterFile, line, pathAfter)
             elif patternRemoveFile in line:
                 if nameFileCompare not in tempCase:
                         print("Previous file has removed with name : " + nameFileCompare)
                         nameFileCompare = ""
 
-        if(nameFileCompare in tempCase):
-            if(patternBeforeIdView == line[:1] and notPatternBefore(line)):
+        if(modul in tempModul):
+            if(patternBeforeIdView == line[:1]):
                 newId = getIdView(patternIdView, line)
                 if(newId.strip()):
                     setIdBefore.add(newId.strip())
-                    createFile(pathBefore, nameFileBefore, newId)
+                    createFile(pathBefore, nameFileBefore, newId, modul)
                     newId = ""
         
             if(patternAfterIdView == line[:1]):
                 newId = getIdView(patternIdView, line)
                 if(newId.strip()):
                     setIdAfter.add(newId.strip())
-                    createFile(pathAfter, nameFileAfter, newId)
+                    createFile(pathAfter, nameFileAfter, newId, modul)
                     newId = ""
 
-        
-    setFileBefore = getFileFromPackage(pathBefore)
-    setFileAfter = getFileFromPackage(pathAfter)
+
+    setFileBefore = getModulFromPackage(pathBefore)
+    setFileAfter = getModulFromPackage(pathAfter)
 
     checkIdView(setFileBefore, setFileAfter, beforePath, afterPath)
 
@@ -127,36 +144,49 @@ def checkIdView(beforeFile, afterFile, beforePath, afterPath):
     if(len(beforeFile) == len(afterFile)):
 
         for(before, after) in zip(beforeFile, afterFile):
-            beforeX = getFileWithoutPath(before, beforePath)
-            afterX = getFileWithoutPath(after, afterPath)
 
-            # print(beforeX)
-            # print(afterX)
-            if(beforeX == afterX):
-                beforeWithPath = getFileWithPath(beforeX, beforePath)
-                afterWithPath = getFileWithPath(afterX, afterPath)
+            beforeSlash = before + "/"
+            afterSlash = after + "/"
 
-                beforeF = open(beforeWithPath, "r")
-                afterF = open(afterWithPath, "r")
+            beforeWithPath = getFileFromPackage(beforeSlash)
+            afterWithPath = getFileFromPackage(afterSlash)
 
-                setIdAfter = set()
-                setIdBefore = set()
+            # print(str(beforeWithPath))
+            # print(str(afterWithPath))
 
-                for beforeLine in beforeF:
-                    setIdBefore.add(getNameWithoutNewLine(beforeLine))
-                
-                for afterLine in afterF:
-                    setIdAfter.add(getNameWithoutNewLine(afterLine))
+            # print("before " + before)
+            # print("after " + after)
 
-                # print(str(setIdBefore))
-                # print(str(setIdAfter))
+            for(beforeFile, afterFile) in zip(beforeWithPath, afterWithPath):
 
-                for beforeIdView in setIdBefore:
-                    if beforeIdView not in setIdAfter:
-                        print("id view " + beforeIdView + " has been changed or removed from file " + getNameFileXML(beforeX))
+                if(beforeFile == afterFile):
 
-                # print(str(setIdBefore))
-                # print(str(setIdAfter))
+                    fileBeforePath = beforeSlash + beforeFile
+                    fileAfterPath = afterSlash + afterFile
+
+                    print("file before with path : " + fileBeforePath)
+                    print("file after with path : " + fileAfterPath)
+
+                    beforeF = open(fileBeforePath, "r")
+                    afterF = open(fileAfterPath, "r")
+
+                    setIdAfter = set()
+                    setIdBefore = set()
+
+                    for beforeLine in beforeF:
+                        setIdBefore.add(getNameWithoutNewLine(beforeLine))
+                        
+                    for afterLine in afterF:
+                        setIdAfter.add(getNameWithoutNewLine(afterLine))
+
+                    for beforeIdView in setIdBefore:
+                        if beforeIdView not in setIdAfter:
+                            pathModule = fileBeforePath.split("/")[1]
+                            fileModule = pathModule + "/" + getNameFileXML(beforeFile)
+                            print("id view " + beforeIdView + " has been changed or removed from file " +  fileModule)
+
+                    # print(str(setIdBefore))
+                    # print(str(setIdAfter))
 
 def getNameWithoutNewLine(line):
     line = line.replace("\n", "")
@@ -170,14 +200,23 @@ def getFileWithoutPath(file, path):
     file = file.replace(path, "")
     return file
 
-def getFileFromPackage(path):
+def getFileFromPackage(modul):
     setFile = set()
+
+    for getfile in os.listdir(modul):
+        setFile.add(getfile)
+    
+    # print("file " + str(setFile))
+    return setFile
+
+def getModulFromPackage(path):
+    setModul = set()
     for filename in os.listdir(path):
         filePath = path + "/" + filename
-        setFile.add(filePath.strip())
+        setModul.add(filePath)
     
-    print(setFile)
-    return setFile
+    print("package " + str(setModul))
+    return setModul
 
 def setValueFromFile(file):
     with open(file, "r") as fCase:
@@ -200,21 +239,29 @@ def notPatternBefore(line):
         return True
     return False
 
-def createFile(path, nameFile, input):
-    if not os.path.exists(path):
-           os.mkdir(path)
+def createFile(path, nameFile, input, modul):
 
-    if os.path.isfile(nameFile):
-        with open(nameFile, 'a') as file:
+    nameFileModul = path + "/" + modul + "/" + nameFile
+    nameModul = path + "/" + modul
+
+    if not os.path.exists(path):
+        os.mkdir(path)
+    
+    if not os.path.exists(nameModul):
+        os.mkdir(nameModul)
+
+    if os.path.isfile(nameFileModul):
+        with open(nameFileModul, 'a') as file:
             file.write("\n" + input)
     else:
-        with open(nameFile, 'w') as fileW:
+        with open(nameFileModul, 'w') as fileW:
             fileW.write(input)
         # myFile = open(nameFile, 'w')
         # myFile.write(input)
         # myFile.close()
 
 def getFile(patternLayout, patternFile, line, path):
+
     nameFile = ""
     posisiPattern = line.find(patternLayout)
     lengthPattern = len(patternLayout)
@@ -222,15 +269,14 @@ def getFile(patternLayout, patternFile, line, path):
 
     if patternFile is patternBeforeFile:
         nameFileBefore = line[posisiFile:]
-        pathBefore = path
-        nameFile = pathBefore + "/" + nameFileBefore
+        nameFile = nameFileBefore
     elif patternFile is patternAfterFile:
         nameFileAfter = line[posisiFile:]
-        pathAfter = path
-        nameFile = pathAfter + "/" + nameFileAfter
+        nameFile = nameFileAfter
     
     nameFile = nameFile.replace("xml", "txt")
     nameFile = nameFile.replace("\n", "")
+    # print(nameFile)
     return nameFile
 
 
@@ -297,9 +343,7 @@ if __name__ == "__main__":
 
         writeFile(str(repo.git.diff('master', 'sukasuka')))
         # writeFile(repo.git.diff("HEAD","HEAD~1"))
-        # checkIdView()
 
-        # pass
         # commits = list(repo.iter_commits('master'))[:COMMITS_TO_PRINT]
         # for commit in commits:
         #     print_commit(commit)
