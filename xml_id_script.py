@@ -340,8 +340,12 @@ if __name__ == "__main__":
 
         # beforeC = repo.head.commit
         # afterC = "77a38266633ec3d224f5de799788adec94432492"
+        # g = git.Git(repo_path)
+        # g.pull()
+        # commitMessages = g.log('%s..%s' % ("master", "sukasuka"), '--pretty=format:%ad %an - %s', '--abbrev-commit')
 
-        writeFile(str(repo.git.diff('master', 'sukasuka')))
+        writeFile(repo.git.diff("master", "sukasuka"))
+        # writeFile(commitMessages)
         # writeFile(repo.git.diff("HEAD","HEAD~1"))
 
         # commits = list(repo.iter_commits('master'))[:COMMITS_TO_PRINT]
