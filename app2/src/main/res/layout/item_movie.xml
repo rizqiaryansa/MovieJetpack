@@ -16,6 +16,7 @@
 
         <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/iv_image_posterf"
+                android:id="@+id/iv_image_poster"
                 android:contentDescription="@string/example_title"
                 android:scaleType="fitCenter"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -46,6 +47,7 @@
 
         <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tv_title_movief"
+                android:id="@+id/tv_title_movie"
                 tools:text="@string/tv_example_title"
                 android:layout_width="match_parent"
                 android:textColor="@android:color/white"
