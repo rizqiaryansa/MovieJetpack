@@ -36,8 +36,6 @@ def print_commit(commit):
     print(str("count: {} and size: {}".format(commit.count(),
                                               commit.size)))
 
-# def print_diff(commitA, commitB):
-#     print('-----')
 
 def writeFile(input):
     # fileName = "/temp/input.txt"
@@ -70,7 +68,7 @@ def writeFile(input):
     newId = ""
 
     tempModul = list()
-
+    tempNameFile = set()
 
     if(os.path.exists(testCase)):
         with open(testCase, "r") as fCase:
@@ -82,27 +80,29 @@ def writeFile(input):
 
         for lineModul in z:
             strOnlyModul = lineModul.replace("\n", "").split("/")[0]
+            stryOnlyName = lineModul.replace("\n", "").split("/")
             tempModul.append(strOnlyModul)
+            if(len(stryOnlyName) > 1):
+                modulSlash = strOnlyModul + "/" + stryOnlyName[1]
+                tempNameFile.add(str(modulSlash))
         print("tempModule: " + str(tempModul))
+        print("tempName: " + str(tempNameFile))
 
 
     f = open(tempName, "r")
     for line in f:
         if(patternBeforeFile in line[:3]):
             if patternLayout in line:
-                # print(line[6:].split("/")[0])
                 modul = str(line[6:].split("/")[0])
                 nameFileBefore = getFile(patternLayout, patternBeforeFile, line, pathBefore)
                 nameFileCompare = getNameFileXML(nameFileBefore)
-                    # nameFileWithModul = line[6:10] + 
         
         if(patternAfterFile in line[:3]):
             if patternLayout in line:
-                # print(line[6:].split("/")[0])
                 modul = str(line[6:].split("/")[0])
                 nameFileAfter = getFile(patternLayout, patternAfterFile, line, pathAfter)
             elif patternRemoveFile in line:
-                if nameFileCompare not in tempCase:
+                if nameFileCompare in tempCase:
                         print("Previous file has removed with name : " + nameFileCompare)
                         nameFileCompare = ""
 
@@ -215,7 +215,7 @@ def getModulFromPackage(path):
         filePath = path + "/" + filename
         setModul.add(filePath)
     
-    print("package " + str(setModul))
+    # print("package " + str(setModul))
     return setModul
 
 def setValueFromFile(file):
@@ -292,11 +292,6 @@ def getIdView(patternIdView, line):
         # print(newId)
 
     return newId
-
-# def checkIdView():
-
-# repo_path = os.getenv('GIT_REPO_PATH')
-# print_repository(repo_path)
 
 # repo = git.Repo(os.getenv('GIT_REPO_PATH'))
 # print repo.git.status()
