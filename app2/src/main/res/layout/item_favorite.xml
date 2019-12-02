@@ -35,7 +35,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/_8dp"
-                android:id="@+id/tv_title_movie_favorite"
+                android:id="@+id/tv_year_movie_favoritef"
                 android:textSize="16sp"
                 android:background="#80333333"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -49,7 +49,8 @@
                 android:textColor="@android:color/white"
                 android:layout_height="wrap_content"
                 android:text='@{movie.title}'
-                android:id="@+id/tv_year_movie_favorite"
+                android:ellipsize="end"
+                android:id="@+id/tv_title_movie_favorite"
                 android:ellipsize="end"
                 android:maxLines="2"
                 android:gravity="center"
