@@ -2,6 +2,8 @@ import os
 import shutil
 import os.path
 import git
+import optparse
+from optparse import OptionParser
 import itertools
 from git import Repo
 
@@ -95,14 +97,14 @@ def writeFile(input):
             if patternLayout in line:
                 modul = str(line[6:].split("/")[0])
                 nameFileBefore = getFile(patternLayout, patternBeforeFile, line, pathBefore)
-                nameFileCompare = getNameFileXML(nameFileBefore)
+                nameFileCompare = modul + "/" + getNameFileXML(nameFileBefore)
         
         if(patternAfterFile in line[:3]):
             if patternLayout in line:
                 modul = str(line[6:].split("/")[0])
                 nameFileAfter = getFile(patternLayout, patternAfterFile, line, pathAfter)
             elif patternRemoveFile in line:
-                if nameFileCompare in tempCase:
+                if nameFileCompare in tempNameFile:
                         print("Previous file has removed with name : " + nameFileCompare)
                         nameFileCompare = ""
 
@@ -164,8 +166,8 @@ def checkIdView(beforeFile, afterFile, beforePath, afterPath):
                     fileBeforePath = beforeSlash + beforeFile
                     fileAfterPath = afterSlash + afterFile
 
-                    print("file before with path : " + fileBeforePath)
-                    print("file after with path : " + fileAfterPath)
+                    # print("file before with path : " + fileBeforePath)
+                    # print("file after with path : " + fileAfterPath)
 
                     beforeF = open(fileBeforePath, "r")
                     afterF = open(fileAfterPath, "r")
@@ -333,13 +335,22 @@ if __name__ == "__main__":
         a_commit = commits_list[-1]
         b_commit = "a4186acd2ad2a077a5887f8ac16c50a37ca872fc"
 
+        parser = optparse.OptionParser()
+        parser.add_option('-t', '--target', dest='target', default="sukasuka", help="Set parameter branch")
+
+        (options, args) = parser.parse_args()
+
+        targetBranch = ""
+        if options.target:
+            targetBranch = options.target
+
         # beforeC = repo.head.commit
         # afterC = "77a38266633ec3d224f5de799788adec94432492"
         # g = git.Git(repo_path)
         # g.pull()
         # commitMessages = g.log('%s..%s' % ("master", "sukasuka"), '--pretty=format:%ad %an - %s', '--abbrev-commit')
 
-        writeFile(repo.git.diff("master", "sukasuka"))
+        writeFile(repo.git.diff("master", targetBranch))
         # writeFile(commitMessages)
         # writeFile(repo.git.diff("HEAD","HEAD~1"))
 
