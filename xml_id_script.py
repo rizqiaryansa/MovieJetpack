@@ -4,8 +4,8 @@ import os.path
 import git
 import optparse
 from optparse import OptionParser
-import itertools
 from git import Repo
+import time
 
 COMMITS_TO_PRINT = 5
 patternLayout = "res/layout/"
@@ -47,23 +47,20 @@ def writeFile(input):
 
     if not os.path.exists(tempName):
         createDumpFile(tempName, input)
-    # elif os.path.exists(tempName):
-    #     removedPackFile()
-    #     createDumpFile(tempName, input)
-
-
-    tempStr = ""
-
-    inputLine = ""
+    elif os.path.exists(tempName):
+        removedPackFile(tempName, pathBefore, pathAfter)
+        createDumpFile(tempName, input)
 
     nameFileAfter = ""
     nameFileBefore = ""
     nameFileCompare = ""
 
-    nameFileWithModul = ""
-
     setIdAfter = set()
     setIdBefore = set()
+    setRemovedFile = set()
+
+    setFileBefore = set()
+    setFileAfter = set()
 
     modul = ""
 
@@ -71,6 +68,10 @@ def writeFile(input):
 
     tempModul = list()
     tempNameFile = set()
+    tempOnlyModul = set()
+
+    strLineRemove = ""
+    isLineRemove = False
 
     if(os.path.exists(testCase)):
         with open(testCase, "r") as fCase:
@@ -86,9 +87,16 @@ def writeFile(input):
             tempModul.append(strOnlyModul)
             if(len(stryOnlyName) > 1):
                 modulSlash = strOnlyModul + "/" + stryOnlyName[1]
-                tempNameFile.add(str(modulSlash))
-        print("tempModule: " + str(tempModul))
-        print("tempName: " + str(tempNameFile))
+                tempNameFile.add(str(modulSlash.strip()))
+            
+            strOnlyModuleName = lineModul.replace("\n", "").split(" ")
+            if(len(strOnlyModuleName) == 1 and len(stryOnlyName) == 1):
+                tempOnlyModul.add(str(strOnlyModuleName[0]))
+            
+
+        # print("tempModule: " + str(tempModul))
+        # print("tempNameFile: " + str(tempNameFile))
+        # print("tempOnlyModule: " + str(tempOnlyModul))
 
 
     f = open(tempName, "r")
@@ -98,36 +106,85 @@ def writeFile(input):
                 modul = str(line[6:].split("/")[0])
                 nameFileBefore = getFile(patternLayout, patternBeforeFile, line, pathBefore)
                 nameFileCompare = modul + "/" + getNameFileXML(nameFileBefore)
+                # print(nameFileCompare)
         
         if(patternAfterFile in line[:3]):
             if patternLayout in line:
                 modul = str(line[6:].split("/")[0])
                 nameFileAfter = getFile(patternLayout, patternAfterFile, line, pathAfter)
             elif patternRemoveFile in line:
+                strLineRemove = line[4:]
                 if nameFileCompare in tempNameFile:
-                        print("Previous file has removed with name : " + nameFileCompare)
+                        isLineRemove = True
+                        # print(not isLineRemove)
+                        
+                        setRemovedFile.add(nameFileCompare)
+                        # print("File has removed with name : " + nameFileCompare + " (d)")
+                        # print(nameFileCompare)
                         nameFileCompare = ""
+                checkFileRemoved(setRemovedFile)
 
-        if(modul in tempModul):
-            if(patternBeforeIdView == line[:1]):
-                newId = getIdView(patternIdView, line)
-                if(newId.strip()):
-                    setIdBefore.add(newId.strip())
-                    createFile(pathBefore, nameFileBefore, newId, modul)
-                    newId = ""
-        
-            if(patternAfterIdView == line[:1]):
-                newId = getIdView(patternIdView, line)
-                if(newId.strip()):
-                    setIdAfter.add(newId.strip())
-                    createFile(pathAfter, nameFileAfter, newId, modul)
-                    newId = ""
+            # print(line)
+        # print(strLineRemove)
+        # print(strLineRemove)
 
+        if(not isLineRemove):
+            if(len(tempOnlyModul) == 0):
+                if(nameFileCompare in tempNameFile):
+                    # print(nameFileCompare)
+                    # print(modul)
+                    if(patternBeforeIdView == line[:1]):
+                        newId = getIdView(patternIdView, line)
+                        if(newId.strip()):
+                            setIdBefore.add(newId.strip())
+                            createFile(pathBefore, nameFileBefore, newId, modul)
+                            newId = ""
+                
+                    if(patternAfterIdView == line[:1]):
+                        newId = getIdView(patternIdView, line)
+                        if(newId.strip()):
+                            setIdAfter.add(newId.strip())
+                            createFile(pathAfter, nameFileAfter, newId, modul)
+                            newId = ""
+                            nameFileCompare = ""
+                            modul = ""
+            
+            elif(len(tempOnlyModul) > 0):
+                # print(modul)
+                if(modul in tempOnlyModul or nameFileCompare in tempNameFile):
+                    # print(nameFileCompare)
+                    # print(modul)
+                    if(patternBeforeIdView == line[:1]):
+                        newId = getIdView(patternIdView, line)
+                        if(newId.strip()):
+                            setIdBefore.add(newId.strip())
+                            createFile(pathBefore, nameFileBefore, newId, modul)
+                            newId = ""
+                
+                    if(patternAfterIdView == line[:1]):
+                        newId = getIdView(patternIdView, line)
+                        if(newId.strip()):
+                            setIdAfter.add(newId.strip())
+                            createFile(pathAfter, nameFileAfter, newId, modul)
+                            newId = ""
+                            nameFileCompare = ""
+                            modul = ""
+                
+        isLineRemove = False
 
     setFileBefore = getModulFromPackage(pathBefore)
     setFileAfter = getModulFromPackage(pathAfter)
-
     checkIdView(setFileBefore, setFileAfter, beforePath, afterPath)
+
+def checkFileRemoved(setFile):
+    if setFile:
+        print("\n====================================")
+        print("File has removed with name : ")
+        
+        for file in setFile:
+            print("\n" + file + " (d)")
+        
+        print("====================================")
 
 
 def createDumpFile(tempName, input):
@@ -136,59 +193,73 @@ def createDumpFile(tempName, input):
     # myFile = open(tempName, 'w')
     # myFile.close()
 
-def removedPackFile():
-    shutil.rmtree("after")
-    shutil.rmtree("before")
-    os.remove("dump_input.txt")
+def removedPackFile(tempName, pathBefore, pathAfter):
+    if os.path.exists(pathBefore):
+        shutil.rmtree(pathBefore)
+    if os.path.exists(pathAfter):
+        shutil.rmtree(pathAfter)
+    if os.path.exists(tempName):
+        os.remove(tempName)
     
 def checkIdView(beforeFile, afterFile, beforePath, afterPath):
 
-    if(len(beforeFile) == len(afterFile)):
+    setChangeId = set()
 
-        for(before, after) in zip(beforeFile, afterFile):
+    if( len(beforeFile) > 0 and len(afterFile) > 0):
 
-            beforeSlash = before + "/"
-            afterSlash = after + "/"
+        if(len(beforeFile) == len(afterFile)):
+            print("\n====================================")
+            print("Below id has been changed/removed : ")
 
-            beforeWithPath = getFileFromPackage(beforeSlash)
-            afterWithPath = getFileFromPackage(afterSlash)
+            for(before, after) in zip(beforeFile, afterFile):
 
-            # print(str(beforeWithPath))
-            # print(str(afterWithPath))
+                beforeSlash = before + "/"
+                afterSlash = after + "/"
 
-            # print("before " + before)
-            # print("after " + after)
+                beforeWithPath = getFileFromPackage(beforeSlash)
+                afterWithPath = getFileFromPackage(afterSlash)
 
-            for(beforeFile, afterFile) in zip(beforeWithPath, afterWithPath):
+                # print(str(beforeWithPath))
+                # print(str(afterWithPath))
 
-                if(beforeFile == afterFile):
+                # print("before " + before)
+                # print("after " + after)
 
-                    fileBeforePath = beforeSlash + beforeFile
-                    fileAfterPath = afterSlash + afterFile
+                for(beforeFile, afterFile) in zip(beforeWithPath, afterWithPath):
 
-                    # print("file before with path : " + fileBeforePath)
-                    # print("file after with path : " + fileAfterPath)
+                    if(beforeFile == afterFile):
 
-                    beforeF = open(fileBeforePath, "r")
-                    afterF = open(fileAfterPath, "r")
+                        fileBeforePath = beforeSlash + beforeFile
+                        fileAfterPath = afterSlash + afterFile
 
-                    setIdAfter = set()
-                    setIdBefore = set()
+                        # print("file before with path : " + fileBeforePath)
+                        # print("file after with path : " + fileAfterPath)
 
-                    for beforeLine in beforeF:
-                        setIdBefore.add(getNameWithoutNewLine(beforeLine))
-                        
-                    for afterLine in afterF:
-                        setIdAfter.add(getNameWithoutNewLine(afterLine))
+                        beforeF = open(fileBeforePath, "r")
+                        afterF = open(fileAfterPath, "r")
 
-                    for beforeIdView in setIdBefore:
-                        if beforeIdView not in setIdAfter:
-                            pathModule = fileBeforePath.split("/")[1]
-                            fileModule = pathModule + "/" + getNameFileXML(beforeFile)
-                            print("id view " + beforeIdView + " has been changed or removed from file " +  fileModule)
+                        setIdAfter = set()
+                        setIdBefore = set()
+
+                        for beforeLine in beforeF:
+                            setIdBefore.add(getNameWithoutNewLine(beforeLine))
+                            
+                        for afterLine in afterF:
+                            setIdAfter.add(getNameWithoutNewLine(afterLine))
+
+                        for beforeIdView in setIdBefore:
+                            if beforeIdView not in setIdAfter:
+                                pathModule = fileBeforePath.split("/")[1]
+                                fileModule = pathModule + "/" + getNameFileXML(beforeFile)
+                                print("\n" + fileModule + ":")
+                                print(beforeIdView + " (c/d)")
+                            # print("id view " + beforeIdView + " has been changed or removed from file " +  fileModule)
 
                     # print(str(setIdBefore))
                     # print(str(setIdAfter))
+        print("====================================")
+
+
 
 def getNameWithoutNewLine(line):
     line = line.replace("\n", "")
@@ -212,10 +283,12 @@ def getFileFromPackage(modul):
     return setFile
 
 def getModulFromPackage(path):
+    # print(path)
     setModul = set()
-    for filename in os.listdir(path):
-        filePath = path + "/" + filename
-        setModul.add(filePath)
+    if os.path.exists(path):
+        for filename in os.listdir(path):
+            filePath = path + "/" + filename
+            setModul.add(filePath)
     
     # print("package " + str(setModul))
     return setModul
@@ -225,7 +298,7 @@ def setValueFromFile(file):
         strStrip = fCase.read().splitlines()
         tempCase = set(strStrip)
     
-    print(tempCase)
+    # print(tempCase)
     return tempCase
 
 
@@ -302,12 +375,10 @@ if __name__ == "__main__":
     repo_path = os.getenv('GIT_REPO_PATH')
     # Repo object used to programmatically interact with Git repositories
     repo = Repo(repo_path)
-
-    defaultBranch = "master"
     
     # check that the repository loaded correctly
     if not repo.bare:
-        print('Repo at {} successfully loaded.'.format(repo_path))
+        # print('Repo at {} successfully loaded.'.format(repo_path))
         # print_repository(repo)
         # create list of commits then print some of them to stdout
         # hcommit = repo.head.commit
@@ -336,21 +407,28 @@ if __name__ == "__main__":
         b_commit = "a4186acd2ad2a077a5887f8ac16c50a37ca872fc"
 
         parser = optparse.OptionParser()
-        parser.add_option('-t', '--target', dest='target', default="sukasuka", help="Set parameter branch")
+        parser.add_option('-d', '--default', dest='default', default="master", help="Set parameter default branch")
+        parser.add_option('-t', '--target', dest='target', default=None, help="Set parameter target branch")
 
         (options, args) = parser.parse_args()
 
         targetBranch = ""
+        defaultBranch = options.default
         if options.target:
             targetBranch = options.target
 
         # beforeC = repo.head.commit
         # afterC = "77a38266633ec3d224f5de799788adec94432492"
-        # g = git.Git(repo_path)
-        # g.pull()
-        # commitMessages = g.log('%s..%s' % ("master", "sukasuka"), '--pretty=format:%ad %an - %s', '--abbrev-commit')
+        
+        starTime = int(round(time.time() * 1000))
 
-        writeFile(repo.git.diff("master", targetBranch))
+        writeFile(repo.git.diff(defaultBranch, targetBranch))
+
+        endTime = int(round(time.time() * 1000))
+
+        elapsedTime = endTime - starTime
+
+        print("Elapsed time : " + str(elapsedTime) + " ms")
         # writeFile(commitMessages)
         # writeFile(repo.git.diff("HEAD","HEAD~1"))
 

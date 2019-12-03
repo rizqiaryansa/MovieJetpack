@@ -1,4 +1,2 @@
-app/item_movie.xml
 app/item_favorite.xml
-app/item_shimmer.xml
 app2
