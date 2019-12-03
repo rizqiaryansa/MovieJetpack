@@ -120,7 +120,7 @@ def writeFile(input):
                         
                         setRemovedFile.add(nameFileCompare)
                         # print("File has removed with name : " + nameFileCompare + " (d)")
-                        # print(nameFileCompare)
+                        print(nameFileCompare)
                         nameFileCompare = ""
                 checkFileRemoved(setRemovedFile)
 
@@ -137,17 +137,19 @@ def writeFile(input):
                         newId = getIdView(patternIdView, line)
                         if(newId.strip()):
                             setIdBefore.add(newId.strip())
-                            createFile(pathBefore, nameFileBefore, newId, modul)
-                            newId = ""
-                
+                            createFile(pathBefore, nameFileBefore, newId, modul, False)
+                                            
                     if(patternAfterIdView == line[:1]):
                         newId = getIdView(patternIdView, line)
                         if(newId.strip()):
                             setIdAfter.add(newId.strip())
-                            createFile(pathAfter, nameFileAfter, newId, modul)
+                            createFile(pathAfter, nameFileAfter, newId, modul, False)
                             newId = ""
                             nameFileCompare = ""
                             modul = ""
+                    elif(nameFileAfter and patternBeforeIdView != line[:1]):
+                        createFile(pathAfter, nameFileAfter, "", modul, True)
+
             
             elif(len(tempOnlyModul) > 0):
                 # print(modul)
@@ -158,18 +160,21 @@ def writeFile(input):
                         newId = getIdView(patternIdView, line)
                         if(newId.strip()):
                             setIdBefore.add(newId.strip())
-                            createFile(pathBefore, nameFileBefore, newId, modul)
-                            newId = ""
+                            createFile(pathBefore, nameFileBefore, newId, modul, False)
+
+                    # if(nameFileAfter and patternAfterIdView != line[:1]):
                 
                     if(patternAfterIdView == line[:1]):
                         newId = getIdView(patternIdView, line)
                         if(newId.strip()):
                             setIdAfter.add(newId.strip())
-                            createFile(pathAfter, nameFileAfter, newId, modul)
+                            createFile(pathAfter, nameFileAfter, newId, modul, False)
                             newId = ""
                             nameFileCompare = ""
                             modul = ""
-                
+                    elif(nameFileAfter and patternBeforeIdView != line[:1]):
+                        createFile(pathAfter, nameFileAfter, "", modul, True)
+
         isLineRemove = False
 
     setFileBefore = getModulFromPackage(pathBefore)
@@ -314,7 +319,7 @@ def notPatternBefore(line):
         return True
     return False
 
-def createFile(path, nameFile, input, modul):
+def createFile(path, nameFile, input, modul, isEmpty):
 
     nameFileModul = path + "/" + modul + "/" + nameFile
     nameModul = path + "/" + modul
@@ -327,10 +332,11 @@ def createFile(path, nameFile, input, modul):
 
     if os.path.isfile(nameFileModul):
         with open(nameFileModul, 'a') as file:
-            file.write("\n" + input)
+                file.write("\n" + input)
     else:
         with open(nameFileModul, 'w') as fileW:
             fileW.write(input)
+   
         # myFile = open(nameFile, 'w')
         # myFile.write(input)
         # myFile.close()
