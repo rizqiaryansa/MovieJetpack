@@ -1,2 +1,2 @@
-app/item_favorite.xml
+app
 app2

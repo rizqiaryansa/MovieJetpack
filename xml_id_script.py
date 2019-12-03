@@ -117,19 +117,22 @@ def writeFile(input):
                 if nameFileCompare in tempNameFile:
                         isLineRemove = True
                         # print(not isLineRemove)
-                        
                         setRemovedFile.add(nameFileCompare)
                         # print("File has removed with name : " + nameFileCompare + " (d)")
-                        print(nameFileCompare)
+                        # print(nameFileCompare)
                         nameFileCompare = ""
-                checkFileRemoved(setRemovedFile)
+                elif modul in tempOnlyModul:
+                        setRemovedFile.add(nameFileCompare)
+                        nameFileCompare = ""
 
+                
             # print(line)
         # print(strLineRemove)
         # print(strLineRemove)
 
         if(not isLineRemove):
             if(len(tempOnlyModul) == 0):
+
                 if(nameFileCompare in tempNameFile):
                     # print(nameFileCompare)
                     # print(modul)
@@ -137,21 +140,24 @@ def writeFile(input):
                         newId = getIdView(patternIdView, line)
                         if(newId.strip()):
                             setIdBefore.add(newId.strip())
-                            createFile(pathBefore, nameFileBefore, newId, modul, False)
+                            createFile(pathBefore, nameFileBefore, newId, modul)
+                            # newId = ""
                                             
                     if(patternAfterIdView == line[:1]):
                         newId = getIdView(patternIdView, line)
                         if(newId.strip()):
                             setIdAfter.add(newId.strip())
-                            createFile(pathAfter, nameFileAfter, newId, modul, False)
+                            createFile(pathAfter, nameFileAfter, newId, modul)
                             newId = ""
-                            nameFileCompare = ""
-                            modul = ""
-                    elif(nameFileAfter and patternBeforeIdView != line[:1]):
-                        createFile(pathAfter, nameFileAfter, "", modul, True)
+                            # nameFileCompare = ""
+                            # modul = ""
+                    # elif(nameFileAfter and patternBeforeIdView != line[:1]):
+                    #     createFile(pathAfter, nameFileAfter, "", modul)
 
             
             elif(len(tempOnlyModul) > 0):
+                if('pbDetail' in line):
+                    print(line)
                 # print(modul)
                 if(modul in tempOnlyModul or nameFileCompare in tempNameFile):
                     # print(nameFileCompare)
@@ -160,7 +166,8 @@ def writeFile(input):
                         newId = getIdView(patternIdView, line)
                         if(newId.strip()):
                             setIdBefore.add(newId.strip())
-                            createFile(pathBefore, nameFileBefore, newId, modul, False)
+                            createFile(pathBefore, nameFileBefore, newId, modul)
+                            # newId = ""
 
                     # if(nameFileAfter and patternAfterIdView != line[:1]):
                 
@@ -168,15 +175,14 @@ def writeFile(input):
                         newId = getIdView(patternIdView, line)
                         if(newId.strip()):
                             setIdAfter.add(newId.strip())
-                            createFile(pathAfter, nameFileAfter, newId, modul, False)
+                            createFile(pathAfter, nameFileAfter, newId, modul)
                             newId = ""
-                            nameFileCompare = ""
-                            modul = ""
-                    elif(nameFileAfter and patternBeforeIdView != line[:1]):
-                        createFile(pathAfter, nameFileAfter, "", modul, True)
+                            # nameFileCompare = ""
+                            # modul = ""
 
         isLineRemove = False
 
+    checkFileRemoved(setRemovedFile)
     setFileBefore = getModulFromPackage(pathBefore)
     setFileAfter = getModulFromPackage(pathAfter)
     checkIdView(setFileBefore, setFileAfter, beforePath, afterPath)
@@ -186,8 +192,8 @@ def checkFileRemoved(setFile):
         print("\n====================================")
         print("File has removed with name : ")
         
-        for file in setFile:
-            print("\n" + file + " (d)")
+        for f in setFile:
+            print("\n" + f)
         
         print("====================================")
 
@@ -257,7 +263,7 @@ def checkIdView(beforeFile, afterFile, beforePath, afterPath):
                                 pathModule = fileBeforePath.split("/")[1]
                                 fileModule = pathModule + "/" + getNameFileXML(beforeFile)
                                 print("\n" + fileModule + ":")
-                                print(beforeIdView + " (c/d)")
+                                print(beforeIdView)
                             # print("id view " + beforeIdView + " has been changed or removed from file " +  fileModule)
 
                     # print(str(setIdBefore))
@@ -319,7 +325,7 @@ def notPatternBefore(line):
         return True
     return False
 
-def createFile(path, nameFile, input, modul, isEmpty):
+def createFile(path, nameFile, input, modul):
 
     nameFileModul = path + "/" + modul + "/" + nameFile
     nameModul = path + "/" + modul
@@ -371,7 +377,6 @@ def getIdView(patternIdView, line):
         nameLength = len(nameIdView)
         newId = nameIdView[:nameLength-2]
         # print(newId)
-
     return newId
 
 # repo = git.Repo(os.getenv('GIT_REPO_PATH'))

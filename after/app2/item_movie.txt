@@ -1,5 +1,2 @@
-
-
-
-
 iv_image_posterf
+tv_title_movief
