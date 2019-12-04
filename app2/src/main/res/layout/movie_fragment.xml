@@ -10,12 +10,12 @@
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/root_layout"
+            android:id="@+id/root_layoutf"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
         <com.facebook.shimmer.ShimmerFrameLayout
-                android:id="@+id/shimmer"
+                android:id="@+id/shimmerf"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:setShimmer="@{safeUnbox(viewModel.loadingState)}"
@@ -25,7 +25,7 @@
                 app:layout_constraintTop_toTopOf="parent">
 
             <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rvShimmer"
+                    android:id="@+id/rvShimmerf"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     tools:listitem="@layout/item_shimmer"/>
@@ -33,7 +33,7 @@
         </com.facebook.shimmer.ShimmerFrameLayout>
 
         <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvMovies"
+                android:id="@+id/rvMoviesf"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 app:layout_constraintBottom_toBottomOf="parent"
