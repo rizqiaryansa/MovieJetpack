@@ -11,7 +11,7 @@
             tools:context=".presentation.view.activity.MainActivity">
 
         <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar"
+                android:id="@+id/toolbarf"
                 android:layout_width="0dp"
                 android:layout_height="?attr/actionBarSize"
                 android:background="@color/colorPrimary"
@@ -22,7 +22,7 @@
                 app:titleTextColor="@color/colorWhite"/>
 
         <com.google.android.material.tabs.TabLayout
-                android:id="@+id/tab_layout"
+                android:id="@+id/tab_layoutf"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 app:layout_constraintBottom_toTopOf="@id/view_pager2"
@@ -38,7 +38,7 @@
                 app:tabTextColor="@android:color/white"/>
 
         <androidx.viewpager2.widget.ViewPager2
-                android:id="@+id/view_pager2"
+                android:id="@+id/view_pager2f"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 app:layout_constraintEnd_toEndOf="parent"
