@@ -114,7 +114,7 @@
                         app:layout_constraintTop_toBottomOf="@id/ratingStar" />
 
                 <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/overviewDetail"
+                        android:id="@+id/overviewDetails"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="@dimen/_8dp"
@@ -128,7 +128,7 @@
                         tools:text="@string/example_title" />
 
                 <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/releaseDate"
+                        android:id="@+id/releaseDates"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="@dimen/_8dp"
@@ -141,7 +141,7 @@
                         app:layout_constraintStart_toStartOf="parent" />
 
                 <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/releaseDateDetail"
+                        android:id="@+id/releaseDateDetails"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="@dimen/_8dp"
@@ -154,7 +154,7 @@
                         tools:text="@string/example_year" />
 
                 <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/genre"
+                        android:id="@+id/genres"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="@dimen/_8dp"

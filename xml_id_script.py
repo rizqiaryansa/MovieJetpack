@@ -72,6 +72,10 @@ def writeFile(input):
 
     strLineRemove = ""
     isLineRemove = False
+    nameFileRemoved = ""
+
+    starTime = None
+    endTime = None
 
     if(os.path.exists(testCase)):
         with open(testCase, "r") as fCase:
@@ -94,10 +98,11 @@ def writeFile(input):
                 tempOnlyModul.add(str(strOnlyModuleName[0]))
             
 
-        # print("tempModule: " + str(tempModul))
-        # print("tempNameFile: " + str(tempNameFile))
-        # print("tempOnlyModule: " + str(tempOnlyModul))
+        print("tempModule: " + str(tempModul))
+        print("tempNameFile: " + str(tempNameFile))
+        print("tempOnlyModule: " + str(tempOnlyModul))
 
+    starTime = time.time()
 
     f = open(tempName, "r")
     for line in f:
@@ -106,36 +111,39 @@ def writeFile(input):
                 modul = str(line[6:].split("/")[0])
                 nameFileBefore = getFile(patternLayout, patternBeforeFile, line, pathBefore)
                 nameFileCompare = modul + "/" + getNameFileXML(nameFileBefore)
+                isLineRemove = False
+                nameFileRemoved = modul + "/" + getNameFileXML(nameFileBefore)
                 # print(nameFileCompare)
         
         if(patternAfterFile in line[:3]):
+            # print(line[:3])
+            
+            strLineRemove = line[3:].strip()
+            # print("removed : " + strLineRemove)
             if patternLayout in line:
                 modul = str(line[6:].split("/")[0])
                 nameFileAfter = getFile(patternLayout, patternAfterFile, line, pathAfter)
             elif patternRemoveFile in line:
-                strLineRemove = line[4:]
-                if nameFileCompare in tempNameFile:
-                        isLineRemove = True
-                        # print(not isLineRemove)
-                        setRemovedFile.add(nameFileCompare)
-                        # print("File has removed with name : " + nameFileCompare + " (d)")
-                        # print(nameFileCompare)
-                        nameFileCompare = ""
-                elif modul in tempOnlyModul:
-                        setRemovedFile.add(nameFileCompare)
-                        nameFileCompare = ""
 
-                
-            # print(line)
-        # print(strLineRemove)
-        # print(strLineRemove)
+                isLineRemove = False
+
+                if nameFileRemoved in tempNameFile:
+                        isLineRemove = True
+                        setRemovedFile.add(nameFileRemoved)
+                        nameFileRemoved = ""
+                elif modul in tempOnlyModul:
+                        isLineRemove = True
+                        setRemovedFile.add(nameFileRemoved)
+                        nameFileRemoved = ""
+
 
         if(not isLineRemove):
+            # print(nameFileCompare)
+            
             if(len(tempOnlyModul) == 0):
-
                 if(nameFileCompare in tempNameFile):
                     # print(nameFileCompare)
-                    # print(modul)
+                    # print(nameFileCompare)
                     if(patternBeforeIdView == line[:1]):
                         newId = getIdView(patternIdView, line)
                         if(newId.strip()):
@@ -146,30 +154,22 @@ def writeFile(input):
                     if(patternAfterIdView == line[:1]):
                         newId = getIdView(patternIdView, line)
                         if(newId.strip()):
+                            # print(modul)
                             setIdAfter.add(newId.strip())
                             createFile(pathAfter, nameFileAfter, newId, modul)
                             newId = ""
                             # nameFileCompare = ""
-                            # modul = ""
-                    # elif(nameFileAfter and patternBeforeIdView != line[:1]):
-                    #     createFile(pathAfter, nameFileAfter, "", modul)
-
+                            nameFileRemoved = ""
+                            # isLineRemove = False
             
             elif(len(tempOnlyModul) > 0):
-                if('pbDetail' in line):
-                    print(line)
-                # print(modul)
+                # print(nameFileCompare)
                 if(modul in tempOnlyModul or nameFileCompare in tempNameFile):
-                    # print(nameFileCompare)
-                    # print(modul)
                     if(patternBeforeIdView == line[:1]):
                         newId = getIdView(patternIdView, line)
                         if(newId.strip()):
                             setIdBefore.add(newId.strip())
                             createFile(pathBefore, nameFileBefore, newId, modul)
-                            # newId = ""
-
-                    # if(nameFileAfter and patternAfterIdView != line[:1]):
                 
                     if(patternAfterIdView == line[:1]):
                         newId = getIdView(patternIdView, line)
@@ -177,11 +177,14 @@ def writeFile(input):
                             setIdAfter.add(newId.strip())
                             createFile(pathAfter, nameFileAfter, newId, modul)
                             newId = ""
-                            # nameFileCompare = ""
-                            # modul = ""
+                            nameFileRemoved = ""
 
-        isLineRemove = False
 
+    
+    endTime = time.time()
+    print("Created file time : " + str(elapsedTime(starTime, endTime)) + " ms")
+
+    # print(setRemovedFile)
     checkFileRemoved(setRemovedFile)
     setFileBefore = getModulFromPackage(pathBefore)
     setFileAfter = getModulFromPackage(pathAfter)
@@ -190,7 +193,7 @@ def writeFile(input):
 def checkFileRemoved(setFile):
     if setFile:
         print("\n====================================")
-        print("File has removed with name : ")
+        print("The Files has been removed with name : ")
         
         for f in setFile:
             print("\n" + f)
@@ -201,8 +204,13 @@ def checkFileRemoved(setFile):
 def createDumpFile(tempName, input):
     with open(tempName, 'w') as file:
         file.write(input)
-    # myFile = open(tempName, 'w')
-    # myFile.close()
+
+def elapsedTime(start, end):
+    starTime = int(round(start * 1000))
+    endTime = int(round(end * 1000))
+    elapsedTime = endTime - starTime
+
+    return elapsedTime
 
 def removedPackFile(tempName, pathBefore, pathAfter):
     if os.path.exists(pathBefore):
@@ -213,12 +221,16 @@ def removedPackFile(tempName, pathBefore, pathAfter):
         os.remove(tempName)
     
 def checkIdView(beforeFile, afterFile, beforePath, afterPath):
-
+    starTime = None
+    endTime = None
     setChangeId = set()
 
+    starTime = time.time()
     if( len(beforeFile) > 0 and len(afterFile) > 0):
 
         if(len(beforeFile) == len(afterFile)):
+
+
             print("\n====================================")
             print("Below id has been changed/removed : ")
 
@@ -237,14 +249,11 @@ def checkIdView(beforeFile, afterFile, beforePath, afterPath):
                 # print("after " + after)
 
                 for(beforeFile, afterFile) in zip(beforeWithPath, afterWithPath):
-
+                    
                     if(beforeFile == afterFile):
 
                         fileBeforePath = beforeSlash + beforeFile
                         fileAfterPath = afterSlash + afterFile
-
-                        # print("file before with path : " + fileBeforePath)
-                        # print("file after with path : " + fileAfterPath)
 
                         beforeF = open(fileBeforePath, "r")
                         afterF = open(fileAfterPath, "r")
@@ -268,7 +277,12 @@ def checkIdView(beforeFile, afterFile, beforePath, afterPath):
 
                     # print(str(setIdBefore))
                     # print(str(setIdAfter))
-        print("====================================")
+    endTime = time.time()
+    print("====================================")
+        
+    print("Checking id view time : " + str(elapsedTime(starTime, endTime)) + " ms")
+
+
 
 
 
@@ -431,15 +445,13 @@ if __name__ == "__main__":
         # beforeC = repo.head.commit
         # afterC = "77a38266633ec3d224f5de799788adec94432492"
         
-        starTime = int(round(time.time() * 1000))
+        starTime = time.time()
 
         writeFile(repo.git.diff(defaultBranch, targetBranch))
 
-        endTime = int(round(time.time() * 1000))
+        endTime = time.time()
 
-        elapsedTime = endTime - starTime
-
-        print("Elapsed time : " + str(elapsedTime) + " ms")
+        print("Total time : " + str(elapsedTime(starTime, endTime)) + " ms")
         # writeFile(commitMessages)
         # writeFile(repo.git.diff("HEAD","HEAD~1"))
 
