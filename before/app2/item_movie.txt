@@ -1,2 +1,0 @@
-iv_image_poster
-tv_title_movie

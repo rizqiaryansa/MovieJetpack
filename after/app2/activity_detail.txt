@@ -1,5 +1,0 @@
-overviewDetails
-releaseDates
-releaseDateDetails
-genres
-rvGenres

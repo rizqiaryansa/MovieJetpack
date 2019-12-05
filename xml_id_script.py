@@ -14,11 +14,17 @@ patternBeforeFile = "---"
 patternAfterFile = "+++"
 patternBeforeIdView = "-"
 patternAfterIdView = "+"
+patternRemoveIdView = "-"
+patternTagOpenIdView = "<"
+patternNotTagOpenIdView = "</"
+patternAddIdView = "+"
 patternRemoveFile = "/dev/null"
 beforePath = "before/"
 afterPath = "after/"
 pathBefore = "before"
 pathAfter = "after"
+
+patternGitDiff = "diff --git"
 
 def print_repository(repo):
     print('Repo description: {}'.format(repo.description))
@@ -76,6 +82,26 @@ def writeFile(input):
 
     starTime = None
     endTime = None
+
+    afterNewId = ""
+    beforeNewId = ""
+
+    nameView = ""
+
+    isChangedId = bool
+    isRemovedId = bool
+    
+    dictBeforeChangedId = dict()
+    dictAfterChangedId = dict()
+    dictChangedId = dict()
+
+    dictBeforeDeletedId = dict()
+    dictAfterDeletedId = dict()
+
+    dictBeforeDeletedId = dict()
+    dictAfterDeletedId = dict()
+
+    count = 0
 
     if(os.path.exists(testCase)):
         with open(testCase, "r") as fCase:
@@ -138,57 +164,128 @@ def writeFile(input):
 
 
         if(not isLineRemove):
-            # print(nameFileCompare)
             
             if(len(tempOnlyModul) == 0):
                 if(nameFileCompare in tempNameFile):
-                    # print(nameFileCompare)
-                    # print(nameFileCompare)
+
+                    isChangedId = False
+
                     if(patternBeforeIdView == line[:1]):
-                        newId = getIdView(patternIdView, line)
-                        if(newId.strip()):
-                            setIdBefore.add(newId.strip())
-                            createFile(pathBefore, nameFileBefore, newId, modul)
+                        beforeNewId = getIdView(patternIdView, line)
+                        if(beforeNewId.strip()):
+                            setIdBefore.add(beforeNewId.strip())
+                            # createFile(pathBefore, nameFileBefore, newId, modul)
                             # newId = ""
+                            # print("before " + str(setIdBefore))
                                             
                     if(patternAfterIdView == line[:1]):
-                        newId = getIdView(patternIdView, line)
-                        if(newId.strip()):
-                            # print(modul)
-                            setIdAfter.add(newId.strip())
-                            createFile(pathAfter, nameFileAfter, newId, modul)
-                            newId = ""
-                            # nameFileCompare = ""
+                        afterNewId = getIdView(patternIdView, line)
+                        if(afterNewId.strip()):
+                            setIdAfter.add(afterNewId.strip())
+                            # createFile(pathAfter, nameFileAfter, newId, modul)
+                            dictChangedId[beforeNewId] = afterNewId
+                            afterNewId = ""
+                            beforeNewId = ""
                             nameFileRemoved = ""
-                            # isLineRemove = False
+                            isChangedId = True
+
+                    if(patternRemoveIdView == line[:1] and patternTagOpenIdView in line[1:]):
+                        isRemovedId = True
+                        nameView = getView(patternTagOpenIdView, line)
+                        # isLineRemove = False
+                        # print(line)
+                        print "test cuy " + nameView
+                        # continue
+                        # print(line)
+                        # next(f)/
+                    
+                    if(patternBeforeIdView in line[:1] and nameView):
+                        if(isRemovedId and not isChangedId):
+                            removeNewId = getIdView(patternIdView, line)
+                            if(removeNewId.strip()):  
+                                print "test " + removeNewId
+                                nameView = ""
+                                isRemovedId = False
+                                
             
             elif(len(tempOnlyModul) > 0):
                 # print(nameFileCompare)
+                # isRemovedId = None
+
                 if(modul in tempOnlyModul or nameFileCompare in tempNameFile):
+                    
+                    # print(isRemovedId)
+                    isChangedId = False
+
                     if(patternBeforeIdView == line[:1]):
-                        newId = getIdView(patternIdView, line)
-                        if(newId.strip()):
-                            setIdBefore.add(newId.strip())
-                            createFile(pathBefore, nameFileBefore, newId, modul)
+                        beforeNewId = getIdView(patternIdView, line)
+                        if(beforeNewId.strip()):
+                            setIdBefore.add(beforeNewId.strip())
+                            # createFile(pathBefore, nameFileBefore, newId, modul)
+
                 
                     if(patternAfterIdView == line[:1]):
-                        newId = getIdView(patternIdView, line)
-                        if(newId.strip()):
-                            setIdAfter.add(newId.strip())
-                            createFile(pathAfter, nameFileAfter, newId, modul)
-                            newId = ""
+                        afterNewId = getIdView(patternIdView, line)
+                        
+                        if(afterNewId.strip()):
+                            setIdAfter.add(afterNewId.strip())
+                            # createFile(pathAfter, nameFileAfter, newId, modul)
+                            # dictChangedId[]
+                            dictChangedId[beforeNewId] = afterNewId
+                            afterNewId = ""
+                            beforeNewId = ""
                             nameFileRemoved = ""
+                            isChangedId = True
+                            # print("after " + str(setIdAfter))
+                    
+                    # patternAA = "@@"
+                    if(patternRemoveIdView == line[:1] and patternTagOpenIdView in line and patternNotTagOpenIdView not in line):
+                        isRemovedId = True
+                        # print(line)
+                        nameView = getView(patternTagOpenIdView, line)
+                        print "test cuy " + nameView
+                    
+                        # print(str(next(f)))
+                        # print "test " + line
+                        # count = 0
 
+                    if(patternBeforeIdView in line[:1] and nameView):
+                        if(isRemovedId and not isChangedId):
+                            removeNewId = getIdView(patternIdView, line)
+                            if(removeNewId.strip()):  
+                                print "test " + removeNewId
+                                nameView = ""
+                                isRemovedId = False
+                    
+        if(patternGitDiff in line[:10] and dictChangedId):
+            dictBeforeChangedId = setDictIdView(dictBeforeChangedId, modul, nameFileBefore, dictChangedId)
+            dictChangedId = dict()
+        
+        # if(patternGitDiff in line[:10] and setIdAfter):
+        #     dictAfterChangedId = setDictIdView(dictAfterChangedId, modul, nameFileAfter, setIdAfter)
+        #     setIdAfter = set()
+        
 
+    # print("dictChange : " + str(dictBeforeChangedId))
+    # print("after : " + str(dictAfterChangedId))
+        
     
     endTime = time.time()
     print("Created file time : " + str(elapsedTime(starTime, endTime)) + " ms")
 
     # print(setRemovedFile)
     checkFileRemoved(setRemovedFile)
-    setFileBefore = getModulFromPackage(pathBefore)
-    setFileAfter = getModulFromPackage(pathAfter)
-    checkIdView(setFileBefore, setFileAfter, beforePath, afterPath)
+    checkChangedIdView(dictBeforeChangedId)
+    # setFileBefore = getModulFromPackage(pathBefore)
+    # setFileAfter = getModulFromPackage(pathAfter)
+    # checkIdView(setFileBefore, setFileAfter, beforePath, afterPath)
+
+
+def setDictIdView(dictIdView, modul, nameFile, mapId):
+    nameFileModul =  modul + "/" + getNameFileXML(nameFile)
+    dictIdView[nameFileModul] = mapId
+    return dictIdView
+
 
 def checkFileRemoved(setFile):
     if setFile:
@@ -219,6 +316,43 @@ def removedPackFile(tempName, pathBefore, pathAfter):
         shutil.rmtree(pathAfter)
     if os.path.exists(tempName):
         os.remove(tempName)
+
+def checkChangedIdView(dictBeforeChangedId):
+    starTime = None
+    endTime = None
+
+    starTime = time.time()
+
+    if(len(dictBeforeChangedId) > 0):
+
+        print("\n====================================")
+        print("Below id has been changed/removed : ")
+        
+        for beforeKeyFile, beforeValueFile in dictBeforeChangedId.items():
+
+            # beforeValue = sorted(beforeValue)
+            # afterValue = sorted(afterValue)
+            # print("before " + str(beforeValue))
+            # print("after " + str(afterValue))
+
+            for beforeValue, afterValue in beforeValueFile.items():
+
+                if(beforeValue != afterValue):
+                    print("\n" + beforeKeyFile + ":")
+                    print("(M) " + beforeValue + " -> " + afterValue)
+
+                # for beforeIdView in beforeValue:
+                #     if beforeIdView not in afterValue:
+                #         fileModule = beforeKey
+                #         print("\n" + fileModule + ":")
+                #         print(beforeIdView + " -> ")
+
+
+    endTime = time.time()
+    print("====================================")
+        
+    print("Checking id view time : " + str(elapsedTime(starTime, endTime)) + " ms")
+
     
 def checkIdView(beforeFile, afterFile, beforePath, afterPath):
     starTime = None
@@ -229,7 +363,6 @@ def checkIdView(beforeFile, afterFile, beforePath, afterPath):
     if( len(beforeFile) > 0 and len(afterFile) > 0):
 
         if(len(beforeFile) == len(afterFile)):
-
 
             print("\n====================================")
             print("Below id has been changed/removed : ")
@@ -272,7 +405,7 @@ def checkIdView(beforeFile, afterFile, beforePath, afterPath):
                                 pathModule = fileBeforePath.split("/")[1]
                                 fileModule = pathModule + "/" + getNameFileXML(beforeFile)
                                 print("\n" + fileModule + ":")
-                                print(beforeIdView)
+                                print(beforeIdView + " -> ")
                             # print("id view " + beforeIdView + " has been changed or removed from file " +  fileModule)
 
                     # print(str(setIdBefore))
@@ -281,9 +414,6 @@ def checkIdView(beforeFile, afterFile, beforePath, afterPath):
     print("====================================")
         
     print("Checking id view time : " + str(elapsedTime(starTime, endTime)) + " ms")
-
-
-
 
 
 def getNameWithoutNewLine(line):
@@ -380,6 +510,15 @@ def getFile(patternLayout, patternFile, line, path):
     # print(nameFile)
     return nameFile
 
+def getView(patternView, line):
+    view = ""
+    if (patternView in line):
+        posisiPatternView = line.find(patternView)
+        lengthPatternView = len(patternView)
+        posisiView = posisiPatternView + lengthPatternView
+        view = line[posisiView:]
+    
+    return view
 
 def getIdView(patternIdView, line):
     newId = ""
@@ -452,13 +591,6 @@ if __name__ == "__main__":
         endTime = time.time()
 
         print("Total time : " + str(elapsedTime(starTime, endTime)) + " ms")
-        # writeFile(commitMessages)
-        # writeFile(repo.git.diff("HEAD","HEAD~1"))
 
-        # commits = list(repo.iter_commits('master'))[:COMMITS_TO_PRINT]
-        # for commit in commits:
-        #     print_commit(commit)
-        #     # print_diff
-        #     pass
     else:
         print('Could not load repository at {} :('.format(repo_path))

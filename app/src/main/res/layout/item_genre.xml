@@ -16,16 +16,5 @@
             android:layout_margin="@dimen/_16dp"
             app:cardCornerRadius="@dimen/_8dp">
 
-        <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tv_name_genre"
-                android:background="@android:color/holo_red_light"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="@dimen/_8dp"
-                android:text="@{genre.name}"
-                android:textColor="@color/colorWhite"
-                android:fontFamily="@font/roboto_medium"
-                tools:text="Action"/>
-
     </androidx.cardview.widget.CardView>
 </layout>

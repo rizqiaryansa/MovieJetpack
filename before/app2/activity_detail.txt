@@ -1,6 +1,0 @@
-overviewDetail
-releaseDate
-releaseDateDetail
-genre
-rvGenre
-pbDetail

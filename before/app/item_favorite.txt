@@ -1,2 +1,0 @@
-tv_title_movie_favorite
-tv_year_movie_favorite
