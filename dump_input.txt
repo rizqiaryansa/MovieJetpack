@@ -1,60 +1,3 @@
-diff --git a/after/app/item_favorite.txt b/after/app/item_favorite.txt
-new file mode 100644
-index 0000000..b794f1f
---- /dev/null
-+++ b/after/app/item_favorite.txt
-@@ -0,0 +1,2 @@
-+tv_year_movie_favoritef
-+tv_title_movie_favorite
-\ No newline at end of file
-diff --git a/after/app2/activity_detail.txt b/after/app2/activity_detail.txt
-new file mode 100644
-index 0000000..ed6837d
---- /dev/null
-+++ b/after/app2/activity_detail.txt
-@@ -0,0 +1,5 @@
-+overviewDetails
-+releaseDates
-+releaseDateDetails
-+genres
-+rvGenres
-\ No newline at end of file
-diff --git a/after/app2/activity_main.txt b/after/app2/activity_main.txt
-new file mode 100644
-index 0000000..a3ef58e
---- /dev/null
-+++ b/after/app2/activity_main.txt
-@@ -0,0 +1,3 @@
-+toolbarf
-+tab_layoutf
-+view_pager2f
-\ No newline at end of file
-diff --git a/after/app2/fragment_favorite.txt b/after/app2/fragment_favorite.txt
-new file mode 100644
-index 0000000..aaf5a1c
---- /dev/null
-+++ b/after/app2/fragment_favorite.txt
-@@ -0,0 +1 @@
-+root_layoutf
-\ No newline at end of file
-diff --git a/after/app2/item_favorite.txt b/after/app2/item_favorite.txt
-new file mode 100644
-index 0000000..b794f1f
---- /dev/null
-+++ b/after/app2/item_favorite.txt
-@@ -0,0 +1,2 @@
-+tv_year_movie_favoritef
-+tv_title_movie_favorite
-\ No newline at end of file
-diff --git a/after/app2/item_movie.txt b/after/app2/item_movie.txt
-new file mode 100644
-index 0000000..9545334
---- /dev/null
-+++ b/after/app2/item_movie.txt
-@@ -0,0 +1,2 @@
-+iv_image_posterf
-+tv_title_movief
-\ No newline at end of file
 diff --git a/app/item_favorite.txt b/app/item_favorite.txt
 new file mode 100644
 index 0000000..b10293a
@@ -86,6 +29,28 @@ index 786648d..ca61829 100644
                  android:maxLines="2"
                  android:gravity="center"
                  android:layout_marginTop="@dimen/_8dp"
+diff --git a/app/src/main/res/layout/item_genre.xml b/app/src/main/res/layout/item_genre.xml
+index e8a13d2..52cfbee 100644
+--- a/app/src/main/res/layout/item_genre.xml
++++ b/app/src/main/res/layout/item_genre.xml
+@@ -16,16 +16,5 @@
+             android:layout_margin="@dimen/_16dp"
+             app:cardCornerRadius="@dimen/_8dp">
+ 
+-        <androidx.appcompat.widget.AppCompatTextView
+-                android:id="@+id/tv_name_genre"
+-                android:background="@android:color/holo_red_light"
+-                android:layout_width="wrap_content"
+-                android:layout_height="wrap_content"
+-                android:padding="@dimen/_8dp"
+-                android:text="@{genre.name}"
+-                android:textColor="@color/colorWhite"
+-                android:fontFamily="@font/roboto_medium"
+-                tools:text="Action"/>
+-
+     </androidx.cardview.widget.CardView>
+ </layout>
+\ No newline at end of file
 diff --git a/app/src/main/res/layout/item_shimmer.xml b/app/src/main/res/layout/item_shimmer.xml
 deleted file mode 100644
 index f660d95..0000000
@@ -376,70 +341,12 @@ index f88db4a..c296796 100644
                  android:layout_width="0dp"
                  android:layout_height="0dp"
                  app:layout_constraintBottom_toBottomOf="parent"
-diff --git a/before/app/item_favorite.txt b/before/app/item_favorite.txt
-new file mode 100644
-index 0000000..fb9d63d
---- /dev/null
-+++ b/before/app/item_favorite.txt
-@@ -0,0 +1,2 @@
-+tv_title_movie_favorite
-+tv_year_movie_favorite
-\ No newline at end of file
-diff --git a/before/app2/activity_detail.txt b/before/app2/activity_detail.txt
-new file mode 100644
-index 0000000..9381202
---- /dev/null
-+++ b/before/app2/activity_detail.txt
-@@ -0,0 +1,6 @@
-+overviewDetail
-+releaseDate
-+releaseDateDetail
-+genre
-+rvGenre
-+pbDetail
-\ No newline at end of file
-diff --git a/before/app2/activity_main.txt b/before/app2/activity_main.txt
-new file mode 100644
-index 0000000..1141ba5
---- /dev/null
-+++ b/before/app2/activity_main.txt
-@@ -0,0 +1,3 @@
-+toolbar
-+tab_layout
-+view_pager2
-\ No newline at end of file
-diff --git a/before/app2/fragment_favorite.txt b/before/app2/fragment_favorite.txt
-new file mode 100644
-index 0000000..a98031f
---- /dev/null
-+++ b/before/app2/fragment_favorite.txt
-@@ -0,0 +1 @@
-+root_layout
-\ No newline at end of file
-diff --git a/before/app2/item_favorite.txt b/before/app2/item_favorite.txt
-new file mode 100644
-index 0000000..fb9d63d
---- /dev/null
-+++ b/before/app2/item_favorite.txt
-@@ -0,0 +1,2 @@
-+tv_title_movie_favorite
-+tv_year_movie_favorite
-\ No newline at end of file
-diff --git a/before/app2/item_movie.txt b/before/app2/item_movie.txt
-new file mode 100644
-index 0000000..d968088
---- /dev/null
-+++ b/before/app2/item_movie.txt
-@@ -0,0 +1,2 @@
-+iv_image_poster
-+tv_title_movie
-\ No newline at end of file
 diff --git a/dump_input.txt b/dump_input.txt
 new file mode 100644
-index 0000000..2a1d606
+index 0000000..661e412
 --- /dev/null
 +++ b/dump_input.txt
-@@ -0,0 +1,9408 @@
+@@ -0,0 +1,11281 @@
 +diff --git a/after/app/item_favorite.txt b/after/app/item_favorite.txt
 +new file mode 100644
 +index 0000000..b794f1f
@@ -460,6 +367,24 @@ index 0000000..2a1d606
 ++releaseDateDetails
 ++genres
 ++rvGenres
++\ No newline at end of file
++diff --git a/after/app2/activity_main.txt b/after/app2/activity_main.txt
++new file mode 100644
++index 0000000..a3ef58e
++--- /dev/null
+++++ b/after/app2/activity_main.txt
++@@ -0,0 +1,3 @@
+++toolbarf
+++tab_layoutf
+++view_pager2f
++\ No newline at end of file
++diff --git a/after/app2/fragment_favorite.txt b/after/app2/fragment_favorite.txt
++new file mode 100644
++index 0000000..aaf5a1c
++--- /dev/null
+++++ b/after/app2/fragment_favorite.txt
++@@ -0,0 +1 @@
+++root_layoutf
 +\ No newline at end of file
 +diff --git a/after/app2/item_favorite.txt b/after/app2/item_favorite.txt
 +new file mode 100644
@@ -763,6 +688,43 @@ index 0000000..2a1d606
 +-</layout>
 +\ No newline at end of file
 ++</layout>
++diff --git a/app2/src/main/res/layout/movie_fragment.xml b/app2/src/main/res/layout/movie_fragment.xml
++index f88db4a..c296796 100644
++--- a/app2/src/main/res/layout/movie_fragment.xml
+++++ b/app2/src/main/res/layout/movie_fragment.xml
++@@ -10,12 +10,12 @@
++     </data>
++ 
++     <androidx.constraintlayout.widget.ConstraintLayout
++-            android:id="@+id/root_layout"
+++            android:id="@+id/root_layoutf"
++             android:layout_width="match_parent"
++             android:layout_height="match_parent">
++ 
++         <com.facebook.shimmer.ShimmerFrameLayout
++-                android:id="@+id/shimmer"
+++                android:id="@+id/shimmerf"
++                 android:layout_width="match_parent"
++                 android:layout_height="wrap_content"
++                 app:setShimmer="@{safeUnbox(viewModel.loadingState)}"
++@@ -25,7 +25,7 @@
++                 app:layout_constraintTop_toTopOf="parent">
++ 
++             <androidx.recyclerview.widget.RecyclerView
++-                    android:id="@+id/rvShimmer"
+++                    android:id="@+id/rvShimmerf"
++                     android:layout_width="match_parent"
++                     android:layout_height="wrap_content"
++                     tools:listitem="@layout/item_shimmer"/>
++@@ -33,7 +33,7 @@
++         </com.facebook.shimmer.ShimmerFrameLayout>
++ 
++         <androidx.recyclerview.widget.RecyclerView
++-                android:id="@+id/rvMovies"
+++                android:id="@+id/rvMoviesf"
++                 android:layout_width="0dp"
++                 android:layout_height="0dp"
++                 app:layout_constraintBottom_toBottomOf="parent"
 +diff --git a/before/app/item_favorite.txt b/before/app/item_favorite.txt
 +new file mode 100644
 +index 0000000..fb9d63d
@@ -785,6 +747,24 @@ index 0000000..2a1d606
 ++rvGenre
 ++pbDetail
 +\ No newline at end of file
++diff --git a/before/app2/activity_main.txt b/before/app2/activity_main.txt
++new file mode 100644
++index 0000000..1141ba5
++--- /dev/null
+++++ b/before/app2/activity_main.txt
++@@ -0,0 +1,3 @@
+++toolbar
+++tab_layout
+++view_pager2
++\ No newline at end of file
++diff --git a/before/app2/fragment_favorite.txt b/before/app2/fragment_favorite.txt
++new file mode 100644
++index 0000000..a98031f
++--- /dev/null
+++++ b/before/app2/fragment_favorite.txt
++@@ -0,0 +1 @@
+++root_layout
++\ No newline at end of file
 +diff --git a/before/app2/item_favorite.txt b/before/app2/item_favorite.txt
 +new file mode 100644
 +index 0000000..fb9d63d
@@ -805,10 +785,10 @@ index 0000000..2a1d606
 +\ No newline at end of file
 +diff --git a/dump_input.txt b/dump_input.txt
 +new file mode 100644
-+index 0000000..a02bcc1
++index 0000000..2a1d606
 +--- /dev/null
 ++++ b/dump_input.txt
-+@@ -0,0 +1,7608 @@
++@@ -0,0 +1,9408 @@
 ++diff --git a/after/app/item_favorite.txt b/after/app/item_favorite.txt
 ++new file mode 100644
 ++index 0000000..b794f1f
@@ -820,10 +800,14 @@ index 0000000..2a1d606
 ++\ No newline at end of file
 ++diff --git a/after/app2/activity_detail.txt b/after/app2/activity_detail.txt
 ++new file mode 100644
-++index 0000000..8595a31
+++index 0000000..ed6837d
 ++--- /dev/null
 +++++ b/after/app2/activity_detail.txt
-++@@ -0,0 +1 @@
+++@@ -0,0 +1,5 @@
++++overviewDetails
++++releaseDates
++++releaseDateDetails
++++genres
 +++rvGenres
 ++\ No newline at end of file
 ++diff --git a/after/app2/item_favorite.txt b/after/app2/item_favorite.txt
@@ -994,6 +978,50 @@ index 0000000..2a1d606
 ++     </androidx.constraintlayout.widget.ConstraintLayout>
 ++ </layout>
 ++\ No newline at end of file
+++diff --git a/app2/src/main/res/layout/activity_main.xml b/app2/src/main/res/layout/activity_main.xml
+++index af48485..d11c5d1 100644
+++--- a/app2/src/main/res/layout/activity_main.xml
++++++ b/app2/src/main/res/layout/activity_main.xml
+++@@ -11,7 +11,7 @@
+++             tools:context=".presentation.view.activity.MainActivity">
+++ 
+++         <androidx.appcompat.widget.Toolbar
+++-                android:id="@+id/toolbar"
++++                android:id="@+id/toolbarf"
+++                 android:layout_width="0dp"
+++                 android:layout_height="?attr/actionBarSize"
+++                 android:background="@color/colorPrimary"
+++@@ -22,7 +22,7 @@
+++                 app:titleTextColor="@color/colorWhite"/>
+++ 
+++         <com.google.android.material.tabs.TabLayout
+++-                android:id="@+id/tab_layout"
++++                android:id="@+id/tab_layoutf"
+++                 android:layout_width="0dp"
+++                 android:layout_height="wrap_content"
+++                 app:layout_constraintBottom_toTopOf="@id/view_pager2"
+++@@ -38,7 +38,7 @@
+++                 app:tabTextColor="@android:color/white"/>
+++ 
+++         <androidx.viewpager2.widget.ViewPager2
+++-                android:id="@+id/view_pager2"
++++                android:id="@+id/view_pager2f"
+++                 android:layout_width="0dp"
+++                 android:layout_height="0dp"
+++                 app:layout_constraintEnd_toEndOf="parent"
+++diff --git a/app2/src/main/res/layout/fragment_favorite.xml b/app2/src/main/res/layout/fragment_favorite.xml
+++index 0a3ee84..7ae8d49 100644
+++--- a/app2/src/main/res/layout/fragment_favorite.xml
++++++ b/app2/src/main/res/layout/fragment_favorite.xml
+++@@ -9,7 +9,7 @@
+++     </data>
+++ 
+++     <androidx.constraintlayout.widget.ConstraintLayout
+++-            android:id="@+id/root_layout"
++++            android:id="@+id/root_layoutf"
+++             android:layout_width="match_parent"
+++             android:layout_height="match_parent">
+++ 
 ++diff --git a/app2/src/main/res/layout/item_favorite.xml b/app2/src/main/res/layout/item_favorite.xml
 ++index 786648d..fb76a99 100644
 ++--- a/app2/src/main/res/layout/item_favorite.xml
@@ -1095,10 +1123,14 @@ index 0000000..2a1d606
 ++\ No newline at end of file
 ++diff --git a/before/app2/activity_detail.txt b/before/app2/activity_detail.txt
 ++new file mode 100644
-++index 0000000..af53638
+++index 0000000..9381202
 ++--- /dev/null
 +++++ b/before/app2/activity_detail.txt
-++@@ -0,0 +1,2 @@
+++@@ -0,0 +1,6 @@
++++overviewDetail
++++releaseDate
++++releaseDateDetail
++++genre
 +++rvGenre
 +++pbDetail
 ++\ No newline at end of file
@@ -1122,10 +1154,10 @@ index 0000000..2a1d606
 ++\ No newline at end of file
 ++diff --git a/dump_input.txt b/dump_input.txt
 ++new file mode 100644
-++index 0000000..419f086
+++index 0000000..a02bcc1
 ++--- /dev/null
 +++++ b/dump_input.txt
-++@@ -0,0 +1,5860 @@
+++@@ -0,0 +1,7608 @@
 +++diff --git a/after/app/item_favorite.txt b/after/app/item_favorite.txt
 +++new file mode 100644
 +++index 0000000..b794f1f
@@ -1246,9 +1278,45 @@ index 0000000..2a1d606
 +++-</layout>
 +++\ No newline at end of file
 +++diff --git a/app2/src/main/res/layout/activity_detail.xml b/app2/src/main/res/layout/activity_detail.xml
-+++index cc6a7be..5dbf7e4 100644
++++index cc6a7be..47c5dba 100644
 +++--- a/app2/src/main/res/layout/activity_detail.xml
 ++++++ b/app2/src/main/res/layout/activity_detail.xml
++++@@ -114,7 +114,7 @@
++++                         app:layout_constraintTop_toBottomOf="@id/ratingStar" />
++++ 
++++                 <androidx.appcompat.widget.AppCompatTextView
++++-                        android:id="@+id/overviewDetail"
+++++                        android:id="@+id/overviewDetails"
++++                         android:layout_width="match_parent"
++++                         android:layout_height="wrap_content"
++++                         android:layout_margin="@dimen/_8dp"
++++@@ -128,7 +128,7 @@
++++                         tools:text="@string/example_title" />
++++ 
++++                 <androidx.appcompat.widget.AppCompatTextView
++++-                        android:id="@+id/releaseDate"
+++++                        android:id="@+id/releaseDates"
++++                         android:layout_width="match_parent"
++++                         android:layout_height="wrap_content"
++++                         android:layout_margin="@dimen/_8dp"
++++@@ -141,7 +141,7 @@
++++                         app:layout_constraintStart_toStartOf="parent" />
++++ 
++++                 <androidx.appcompat.widget.AppCompatTextView
++++-                        android:id="@+id/releaseDateDetail"
+++++                        android:id="@+id/releaseDateDetails"
++++                         android:layout_width="match_parent"
++++                         android:layout_height="wrap_content"
++++                         android:layout_margin="@dimen/_8dp"
++++@@ -154,7 +154,7 @@
++++                         tools:text="@string/example_year" />
++++ 
++++                 <androidx.appcompat.widget.AppCompatTextView
++++-                        android:id="@+id/genre"
+++++                        android:id="@+id/genres"
++++                         android:layout_width="match_parent"
++++                         android:layout_height="wrap_content"
++++                         android:layout_margin="@dimen/_8dp"
 +++@@ -168,7 +168,7 @@
 +++                         app:layout_constraintTop_toBottomOf="@+id/releaseDateDetail" />
 +++ 
@@ -1374,16 +1442,6 @@ index 0000000..2a1d606
 ++++tv_title_movie_favorite
 ++++tv_year_movie_favorite
 +++\ No newline at end of file
-+++diff --git a/before/app/item_shimmer.txt b/before/app/item_shimmer.txt
-+++new file mode 100644
-+++index 0000000..92c0459
-+++--- /dev/null
-++++++ b/before/app/item_shimmer.txt
-+++@@ -0,0 +1,3 @@
-++++rootLayout
-++++ivImageShimmer
-++++tvTitleShimmer
-+++\ No newline at end of file
 +++diff --git a/before/app2/activity_detail.txt b/before/app2/activity_detail.txt
 +++new file mode 100644
 +++index 0000000..af53638
@@ -1413,59 +1471,44 @@ index 0000000..2a1d606
 +++\ No newline at end of file
 +++diff --git a/dump_input.txt b/dump_input.txt
 +++new file mode 100644
-+++index 0000000..5c0d8a1
++++index 0000000..419f086
 +++--- /dev/null
 ++++++ b/dump_input.txt
-+++@@ -0,0 +1,4155 @@
++++@@ -0,0 +1,5860 @@
 ++++diff --git a/after/app/item_favorite.txt b/after/app/item_favorite.txt
 ++++new file mode 100644
-++++index 0000000..146be13
+++++index 0000000..b794f1f
 ++++--- /dev/null
 +++++++ b/after/app/item_favorite.txt
-++++@@ -0,0 +1,5 @@
-+++++
-+++++
-+++++
-+++++
+++++@@ -0,0 +1,2 @@
 +++++tv_year_movie_favoritef
++++++tv_title_movie_favorite
 ++++\ No newline at end of file
 ++++diff --git a/after/app2/activity_detail.txt b/after/app2/activity_detail.txt
 ++++new file mode 100644
-++++index 0000000..12a6f48
+++++index 0000000..8595a31
 ++++--- /dev/null
 +++++++ b/after/app2/activity_detail.txt
-++++@@ -0,0 +1,8 @@
-+++++
-+++++
-+++++
-+++++
-+++++
-+++++
-+++++
-+++++
+++++@@ -0,0 +1 @@
++++++rvGenres
+++++\ No newline at end of file
 ++++diff --git a/after/app2/item_favorite.txt b/after/app2/item_favorite.txt
 ++++new file mode 100644
-++++index 0000000..146be13
+++++index 0000000..b794f1f
 ++++--- /dev/null
 +++++++ b/after/app2/item_favorite.txt
-++++@@ -0,0 +1,5 @@
-+++++
-+++++
-+++++
-+++++
+++++@@ -0,0 +1,2 @@
 +++++tv_year_movie_favoritef
++++++tv_title_movie_favorite
 ++++\ No newline at end of file
 ++++diff --git a/after/app2/item_movie.txt b/after/app2/item_movie.txt
 ++++new file mode 100644
-++++index 0000000..68faa66
+++++index 0000000..9545334
 ++++--- /dev/null
 +++++++ b/after/app2/item_movie.txt
-++++@@ -0,0 +1,5 @@
-+++++
-+++++
-+++++
-+++++
+++++@@ -0,0 +1,2 @@
 +++++iv_image_posterf
++++++tv_title_movief
 ++++\ No newline at end of file
 ++++diff --git a/app/item_favorite.txt b/app/item_favorite.txt
 ++++new file mode 100644
@@ -1604,6 +1647,44 @@ index 0000000..2a1d606
 ++++                 android:ellipsize="end"
 ++++                 android:maxLines="2"
 ++++                 android:gravity="center"
+++++diff --git a/app2/src/main/res/layout/item_genre.xml b/app2/src/main/res/layout/item_genre.xml
+++++deleted file mode 100644
+++++index e8a13d2..0000000
+++++--- a/app2/src/main/res/layout/item_genre.xml
++++++++ /dev/null
+++++@@ -1,31 +0,0 @@
+++++-<?xml version="1.0" encoding="utf-8"?>
+++++-<layout xmlns:android="http://schemas.android.com/apk/res/android"
+++++-        xmlns:tools="http://schemas.android.com/tools"
+++++-        xmlns:app="http://schemas.android.com/apk/res-auto">
+++++-
+++++-    <data>
+++++-        <variable name="genre"
+++++-                  type="com.aryansa.rizqi.moviejetpack.domain.model.remote.Genre"/>
+++++-    </data>
+++++-
+++++-
+++++-    <androidx.cardview.widget.CardView
+++++-            android:id="@+id/cv_item_genre"
+++++-            android:layout_width="wrap_content"
+++++-            android:layout_height="wrap_content"
+++++-            android:layout_margin="@dimen/_16dp"
+++++-            app:cardCornerRadius="@dimen/_8dp">
+++++-
+++++-        <androidx.appcompat.widget.AppCompatTextView
+++++-                android:id="@+id/tv_name_genre"
+++++-                android:background="@android:color/holo_red_light"
+++++-                android:layout_width="wrap_content"
+++++-                android:layout_height="wrap_content"
+++++-                android:padding="@dimen/_8dp"
+++++-                android:text="@{genre.name}"
+++++-                android:textColor="@color/colorWhite"
+++++-                android:fontFamily="@font/roboto_medium"
+++++-                tools:text="Action"/>
+++++-
+++++-    </androidx.cardview.widget.CardView>
+++++-</layout>
+++++\ No newline at end of file
 ++++diff --git a/app2/src/main/res/layout/item_movie.xml b/app2/src/main/res/layout/item_movie.xml
 ++++index ec462bd..453cb06 100644
 ++++--- a/app2/src/main/res/layout/item_movie.xml
@@ -1635,64 +1716,104 @@ index 0000000..2a1d606
 +++++</layout>
 ++++diff --git a/before/app/item_favorite.txt b/before/app/item_favorite.txt
 ++++new file mode 100644
-++++index 0000000..b10293a
+++++index 0000000..fb9d63d
 ++++--- /dev/null
 +++++++ b/before/app/item_favorite.txt
-++++@@ -0,0 +1 @@
+++++@@ -0,0 +1,2 @@
 +++++tv_title_movie_favorite
++++++tv_year_movie_favorite
+++++\ No newline at end of file
+++++diff --git a/before/app/item_shimmer.txt b/before/app/item_shimmer.txt
+++++new file mode 100644
+++++index 0000000..92c0459
+++++--- /dev/null
++++++++ b/before/app/item_shimmer.txt
+++++@@ -0,0 +1,3 @@
++++++rootLayout
++++++ivImageShimmer
++++++tvTitleShimmer
 ++++\ No newline at end of file
 ++++diff --git a/before/app2/activity_detail.txt b/before/app2/activity_detail.txt
 ++++new file mode 100644
-++++index 0000000..668043d
+++++index 0000000..af53638
 ++++--- /dev/null
 +++++++ b/before/app2/activity_detail.txt
-++++@@ -0,0 +1 @@
+++++@@ -0,0 +1,2 @@
++++++rvGenre
 +++++pbDetail
 ++++\ No newline at end of file
 ++++diff --git a/before/app2/item_favorite.txt b/before/app2/item_favorite.txt
 ++++new file mode 100644
-++++index 0000000..b10293a
+++++index 0000000..fb9d63d
 ++++--- /dev/null
 +++++++ b/before/app2/item_favorite.txt
-++++@@ -0,0 +1 @@
+++++@@ -0,0 +1,2 @@
 +++++tv_title_movie_favorite
++++++tv_year_movie_favorite
 ++++\ No newline at end of file
 ++++diff --git a/before/app2/item_movie.txt b/before/app2/item_movie.txt
 ++++new file mode 100644
-++++index 0000000..ecae33e
+++++index 0000000..d968088
 ++++--- /dev/null
 +++++++ b/before/app2/item_movie.txt
-++++@@ -0,0 +1 @@
+++++@@ -0,0 +1,2 @@
 +++++iv_image_poster
++++++tv_title_movie
 ++++\ No newline at end of file
 ++++diff --git a/dump_input.txt b/dump_input.txt
 ++++new file mode 100644
-++++index 0000000..0c1c99e
+++++index 0000000..5c0d8a1
 ++++--- /dev/null
 +++++++ b/dump_input.txt
-++++@@ -0,0 +1,2493 @@
+++++@@ -0,0 +1,4155 @@
 +++++diff --git a/after/app/item_favorite.txt b/after/app/item_favorite.txt
 +++++new file mode 100644
-+++++index 0000000..08c7f37
++++++index 0000000..146be13
 +++++--- /dev/null
 ++++++++ b/after/app/item_favorite.txt
-+++++@@ -0,0 +1 @@
++++++@@ -0,0 +1,5 @@
+++++++
+++++++
+++++++
+++++++
 ++++++tv_year_movie_favoritef
 +++++\ No newline at end of file
++++++diff --git a/after/app2/activity_detail.txt b/after/app2/activity_detail.txt
++++++new file mode 100644
++++++index 0000000..12a6f48
++++++--- /dev/null
+++++++++ b/after/app2/activity_detail.txt
++++++@@ -0,0 +1,8 @@
+++++++
+++++++
+++++++
+++++++
+++++++
+++++++
+++++++
+++++++
 +++++diff --git a/after/app2/item_favorite.txt b/after/app2/item_favorite.txt
 +++++new file mode 100644
-+++++index 0000000..08c7f37
++++++index 0000000..146be13
 +++++--- /dev/null
 ++++++++ b/after/app2/item_favorite.txt
-+++++@@ -0,0 +1 @@
++++++@@ -0,0 +1,5 @@
+++++++
+++++++
+++++++
+++++++
 ++++++tv_year_movie_favoritef
 +++++\ No newline at end of file
 +++++diff --git a/after/app2/item_movie.txt b/after/app2/item_movie.txt
 +++++new file mode 100644
-+++++index 0000000..f710e03
++++++index 0000000..68faa66
 +++++--- /dev/null
 ++++++++ b/after/app2/item_movie.txt
-+++++@@ -0,0 +1 @@
++++++@@ -0,0 +1,5 @@
+++++++
+++++++
+++++++
+++++++
 ++++++iv_image_posterf
 +++++\ No newline at end of file
 +++++diff --git a/app/item_favorite.txt b/app/item_favorite.txt
@@ -1780,9 +1901,18 @@ index 0000000..2a1d606
 +++++-</layout>
 +++++\ No newline at end of file
 +++++diff --git a/app2/src/main/res/layout/activity_detail.xml b/app2/src/main/res/layout/activity_detail.xml
-+++++index cc6a7be..e9cd913 100644
++++++index cc6a7be..5dbf7e4 100644
 +++++--- a/app2/src/main/res/layout/activity_detail.xml
 ++++++++ b/app2/src/main/res/layout/activity_detail.xml
++++++@@ -168,7 +168,7 @@
++++++                         app:layout_constraintTop_toBottomOf="@+id/releaseDateDetail" />
++++++ 
++++++                 <androidx.recyclerview.widget.RecyclerView
++++++-                        android:id="@+id/rvGenre"
+++++++                        android:id="@+id/rvGenres"
++++++                         android:layout_width="wrap_content"
++++++                         android:layout_height="wrap_content"
++++++                         app:layout_constraintEnd_toEndOf="parent"
 +++++@@ -181,15 +181,5 @@
 +++++ 
 +++++         </androidx.constraintlayout.motion.widget.MotionLayout>
@@ -1860,6 +1990,14 @@ index 0000000..2a1d606
 +++++@@ -0,0 +1 @@
 ++++++tv_title_movie_favorite
 +++++\ No newline at end of file
++++++diff --git a/before/app2/activity_detail.txt b/before/app2/activity_detail.txt
++++++new file mode 100644
++++++index 0000000..668043d
++++++--- /dev/null
+++++++++ b/before/app2/activity_detail.txt
++++++@@ -0,0 +1 @@
+++++++pbDetail
++++++\ No newline at end of file
 +++++diff --git a/before/app2/item_favorite.txt b/before/app2/item_favorite.txt
 +++++new file mode 100644
 +++++index 0000000..b10293a
@@ -1878,10 +2016,34 @@ index 0000000..2a1d606
 +++++\ No newline at end of file
 +++++diff --git a/dump_input.txt b/dump_input.txt
 +++++new file mode 100644
-+++++index 0000000..0aa5a84
++++++index 0000000..0c1c99e
 +++++--- /dev/null
 ++++++++ b/dump_input.txt
-+++++@@ -0,0 +1,881 @@
++++++@@ -0,0 +1,2493 @@
+++++++diff --git a/after/app/item_favorite.txt b/after/app/item_favorite.txt
+++++++new file mode 100644
+++++++index 0000000..08c7f37
+++++++--- /dev/null
++++++++++ b/after/app/item_favorite.txt
+++++++@@ -0,0 +1 @@
++++++++tv_year_movie_favoritef
+++++++\ No newline at end of file
+++++++diff --git a/after/app2/item_favorite.txt b/after/app2/item_favorite.txt
+++++++new file mode 100644
+++++++index 0000000..08c7f37
+++++++--- /dev/null
++++++++++ b/after/app2/item_favorite.txt
+++++++@@ -0,0 +1 @@
++++++++tv_year_movie_favoritef
+++++++\ No newline at end of file
+++++++diff --git a/after/app2/item_movie.txt b/after/app2/item_movie.txt
+++++++new file mode 100644
+++++++index 0000000..f710e03
+++++++--- /dev/null
++++++++++ b/after/app2/item_movie.txt
+++++++@@ -0,0 +1 @@
++++++++iv_image_posterf
+++++++\ No newline at end of file
 ++++++diff --git a/app/item_favorite.txt b/app/item_favorite.txt
 ++++++new file mode 100644
 ++++++index 0000000..b10293a
@@ -1966,6 +2128,27 @@ index 0000000..2a1d606
 ++++++-
 ++++++-</layout>
 ++++++\ No newline at end of file
+++++++diff --git a/app2/src/main/res/layout/activity_detail.xml b/app2/src/main/res/layout/activity_detail.xml
+++++++index cc6a7be..e9cd913 100644
+++++++--- a/app2/src/main/res/layout/activity_detail.xml
++++++++++ b/app2/src/main/res/layout/activity_detail.xml
+++++++@@ -181,15 +181,5 @@
+++++++ 
+++++++         </androidx.constraintlayout.motion.widget.MotionLayout>
+++++++ 
+++++++-        <ProgressBar
+++++++-                android:id="@+id/pbDetail"
+++++++-                android:layout_width="wrap_content"
+++++++-                android:layout_height="wrap_content"
+++++++-                app:layout_constraintEnd_toEndOf="parent"
+++++++-                app:layout_constraintStart_toStartOf="parent"
+++++++-                app:layout_constraintBottom_toBottomOf="parent"
+++++++-                app:layout_constraintTop_toTopOf="parent"
+++++++-                app:setLoading="@{safeUnbox(viewModel.loadingState)}" />
+++++++-
+++++++     </androidx.constraintlayout.widget.ConstraintLayout>
+++++++ </layout>
+++++++\ No newline at end of file
 ++++++diff --git a/app2/src/main/res/layout/item_favorite.xml b/app2/src/main/res/layout/item_favorite.xml
 ++++++index 786648d..fb76a99 100644
 ++++++--- a/app2/src/main/res/layout/item_favorite.xml
@@ -2018,12 +2201,36 @@ index 0000000..2a1d606
 ++++++-</layout>
 ++++++\ No newline at end of file
 +++++++</layout>
-++++++diff --git a/headdiff.txt b/headdiff.txt
+++++++diff --git a/before/app/item_favorite.txt b/before/app/item_favorite.txt
 ++++++new file mode 100644
-++++++index 0000000..3423b47
+++++++index 0000000..b10293a
 ++++++--- /dev/null
-+++++++++ b/headdiff.txt
-++++++@@ -0,0 +1,400 @@
++++++++++ b/before/app/item_favorite.txt
+++++++@@ -0,0 +1 @@
++++++++tv_title_movie_favorite
+++++++\ No newline at end of file
+++++++diff --git a/before/app2/item_favorite.txt b/before/app2/item_favorite.txt
+++++++new file mode 100644
+++++++index 0000000..b10293a
+++++++--- /dev/null
++++++++++ b/before/app2/item_favorite.txt
+++++++@@ -0,0 +1 @@
++++++++tv_title_movie_favorite
+++++++\ No newline at end of file
+++++++diff --git a/before/app2/item_movie.txt b/before/app2/item_movie.txt
+++++++new file mode 100644
+++++++index 0000000..ecae33e
+++++++--- /dev/null
++++++++++ b/before/app2/item_movie.txt
+++++++@@ -0,0 +1 @@
++++++++iv_image_poster
+++++++\ No newline at end of file
+++++++diff --git a/dump_input.txt b/dump_input.txt
+++++++new file mode 100644
+++++++index 0000000..0aa5a84
+++++++--- /dev/null
++++++++++ b/dump_input.txt
+++++++@@ -0,0 +1,881 @@
 +++++++diff --git a/app/item_favorite.txt b/app/item_favorite.txt
 +++++++new file mode 100644
 +++++++index 0000000..b10293a
@@ -2055,6 +2262,59 @@ index 0000000..2a1d606
 +++++++                 android:maxLines="2"
 +++++++                 android:gravity="center"
 +++++++                 android:layout_marginTop="@dimen/_8dp"
++++++++diff --git a/app/src/main/res/layout/item_shimmer.xml b/app/src/main/res/layout/item_shimmer.xml
++++++++deleted file mode 100644
++++++++index f660d95..0000000
++++++++--- a/app/src/main/res/layout/item_shimmer.xml
+++++++++++ /dev/null
++++++++@@ -1,46 +0,0 @@
++++++++-<?xml version="1.0" encoding="utf-8"?>
++++++++-
++++++++-<layout xmlns:android="http://schemas.android.com/apk/res/android"
++++++++-        xmlns:app="http://schemas.android.com/apk/res-auto">
++++++++-
++++++++-    <androidx.constraintlayout.widget.ConstraintLayout
++++++++-            android:id="@+id/rootLayout"
++++++++-            android:layout_width="match_parent"
++++++++-            android:layout_height="wrap_content">
++++++++-
++++++++-        <androidx.cardview.widget.CardView
++++++++-                android:id="@+id/ivImageShimmer"
++++++++-                android:layout_width="match_parent"
++++++++-                android:layout_height="185dp"
++++++++-                app:layout_constraintEnd_toEndOf="parent"
++++++++-                app:layout_constraintStart_toStartOf="parent"
++++++++-                app:layout_constraintTop_toTopOf="parent"
++++++++-                app:layout_constraintBottom_toBottomOf="parent"
++++++++-                android:layout_marginRight="@dimen/_8dp"
++++++++-                android:layout_marginEnd="@dimen/_8dp"
++++++++-                android:background="@color/colorShimmer"
++++++++-                app:cardCornerRadius="@dimen/_8dp"
++++++++-                app:cardElevation="4dp">
++++++++-
++++++++-            <View
++++++++-                    android:layout_width="match_parent"
++++++++-                    android:layout_height="185dp"
++++++++-                    android:background="@color/colorShimmer" />
++++++++-
++++++++-        </androidx.cardview.widget.CardView>
++++++++-
++++++++-        <View
++++++++-                android:id="@+id/tvTitleShimmer"
++++++++-                android:layout_width="120dp"
++++++++-                android:layout_height="16dp"
++++++++-                android:background="@color/colorShimmer"
++++++++-                android:layout_marginTop="@dimen/_8dp"
++++++++-                app:layout_constraintTop_toBottomOf="@id/ivImageShimmer"
++++++++-                app:layout_constraintStart_toStartOf="parent"
++++++++-                app:layout_constraintEnd_toEndOf="parent"
++++++++-                app:layout_constraintBottom_toBottomOf="parent"/>
++++++++-
++++++++-
++++++++-    </androidx.constraintlayout.widget.ConstraintLayout>
++++++++-
++++++++-</layout>
++++++++\ No newline at end of file
 +++++++diff --git a/app2/src/main/res/layout/item_favorite.xml b/app2/src/main/res/layout/item_favorite.xml
 +++++++index 786648d..fb76a99 100644
 +++++++--- a/app2/src/main/res/layout/item_favorite.xml
@@ -2107,6 +2367,412 @@ index 0000000..2a1d606
 +++++++-</layout>
 +++++++\ No newline at end of file
 ++++++++</layout>
++++++++diff --git a/headdiff.txt b/headdiff.txt
++++++++new file mode 100644
++++++++index 0000000..3423b47
++++++++--- /dev/null
+++++++++++ b/headdiff.txt
++++++++@@ -0,0 +1,400 @@
+++++++++diff --git a/app/item_favorite.txt b/app/item_favorite.txt
+++++++++new file mode 100644
+++++++++index 0000000..b10293a
+++++++++--- /dev/null
++++++++++++ b/app/item_favorite.txt
+++++++++@@ -0,0 +1 @@
++++++++++tv_title_movie_favorite
+++++++++\ No newline at end of file
+++++++++diff --git a/app/src/main/res/layout/item_favorite.xml b/app/src/main/res/layout/item_favorite.xml
+++++++++index 786648d..ca61829 100644
+++++++++--- a/app/src/main/res/layout/item_favorite.xml
++++++++++++ b/app/src/main/res/layout/item_favorite.xml
+++++++++@@ -35,7 +35,7 @@
+++++++++                 android:layout_width="wrap_content"
+++++++++                 android:layout_height="wrap_content"
+++++++++                 android:padding="@dimen/_8dp"
+++++++++-                android:id="@+id/tv_title_movie_favorite"
++++++++++                android:id="@+id/tv_year_movie_favoritef"
+++++++++                 android:textSize="16sp"
+++++++++                 android:background="#80333333"
+++++++++                 app:layout_constraintEnd_toEndOf="parent"
+++++++++@@ -49,8 +49,8 @@
+++++++++                 android:textColor="@android:color/white"
+++++++++                 android:layout_height="wrap_content"
+++++++++                 android:text='@{movie.title}'
+++++++++-                android:id="@+id/tv_year_movie_favorite"
+++++++++                 android:ellipsize="end"
++++++++++                android:id="@+id/tv_title_movie_favorite"
+++++++++                 android:maxLines="2"
+++++++++                 android:gravity="center"
+++++++++                 android:layout_marginTop="@dimen/_8dp"
+++++++++diff --git a/app2/src/main/res/layout/item_favorite.xml b/app2/src/main/res/layout/item_favorite.xml
+++++++++index 786648d..fb76a99 100644
+++++++++--- a/app2/src/main/res/layout/item_favorite.xml
++++++++++++ b/app2/src/main/res/layout/item_favorite.xml
+++++++++@@ -35,7 +35,7 @@
+++++++++                 android:layout_width="wrap_content"
+++++++++                 android:layout_height="wrap_content"
+++++++++                 android:padding="@dimen/_8dp"
+++++++++-                android:id="@+id/tv_title_movie_favorite"
++++++++++                android:id="@+id/tv_year_movie_favoritef"
+++++++++                 android:textSize="16sp"
+++++++++                 android:background="#80333333"
+++++++++                 app:layout_constraintEnd_toEndOf="parent"
+++++++++@@ -49,7 +49,8 @@
+++++++++                 android:textColor="@android:color/white"
+++++++++                 android:layout_height="wrap_content"
+++++++++                 android:text='@{movie.title}'
+++++++++-                android:id="@+id/tv_year_movie_favorite"
++++++++++                android:ellipsize="end"
++++++++++                android:id="@+id/tv_title_movie_favorite"
+++++++++                 android:ellipsize="end"
+++++++++                 android:maxLines="2"
+++++++++                 android:gravity="center"
+++++++++diff --git a/app2/src/main/res/layout/item_movie.xml b/app2/src/main/res/layout/item_movie.xml
+++++++++index ec462bd..453cb06 100644
+++++++++--- a/app2/src/main/res/layout/item_movie.xml
++++++++++++ b/app2/src/main/res/layout/item_movie.xml
+++++++++@@ -15,7 +15,7 @@
+++++++++             android:layout_height="wrap_content">
+++++++++ 
+++++++++         <androidx.appcompat.widget.AppCompatImageView
+++++++++-                android:id="@+id/iv_image_poster"
++++++++++                android:id="@+id/iv_image_posterf"
+++++++++                 android:contentDescription="@string/example_title"
+++++++++                 android:scaleType="fitCenter"
+++++++++                 app:layout_constraintEnd_toEndOf="parent"
+++++++++@@ -45,7 +45,7 @@
+++++++++                 app:fontFamily="@font/roboto_medium"/>
+++++++++ 
+++++++++         <androidx.appcompat.widget.AppCompatTextView
+++++++++-                android:id="@+id/tv_title_movie"
++++++++++                android:id="@+id/tv_title_movief"
+++++++++                 tools:text="@string/tv_example_title"
+++++++++                 android:layout_width="match_parent"
+++++++++                 android:textColor="@android:color/white"
+++++++++@@ -64,4 +64,4 @@
+++++++++ 
+++++++++     </androidx.constraintlayout.widget.ConstraintLayout>
+++++++++ 
+++++++++-</layout>
+++++++++\ No newline at end of file
++++++++++</layout>
+++++++++diff --git a/test_case.txt b/test_case.txt
+++++++++index bf18197..e67a6a6 100644
+++++++++--- a/test_case.txt
++++++++++++ b/test_case.txt
+++++++++@@ -1,3 +1,4 @@
+++++++++-item_movie.xml
+++++++++-item_favorite.xml
+++++++++-item_shimmer.xml
+++++++++\ No newline at end of file
++++++++++app/item_movie.xml
++++++++++app/item_favorite.xml
++++++++++app/item_shimmer.xml
++++++++++app2
+++++++++\ No newline at end of file
+++++++++diff --git a/xml_id_script.py b/xml_id_script.py
+++++++++index 5708213..f61f75e 100644
+++++++++--- a/xml_id_script.py
++++++++++++ b/xml_id_script.py
+++++++++@@ -18,8 +18,6 @@ afterPath = "after/"
+++++++++ pathBefore = "before"
+++++++++ pathAfter = "after"
+++++++++ 
+++++++++-
+++++++++-
+++++++++ def print_repository(repo):
+++++++++     print('Repo description: {}'.format(repo.description))
+++++++++     print('Repo active branch is {}'.format(repo.active_branch))
+++++++++@@ -38,8 +36,6 @@ def print_commit(commit):
+++++++++     print(str("count: {} and size: {}".format(commit.count(),
+++++++++                                               commit.size)))
+++++++++ 
+++++++++-# def print_diff(commitA, commitB):
+++++++++-#     print('-----')
+++++++++ 
+++++++++ def writeFile(input):
+++++++++     # fileName = "/temp/input.txt"
+++++++++@@ -62,53 +58,72 @@ def writeFile(input):
+++++++++     nameFileBefore = ""
+++++++++     nameFileCompare = ""
+++++++++ 
++++++++++    nameFileWithModul = ""
++++++++++
+++++++++     setIdAfter = set()
+++++++++     setIdBefore = set()
+++++++++ 
++++++++++    modul = ""
++++++++++
+++++++++     newId = ""
+++++++++ 
+++++++++-    fileCase = None
++++++++++    tempModul = list()
++++++++++    tempNameFile = set()
+++++++++ 
+++++++++     if(os.path.exists(testCase)):
+++++++++         with open(testCase, "r") as fCase:
+++++++++             strStrip = fCase.read().splitlines()
+++++++++             tempCase = set(strStrip)
+++++++++             print("tempCase: " + str(tempCase))
++++++++++        
++++++++++        z = open(testCase, "r")
++++++++++
++++++++++        for lineModul in z:
++++++++++            strOnlyModul = lineModul.replace("\n", "").split("/")[0]
++++++++++            stryOnlyName = lineModul.replace("\n", "").split("/")
++++++++++            tempModul.append(strOnlyModul)
++++++++++            if(len(stryOnlyName) > 1):
++++++++++                modulSlash = strOnlyModul + "/" + stryOnlyName[1]
++++++++++                tempNameFile.add(str(modulSlash))
++++++++++        print("tempModule: " + str(tempModul))
++++++++++        print("tempName: " + str(tempNameFile))
+++++++++ 
+++++++++ 
+++++++++     f = open(tempName, "r")
+++++++++     for line in f:
+++++++++         if(patternBeforeFile in line[:3]):
+++++++++             if patternLayout in line:
++++++++++                modul = str(line[6:].split("/")[0])
+++++++++                 nameFileBefore = getFile(patternLayout, patternBeforeFile, line, pathBefore)
+++++++++                 nameFileCompare = getNameFileXML(nameFileBefore)
+++++++++         
+++++++++         if(patternAfterFile in line[:3]):
+++++++++             if patternLayout in line:
++++++++++                modul = str(line[6:].split("/")[0])
+++++++++                 nameFileAfter = getFile(patternLayout, patternAfterFile, line, pathAfter)
+++++++++             elif patternRemoveFile in line:
+++++++++                 if nameFileCompare in tempCase:
+++++++++                         print("Previous file has removed with name : " + nameFileCompare)
+++++++++                         nameFileCompare = ""
+++++++++ 
+++++++++-        if(nameFileCompare in tempCase):
+++++++++-            if(patternBeforeIdView == line[:1] and notPatternBefore(line)):
++++++++++        if(modul in tempModul):
++++++++++            if(patternBeforeIdView == line[:1]):
+++++++++                 newId = getIdView(patternIdView, line)
+++++++++                 if(newId.strip()):
+++++++++                     setIdBefore.add(newId.strip())
+++++++++-                    createFile(pathBefore, nameFileBefore, newId)
++++++++++                    createFile(pathBefore, nameFileBefore, newId, modul)
+++++++++                     newId = ""
+++++++++         
+++++++++             if(patternAfterIdView == line[:1]):
+++++++++                 newId = getIdView(patternIdView, line)
+++++++++                 if(newId.strip()):
+++++++++                     setIdAfter.add(newId.strip())
+++++++++-                    createFile(pathAfter, nameFileAfter, newId)
++++++++++                    createFile(pathAfter, nameFileAfter, newId, modul)
+++++++++                     newId = ""
+++++++++ 
+++++++++-        
+++++++++-    setFileBefore = getFileFromPackage(pathBefore)
+++++++++-    setFileAfter = getFileFromPackage(pathAfter)
++++++++++
++++++++++    setFileBefore = getModulFromPackage(pathBefore)
++++++++++    setFileAfter = getModulFromPackage(pathAfter)
+++++++++ 
+++++++++     checkIdView(setFileBefore, setFileAfter, beforePath, afterPath)
+++++++++ 
+++++++++@@ -129,36 +144,49 @@ def checkIdView(beforeFile, afterFile, beforePath, afterPath):
+++++++++     if(len(beforeFile) == len(afterFile)):
+++++++++ 
+++++++++         for(before, after) in zip(beforeFile, afterFile):
+++++++++-            beforeX = getFileWithoutPath(before, beforePath)
+++++++++-            afterX = getFileWithoutPath(after, afterPath)
+++++++++ 
+++++++++-            print(beforeX)
+++++++++-            print(afterX)
+++++++++-            if(beforeX == afterX):
+++++++++-                beforeWithPath = getFileWithPath(beforeX, beforePath)
+++++++++-                afterWithPath = getFileWithPath(afterX, afterPath)
++++++++++            beforeSlash = before + "/"
++++++++++            afterSlash = after + "/"
++++++++++
++++++++++            beforeWithPath = getFileFromPackage(beforeSlash)
++++++++++            afterWithPath = getFileFromPackage(afterSlash)
++++++++++
++++++++++            # print(str(beforeWithPath))
++++++++++            # print(str(afterWithPath))
++++++++++
++++++++++            # print("before " + before)
++++++++++            # print("after " + after)
++++++++++
++++++++++            for(beforeFile, afterFile) in zip(beforeWithPath, afterWithPath):
++++++++++
++++++++++                if(beforeFile == afterFile):
++++++++++
++++++++++                    fileBeforePath = beforeSlash + beforeFile
++++++++++                    fileAfterPath = afterSlash + afterFile
+++++++++ 
+++++++++-                beforeF = open(beforeWithPath, "r")
+++++++++-                afterF = open(afterWithPath, "r")
++++++++++                    print("file before with path : " + fileBeforePath)
++++++++++                    print("file after with path : " + fileAfterPath)
+++++++++ 
+++++++++-                setIdAfter = set()
+++++++++-                setIdBefore = set()
++++++++++                    beforeF = open(fileBeforePath, "r")
++++++++++                    afterF = open(fileAfterPath, "r")
+++++++++ 
+++++++++-                for beforeLine in beforeF:
+++++++++-                    setIdBefore.add(getNameWithoutNewLine(beforeLine))
+++++++++-                
+++++++++-                for afterLine in afterF:
+++++++++-                    setIdAfter.add(getNameWithoutNewLine(afterLine))
++++++++++                    setIdAfter = set()
++++++++++                    setIdBefore = set()
+++++++++ 
+++++++++-                print(str(setIdBefore))
+++++++++-                print(str(setIdAfter))
++++++++++                    for beforeLine in beforeF:
++++++++++                        setIdBefore.add(getNameWithoutNewLine(beforeLine))
++++++++++                        
++++++++++                    for afterLine in afterF:
++++++++++                        setIdAfter.add(getNameWithoutNewLine(afterLine))
+++++++++ 
+++++++++-                for beforeIdView in setIdBefore:
+++++++++-                    if beforeIdView not in setIdAfter:
+++++++++-                        print("id view " + beforeIdView + " has been changed or removed from file " + getNameFileXML(beforeX))
++++++++++                    for beforeIdView in setIdBefore:
++++++++++                        if beforeIdView not in setIdAfter:
++++++++++                            pathModule = fileBeforePath.split("/")[1]
++++++++++                            fileModule = pathModule + "/" + getNameFileXML(beforeFile)
++++++++++                            print("id view " + beforeIdView + " has been changed or removed from file " +  fileModule)
+++++++++ 
+++++++++-                # print(str(setIdBefore))
+++++++++-                # print(str(setIdAfter))
++++++++++                    # print(str(setIdBefore))
++++++++++                    # print(str(setIdAfter))
+++++++++ 
+++++++++ def getNameWithoutNewLine(line):
+++++++++     line = line.replace("\n", "")
+++++++++@@ -172,14 +200,23 @@ def getFileWithoutPath(file, path):
+++++++++     file = file.replace(path, "")
+++++++++     return file
+++++++++ 
+++++++++-def getFileFromPackage(path):
++++++++++def getFileFromPackage(modul):
+++++++++     setFile = set()
++++++++++
++++++++++    for getfile in os.listdir(modul):
++++++++++        setFile.add(getfile)
++++++++++    
++++++++++    # print("file " + str(setFile))
++++++++++    return setFile
++++++++++
++++++++++def getModulFromPackage(path):
++++++++++    setModul = set()
+++++++++     for filename in os.listdir(path):
+++++++++         filePath = path + "/" + filename
+++++++++-        setFile.add(filePath.strip())
++++++++++        setModul.add(filePath)
+++++++++     
+++++++++-    print(setFile)
+++++++++-    return setFile
++++++++++    # print("package " + str(setModul))
++++++++++    return setModul
+++++++++ 
+++++++++ def setValueFromFile(file):
+++++++++     with open(file, "r") as fCase:
+++++++++@@ -202,21 +239,29 @@ def notPatternBefore(line):
+++++++++         return True
+++++++++     return False
+++++++++ 
+++++++++-def createFile(path, nameFile, input):
++++++++++def createFile(path, nameFile, input, modul):
++++++++++
++++++++++    nameFileModul = path + "/" + modul + "/" + nameFile
++++++++++    nameModul = path + "/" + modul
++++++++++
+++++++++     if not os.path.exists(path):
+++++++++-           os.mkdir(path)
++++++++++        os.mkdir(path)
++++++++++    
++++++++++    if not os.path.exists(nameModul):
++++++++++        os.mkdir(nameModul)
+++++++++ 
+++++++++-    if os.path.isfile(nameFile):
+++++++++-        with open(nameFile, 'a') as file:
++++++++++    if os.path.isfile(nameFileModul):
++++++++++        with open(nameFileModul, 'a') as file:
+++++++++             file.write("\n" + input)
+++++++++     else:
+++++++++-        with open(nameFile, 'w') as fileW:
++++++++++        with open(nameFileModul, 'w') as fileW:
+++++++++             fileW.write(input)
+++++++++         # myFile = open(nameFile, 'w')
+++++++++         # myFile.write(input)
+++++++++         # myFile.close()
+++++++++ 
+++++++++ def getFile(patternLayout, patternFile, line, path):
++++++++++
+++++++++     nameFile = ""
+++++++++     posisiPattern = line.find(patternLayout)
+++++++++     lengthPattern = len(patternLayout)
+++++++++@@ -224,15 +269,14 @@ def getFile(patternLayout, patternFile, line, path):
+++++++++ 
+++++++++     if patternFile is patternBeforeFile:
+++++++++         nameFileBefore = line[posisiFile:]
+++++++++-        pathBefore = path
+++++++++-        nameFile = pathBefore + "/" + nameFileBefore
++++++++++        nameFile = nameFileBefore
+++++++++     elif patternFile is patternAfterFile:
+++++++++         nameFileAfter = line[posisiFile:]
+++++++++-        pathAfter = path
+++++++++-        nameFile = pathAfter + "/" + nameFileAfter
++++++++++        nameFile = nameFileAfter
+++++++++     
+++++++++     nameFile = nameFile.replace("xml", "txt")
+++++++++     nameFile = nameFile.replace("\n", "")
++++++++++    # print(nameFile)
+++++++++     return nameFile
+++++++++ 
+++++++++ 
+++++++++@@ -245,15 +289,10 @@ def getIdView(patternIdView, line):
+++++++++         nameIdView = line[posisiIdView:]
+++++++++         nameLength = len(nameIdView)
+++++++++         newId = nameIdView[:nameLength-2]
+++++++++-        print(newId)
++++++++++        # print(newId)
+++++++++ 
+++++++++     return newId
+++++++++ 
+++++++++-# def checkIdView():
+++++++++-
+++++++++-# repo_path = os.getenv('GIT_REPO_PATH')
+++++++++-# print_repository(repo_path)
+++++++++-
+++++++++ # repo = git.Repo(os.getenv('GIT_REPO_PATH'))
+++++++++ # print repo.git.status()
+++++++++ 
+++++++++@@ -261,6 +300,9 @@ if __name__ == "__main__":
+++++++++     repo_path = os.getenv('GIT_REPO_PATH')
+++++++++     # Repo object used to programmatically interact with Git repositories
+++++++++     repo = Repo(repo_path)
++++++++++
++++++++++    defaultBranch = "master"
++++++++++    
+++++++++     # check that the repository loaded correctly
+++++++++     if not repo.bare:
+++++++++         print('Repo at {} successfully loaded.'.format(repo_path))
+++++++++@@ -293,12 +335,14 @@ if __name__ == "__main__":
+++++++++ 
+++++++++         # beforeC = repo.head.commit
+++++++++         # afterC = "77a38266633ec3d224f5de799788adec94432492"
++++++++++        # g = git.Git(repo_path)
++++++++++        # g.pull()
++++++++++        # commitMessages = g.log('%s..%s' % ("master", "sukasuka"), '--pretty=format:%ad %an - %s', '--abbrev-commit')
+++++++++ 
+++++++++-        writeFile(str(repo.git.diff('HEAD~1')))
++++++++++        writeFile(repo.git.diff("master", "sukasuka"))
++++++++++        # writeFile(commitMessages)
+++++++++         # writeFile(repo.git.diff("HEAD","HEAD~1"))
+++++++++-        # checkIdView()
+++++++++ 
+++++++++-        # pass
+++++++++         # commits = list(repo.iter_commits('master'))[:COMMITS_TO_PRINT]
+++++++++         # for commit in commits:
+++++++++         #     print_commit(commit)
 +++++++diff --git a/test_case.txt b/test_case.txt
 +++++++index bf18197..e67a6a6 100644
 +++++++--- a/test_case.txt
@@ -2122,10 +2788,19 @@ index 0000000..2a1d606
 ++++++++app2
 +++++++\ No newline at end of file
 +++++++diff --git a/xml_id_script.py b/xml_id_script.py
-+++++++index 5708213..f61f75e 100644
++++++++index 5708213..b497ecb 100644
 +++++++--- a/xml_id_script.py
 ++++++++++ b/xml_id_script.py
-+++++++@@ -18,8 +18,6 @@ afterPath = "after/"
++++++++@@ -2,6 +2,8 @@ import os
++++++++ import shutil
++++++++ import os.path
++++++++ import git
+++++++++import optparse
+++++++++from optparse import OptionParser
++++++++ import itertools
++++++++ from git import Repo
++++++++ 
++++++++@@ -18,8 +20,6 @@ afterPath = "after/"
 +++++++ pathBefore = "before"
 +++++++ pathAfter = "after"
 +++++++ 
@@ -2134,7 +2809,7 @@ index 0000000..2a1d606
 +++++++ def print_repository(repo):
 +++++++     print('Repo description: {}'.format(repo.description))
 +++++++     print('Repo active branch is {}'.format(repo.active_branch))
-+++++++@@ -38,8 +36,6 @@ def print_commit(commit):
++++++++@@ -38,8 +38,6 @@ def print_commit(commit):
 +++++++     print(str("count: {} and size: {}".format(commit.count(),
 +++++++                                               commit.size)))
 +++++++ 
@@ -2143,7 +2818,7 @@ index 0000000..2a1d606
 +++++++ 
 +++++++ def writeFile(input):
 +++++++     # fileName = "/temp/input.txt"
-+++++++@@ -62,53 +58,72 @@ def writeFile(input):
++++++++@@ -62,53 +60,72 @@ def writeFile(input):
 +++++++     nameFileBefore = ""
 +++++++     nameFileCompare = ""
 +++++++ 
@@ -2185,14 +2860,16 @@ index 0000000..2a1d606
 +++++++             if patternLayout in line:
 ++++++++                modul = str(line[6:].split("/")[0])
 +++++++                 nameFileBefore = getFile(patternLayout, patternBeforeFile, line, pathBefore)
-+++++++                 nameFileCompare = getNameFileXML(nameFileBefore)
++++++++-                nameFileCompare = getNameFileXML(nameFileBefore)
+++++++++                nameFileCompare = modul + "/" + getNameFileXML(nameFileBefore)
 +++++++         
 +++++++         if(patternAfterFile in line[:3]):
 +++++++             if patternLayout in line:
 ++++++++                modul = str(line[6:].split("/")[0])
 +++++++                 nameFileAfter = getFile(patternLayout, patternAfterFile, line, pathAfter)
 +++++++             elif patternRemoveFile in line:
-+++++++                 if nameFileCompare in tempCase:
++++++++-                if nameFileCompare in tempCase:
+++++++++                if nameFileCompare in tempNameFile:
 +++++++                         print("Previous file has removed with name : " + nameFileCompare)
 +++++++                         nameFileCompare = ""
 +++++++ 
@@ -2224,7 +2901,7 @@ index 0000000..2a1d606
 +++++++ 
 +++++++     checkIdView(setFileBefore, setFileAfter, beforePath, afterPath)
 +++++++ 
-+++++++@@ -129,36 +144,49 @@ def checkIdView(beforeFile, afterFile, beforePath, afterPath):
++++++++@@ -129,36 +146,49 @@ def checkIdView(beforeFile, afterFile, beforePath, afterPath):
 +++++++     if(len(beforeFile) == len(afterFile)):
 +++++++ 
 +++++++         for(before, after) in zip(beforeFile, afterFile):
@@ -2238,66 +2915,66 @@ index 0000000..2a1d606
 +++++++-                afterWithPath = getFileWithPath(afterX, afterPath)
 ++++++++            beforeSlash = before + "/"
 ++++++++            afterSlash = after + "/"
-++++++++
-++++++++            beforeWithPath = getFileFromPackage(beforeSlash)
-++++++++            afterWithPath = getFileFromPackage(afterSlash)
-++++++++
-++++++++            # print(str(beforeWithPath))
-++++++++            # print(str(afterWithPath))
-++++++++
-++++++++            # print("before " + before)
-++++++++            # print("after " + after)
-++++++++
-++++++++            for(beforeFile, afterFile) in zip(beforeWithPath, afterWithPath):
-++++++++
-++++++++                if(beforeFile == afterFile):
-++++++++
-++++++++                    fileBeforePath = beforeSlash + beforeFile
-++++++++                    fileAfterPath = afterSlash + afterFile
 +++++++ 
 +++++++-                beforeF = open(beforeWithPath, "r")
 +++++++-                afterF = open(afterWithPath, "r")
-++++++++                    print("file before with path : " + fileBeforePath)
-++++++++                    print("file after with path : " + fileAfterPath)
+++++++++            beforeWithPath = getFileFromPackage(beforeSlash)
+++++++++            afterWithPath = getFileFromPackage(afterSlash)
 +++++++ 
 +++++++-                setIdAfter = set()
 +++++++-                setIdBefore = set()
-++++++++                    beforeF = open(fileBeforePath, "r")
-++++++++                    afterF = open(fileAfterPath, "r")
+++++++++            # print(str(beforeWithPath))
+++++++++            # print(str(afterWithPath))
 +++++++ 
 +++++++-                for beforeLine in beforeF:
 +++++++-                    setIdBefore.add(getNameWithoutNewLine(beforeLine))
 +++++++-                
 +++++++-                for afterLine in afterF:
 +++++++-                    setIdAfter.add(getNameWithoutNewLine(afterLine))
-++++++++                    setIdAfter = set()
-++++++++                    setIdBefore = set()
+++++++++            # print("before " + before)
+++++++++            # print("after " + after)
 +++++++ 
 +++++++-                print(str(setIdBefore))
 +++++++-                print(str(setIdAfter))
+++++++++            for(beforeFile, afterFile) in zip(beforeWithPath, afterWithPath):
++++++++ 
++++++++-                for beforeIdView in setIdBefore:
++++++++-                    if beforeIdView not in setIdAfter:
++++++++-                        print("id view " + beforeIdView + " has been changed or removed from file " + getNameFileXML(beforeX))
+++++++++                if(beforeFile == afterFile):
++++++++ 
++++++++-                # print(str(setIdBefore))
++++++++-                # print(str(setIdAfter))
+++++++++                    fileBeforePath = beforeSlash + beforeFile
+++++++++                    fileAfterPath = afterSlash + afterFile
+++++++++
+++++++++                    # print("file before with path : " + fileBeforePath)
+++++++++                    # print("file after with path : " + fileAfterPath)
+++++++++
+++++++++                    beforeF = open(fileBeforePath, "r")
+++++++++                    afterF = open(fileAfterPath, "r")
+++++++++
+++++++++                    setIdAfter = set()
+++++++++                    setIdBefore = set()
+++++++++
 ++++++++                    for beforeLine in beforeF:
 ++++++++                        setIdBefore.add(getNameWithoutNewLine(beforeLine))
 ++++++++                        
 ++++++++                    for afterLine in afterF:
 ++++++++                        setIdAfter.add(getNameWithoutNewLine(afterLine))
-+++++++ 
-+++++++-                for beforeIdView in setIdBefore:
-+++++++-                    if beforeIdView not in setIdAfter:
-+++++++-                        print("id view " + beforeIdView + " has been changed or removed from file " + getNameFileXML(beforeX))
+++++++++
 ++++++++                    for beforeIdView in setIdBefore:
 ++++++++                        if beforeIdView not in setIdAfter:
 ++++++++                            pathModule = fileBeforePath.split("/")[1]
 ++++++++                            fileModule = pathModule + "/" + getNameFileXML(beforeFile)
 ++++++++                            print("id view " + beforeIdView + " has been changed or removed from file " +  fileModule)
-+++++++ 
-+++++++-                # print(str(setIdBefore))
-+++++++-                # print(str(setIdAfter))
+++++++++
 ++++++++                    # print(str(setIdBefore))
 ++++++++                    # print(str(setIdAfter))
 +++++++ 
 +++++++ def getNameWithoutNewLine(line):
 +++++++     line = line.replace("\n", "")
-+++++++@@ -172,14 +200,23 @@ def getFileWithoutPath(file, path):
++++++++@@ -172,14 +202,23 @@ def getFileWithoutPath(file, path):
 +++++++     file = file.replace(path, "")
 +++++++     return file
 +++++++ 
@@ -2325,7 +3002,7 @@ index 0000000..2a1d606
 +++++++ 
 +++++++ def setValueFromFile(file):
 +++++++     with open(file, "r") as fCase:
-+++++++@@ -202,21 +239,29 @@ def notPatternBefore(line):
++++++++@@ -202,21 +241,29 @@ def notPatternBefore(line):
 +++++++         return True
 +++++++     return False
 +++++++ 
@@ -2360,7 +3037,7 @@ index 0000000..2a1d606
 +++++++     nameFile = ""
 +++++++     posisiPattern = line.find(patternLayout)
 +++++++     lengthPattern = len(patternLayout)
-+++++++@@ -224,15 +269,14 @@ def getFile(patternLayout, patternFile, line, path):
++++++++@@ -224,15 +271,14 @@ def getFile(patternLayout, patternFile, line, path):
 +++++++ 
 +++++++     if patternFile is patternBeforeFile:
 +++++++         nameFileBefore = line[posisiFile:]
@@ -2379,7 +3056,7 @@ index 0000000..2a1d606
 +++++++     return nameFile
 +++++++ 
 +++++++ 
-+++++++@@ -245,15 +289,10 @@ def getIdView(patternIdView, line):
++++++++@@ -245,15 +291,10 @@ def getIdView(patternIdView, line):
 +++++++         nameIdView = line[posisiIdView:]
 +++++++         nameLength = len(nameIdView)
 +++++++         newId = nameIdView[:nameLength-2]
@@ -2396,7 +3073,7 @@ index 0000000..2a1d606
 +++++++ # repo = git.Repo(os.getenv('GIT_REPO_PATH'))
 +++++++ # print repo.git.status()
 +++++++ 
-+++++++@@ -261,6 +300,9 @@ if __name__ == "__main__":
++++++++@@ -261,6 +302,9 @@ if __name__ == "__main__":
 +++++++     repo_path = os.getenv('GIT_REPO_PATH')
 +++++++     # Repo object used to programmatically interact with Git repositories
 +++++++     repo = Repo(repo_path)
@@ -2406,8 +3083,19 @@ index 0000000..2a1d606
 +++++++     # check that the repository loaded correctly
 +++++++     if not repo.bare:
 +++++++         print('Repo at {} successfully loaded.'.format(repo_path))
-+++++++@@ -293,12 +335,14 @@ if __name__ == "__main__":
++++++++@@ -291,14 +335,25 @@ if __name__ == "__main__":
++++++++         a_commit = commits_list[-1]
++++++++         b_commit = "a4186acd2ad2a077a5887f8ac16c50a37ca872fc"
 +++++++ 
+++++++++        parser = optparse.OptionParser()
+++++++++        parser.add_option('-t', '--target', dest='target', default="sukasuka", help="Set parameter branch")
+++++++++
+++++++++        (options, args) = parser.parse_args()
+++++++++
+++++++++        targetBranch = ""
+++++++++        if options.target:
+++++++++            targetBranch = options.target
+++++++++
 +++++++         # beforeC = repo.head.commit
 +++++++         # afterC = "77a38266633ec3d224f5de799788adec94432492"
 ++++++++        # g = git.Git(repo_path)
@@ -2415,7 +3103,926 @@ index 0000000..2a1d606
 ++++++++        # commitMessages = g.log('%s..%s' % ("master", "sukasuka"), '--pretty=format:%ad %an - %s', '--abbrev-commit')
 +++++++ 
 +++++++-        writeFile(str(repo.git.diff('HEAD~1')))
-++++++++        writeFile(repo.git.diff("master", "sukasuka"))
+++++++++        writeFile(repo.git.diff("master", targetBranch))
+++++++++        # writeFile(commitMessages)
++++++++         # writeFile(repo.git.diff("HEAD","HEAD~1"))
++++++++-        # checkIdView()
++++++++ 
++++++++-        # pass
++++++++         # commits = list(repo.iter_commits('master'))[:COMMITS_TO_PRINT]
++++++++         # for commit in commits:
++++++++         #     print_commit(commit)
+++++++\ No newline at end of file
+++++++diff --git a/gradle.properties b/gradle.properties
+++++++deleted file mode 100644
+++++++index c77742e..0000000
+++++++--- a/gradle.properties
++++++++++ /dev/null
+++++++@@ -1,25 +0,0 @@
+++++++-# Project-wide Gradle settings.
+++++++-# IDE (e.g. Android Studio) users:
+++++++-# Gradle settings configured through the IDE *will override*
+++++++-# any settings specified in this file.
+++++++-# For more details on how to configure your build environment visit
+++++++-# http://www.gradle.org/docs/current/userguide/build_environment.html
+++++++-# Specifies the JVM arguments used for the daemon process.
+++++++-# The setting is particularly useful for tweaking memory settings.
+++++++-org.gradle.jvmargs=-Xmx1536m
+++++++-# When configured, Gradle will run in incubating parallel mode.
+++++++-# This option should only be used with decoupled projects. More details, visit
+++++++-# http://www.gradle.org/docs/current/userguide/multi_project_builds.html#sec:decoupled_projects
+++++++-# org.gradle.parallel=true
+++++++-# AndroidX package structure to make it clearer which packages are bundled with the
+++++++-# Android operating system, and which are packaged with your app's APK
+++++++-# https://developer.android.com/topic/libraries/support-library/androidx-rn
+++++++-android.useAndroidX=true
+++++++-# Automatically convert third-party libraries to use AndroidX
+++++++-android.enableJetifier=true
+++++++-# Kotlin code style for this project: "official" or "obsolete":
+++++++-kotlin.code.style=official
+++++++-
+++++++-android.enableUnitTestBinaryResources=true
+++++++-ApiKeyMovieDB="64c262d79da6533c4e9abdc985d90e60"
+++++++-
+++++++diff --git a/headdiff.txt b/headdiff.txt
+++++++new file mode 100644
+++++++index 0000000..78a988c
+++++++--- /dev/null
++++++++++ b/headdiff.txt
+++++++@@ -0,0 +1,881 @@
++++++++diff --git a/app/item_favorite.txt b/app/item_favorite.txt
++++++++new file mode 100644
++++++++index 0000000..b10293a
++++++++--- /dev/null
+++++++++++ b/app/item_favorite.txt
++++++++@@ -0,0 +1 @@
+++++++++tv_title_movie_favorite
++++++++\ No newline at end of file
++++++++diff --git a/app/src/main/res/layout/item_favorite.xml b/app/src/main/res/layout/item_favorite.xml
++++++++index 786648d..ca61829 100644
++++++++--- a/app/src/main/res/layout/item_favorite.xml
+++++++++++ b/app/src/main/res/layout/item_favorite.xml
++++++++@@ -35,7 +35,7 @@
++++++++                 android:layout_width="wrap_content"
++++++++                 android:layout_height="wrap_content"
++++++++                 android:padding="@dimen/_8dp"
++++++++-                android:id="@+id/tv_title_movie_favorite"
+++++++++                android:id="@+id/tv_year_movie_favoritef"
++++++++                 android:textSize="16sp"
++++++++                 android:background="#80333333"
++++++++                 app:layout_constraintEnd_toEndOf="parent"
++++++++@@ -49,8 +49,8 @@
++++++++                 android:textColor="@android:color/white"
++++++++                 android:layout_height="wrap_content"
++++++++                 android:text='@{movie.title}'
++++++++-                android:id="@+id/tv_year_movie_favorite"
++++++++                 android:ellipsize="end"
+++++++++                android:id="@+id/tv_title_movie_favorite"
++++++++                 android:maxLines="2"
++++++++                 android:gravity="center"
++++++++                 android:layout_marginTop="@dimen/_8dp"
++++++++diff --git a/app/src/main/res/layout/item_shimmer.xml b/app/src/main/res/layout/item_shimmer.xml
++++++++deleted file mode 100644
++++++++index f660d95..0000000
++++++++--- a/app/src/main/res/layout/item_shimmer.xml
+++++++++++ /dev/null
++++++++@@ -1,46 +0,0 @@
++++++++-<?xml version="1.0" encoding="utf-8"?>
++++++++-
++++++++-<layout xmlns:android="http://schemas.android.com/apk/res/android"
++++++++-        xmlns:app="http://schemas.android.com/apk/res-auto">
++++++++-
++++++++-    <androidx.constraintlayout.widget.ConstraintLayout
++++++++-            android:id="@+id/rootLayout"
++++++++-            android:layout_width="match_parent"
++++++++-            android:layout_height="wrap_content">
++++++++-
++++++++-        <androidx.cardview.widget.CardView
++++++++-                android:id="@+id/ivImageShimmer"
++++++++-                android:layout_width="match_parent"
++++++++-                android:layout_height="185dp"
++++++++-                app:layout_constraintEnd_toEndOf="parent"
++++++++-                app:layout_constraintStart_toStartOf="parent"
++++++++-                app:layout_constraintTop_toTopOf="parent"
++++++++-                app:layout_constraintBottom_toBottomOf="parent"
++++++++-                android:layout_marginRight="@dimen/_8dp"
++++++++-                android:layout_marginEnd="@dimen/_8dp"
++++++++-                android:background="@color/colorShimmer"
++++++++-                app:cardCornerRadius="@dimen/_8dp"
++++++++-                app:cardElevation="4dp">
++++++++-
++++++++-            <View
++++++++-                    android:layout_width="match_parent"
++++++++-                    android:layout_height="185dp"
++++++++-                    android:background="@color/colorShimmer" />
++++++++-
++++++++-        </androidx.cardview.widget.CardView>
++++++++-
++++++++-        <View
++++++++-                android:id="@+id/tvTitleShimmer"
++++++++-                android:layout_width="120dp"
++++++++-                android:layout_height="16dp"
++++++++-                android:background="@color/colorShimmer"
++++++++-                android:layout_marginTop="@dimen/_8dp"
++++++++-                app:layout_constraintTop_toBottomOf="@id/ivImageShimmer"
++++++++-                app:layout_constraintStart_toStartOf="parent"
++++++++-                app:layout_constraintEnd_toEndOf="parent"
++++++++-                app:layout_constraintBottom_toBottomOf="parent"/>
++++++++-
++++++++-
++++++++-    </androidx.constraintlayout.widget.ConstraintLayout>
++++++++-
++++++++-</layout>
++++++++\ No newline at end of file
++++++++diff --git a/app2/src/main/res/layout/item_favorite.xml b/app2/src/main/res/layout/item_favorite.xml
++++++++index 786648d..fb76a99 100644
++++++++--- a/app2/src/main/res/layout/item_favorite.xml
+++++++++++ b/app2/src/main/res/layout/item_favorite.xml
++++++++@@ -35,7 +35,7 @@
++++++++                 android:layout_width="wrap_content"
++++++++                 android:layout_height="wrap_content"
++++++++                 android:padding="@dimen/_8dp"
++++++++-                android:id="@+id/tv_title_movie_favorite"
+++++++++                android:id="@+id/tv_year_movie_favoritef"
++++++++                 android:textSize="16sp"
++++++++                 android:background="#80333333"
++++++++                 app:layout_constraintEnd_toEndOf="parent"
++++++++@@ -49,7 +49,8 @@
++++++++                 android:textColor="@android:color/white"
++++++++                 android:layout_height="wrap_content"
++++++++                 android:text='@{movie.title}'
++++++++-                android:id="@+id/tv_year_movie_favorite"
+++++++++                android:ellipsize="end"
+++++++++                android:id="@+id/tv_title_movie_favorite"
++++++++                 android:ellipsize="end"
++++++++                 android:maxLines="2"
++++++++                 android:gravity="center"
++++++++diff --git a/app2/src/main/res/layout/item_movie.xml b/app2/src/main/res/layout/item_movie.xml
++++++++index ec462bd..453cb06 100644
++++++++--- a/app2/src/main/res/layout/item_movie.xml
+++++++++++ b/app2/src/main/res/layout/item_movie.xml
++++++++@@ -15,7 +15,7 @@
++++++++             android:layout_height="wrap_content">
++++++++ 
++++++++         <androidx.appcompat.widget.AppCompatImageView
++++++++-                android:id="@+id/iv_image_poster"
+++++++++                android:id="@+id/iv_image_posterf"
++++++++                 android:contentDescription="@string/example_title"
++++++++                 android:scaleType="fitCenter"
++++++++                 app:layout_constraintEnd_toEndOf="parent"
++++++++@@ -45,7 +45,7 @@
++++++++                 app:fontFamily="@font/roboto_medium"/>
++++++++ 
++++++++         <androidx.appcompat.widget.AppCompatTextView
++++++++-                android:id="@+id/tv_title_movie"
+++++++++                android:id="@+id/tv_title_movief"
++++++++                 tools:text="@string/tv_example_title"
++++++++                 android:layout_width="match_parent"
++++++++                 android:textColor="@android:color/white"
++++++++@@ -64,4 +64,4 @@
++++++++ 
++++++++     </androidx.constraintlayout.widget.ConstraintLayout>
++++++++ 
++++++++-</layout>
++++++++\ No newline at end of file
+++++++++</layout>
++++++++diff --git a/headdiff.txt b/headdiff.txt
++++++++new file mode 100644
++++++++index 0000000..3423b47
++++++++--- /dev/null
+++++++++++ b/headdiff.txt
++++++++@@ -0,0 +1,400 @@
+++++++++diff --git a/app/item_favorite.txt b/app/item_favorite.txt
+++++++++new file mode 100644
+++++++++index 0000000..b10293a
+++++++++--- /dev/null
++++++++++++ b/app/item_favorite.txt
+++++++++@@ -0,0 +1 @@
++++++++++tv_title_movie_favorite
+++++++++\ No newline at end of file
+++++++++diff --git a/app/src/main/res/layout/item_favorite.xml b/app/src/main/res/layout/item_favorite.xml
+++++++++index 786648d..ca61829 100644
+++++++++--- a/app/src/main/res/layout/item_favorite.xml
++++++++++++ b/app/src/main/res/layout/item_favorite.xml
+++++++++@@ -35,7 +35,7 @@
+++++++++                 android:layout_width="wrap_content"
+++++++++                 android:layout_height="wrap_content"
+++++++++                 android:padding="@dimen/_8dp"
+++++++++-                android:id="@+id/tv_title_movie_favorite"
++++++++++                android:id="@+id/tv_year_movie_favoritef"
+++++++++                 android:textSize="16sp"
+++++++++                 android:background="#80333333"
+++++++++                 app:layout_constraintEnd_toEndOf="parent"
+++++++++@@ -49,8 +49,8 @@
+++++++++                 android:textColor="@android:color/white"
+++++++++                 android:layout_height="wrap_content"
+++++++++                 android:text='@{movie.title}'
+++++++++-                android:id="@+id/tv_year_movie_favorite"
+++++++++                 android:ellipsize="end"
++++++++++                android:id="@+id/tv_title_movie_favorite"
+++++++++                 android:maxLines="2"
+++++++++                 android:gravity="center"
+++++++++                 android:layout_marginTop="@dimen/_8dp"
+++++++++diff --git a/app2/src/main/res/layout/item_favorite.xml b/app2/src/main/res/layout/item_favorite.xml
+++++++++index 786648d..fb76a99 100644
+++++++++--- a/app2/src/main/res/layout/item_favorite.xml
++++++++++++ b/app2/src/main/res/layout/item_favorite.xml
+++++++++@@ -35,7 +35,7 @@
+++++++++                 android:layout_width="wrap_content"
+++++++++                 android:layout_height="wrap_content"
+++++++++                 android:padding="@dimen/_8dp"
+++++++++-                android:id="@+id/tv_title_movie_favorite"
++++++++++                android:id="@+id/tv_year_movie_favoritef"
+++++++++                 android:textSize="16sp"
+++++++++                 android:background="#80333333"
+++++++++                 app:layout_constraintEnd_toEndOf="parent"
+++++++++@@ -49,7 +49,8 @@
+++++++++                 android:textColor="@android:color/white"
+++++++++                 android:layout_height="wrap_content"
+++++++++                 android:text='@{movie.title}'
+++++++++-                android:id="@+id/tv_year_movie_favorite"
++++++++++                android:ellipsize="end"
++++++++++                android:id="@+id/tv_title_movie_favorite"
+++++++++                 android:ellipsize="end"
+++++++++                 android:maxLines="2"
+++++++++                 android:gravity="center"
+++++++++diff --git a/app2/src/main/res/layout/item_movie.xml b/app2/src/main/res/layout/item_movie.xml
+++++++++index ec462bd..453cb06 100644
+++++++++--- a/app2/src/main/res/layout/item_movie.xml
++++++++++++ b/app2/src/main/res/layout/item_movie.xml
+++++++++@@ -15,7 +15,7 @@
+++++++++             android:layout_height="wrap_content">
+++++++++ 
+++++++++         <androidx.appcompat.widget.AppCompatImageView
+++++++++-                android:id="@+id/iv_image_poster"
++++++++++                android:id="@+id/iv_image_posterf"
+++++++++                 android:contentDescription="@string/example_title"
+++++++++                 android:scaleType="fitCenter"
+++++++++                 app:layout_constraintEnd_toEndOf="parent"
+++++++++@@ -45,7 +45,7 @@
+++++++++                 app:fontFamily="@font/roboto_medium"/>
+++++++++ 
+++++++++         <androidx.appcompat.widget.AppCompatTextView
+++++++++-                android:id="@+id/tv_title_movie"
++++++++++                android:id="@+id/tv_title_movief"
+++++++++                 tools:text="@string/tv_example_title"
+++++++++                 android:layout_width="match_parent"
+++++++++                 android:textColor="@android:color/white"
+++++++++@@ -64,4 +64,4 @@
+++++++++ 
+++++++++     </androidx.constraintlayout.widget.ConstraintLayout>
+++++++++ 
+++++++++-</layout>
+++++++++\ No newline at end of file
++++++++++</layout>
+++++++++diff --git a/test_case.txt b/test_case.txt
+++++++++index bf18197..e67a6a6 100644
+++++++++--- a/test_case.txt
++++++++++++ b/test_case.txt
+++++++++@@ -1,3 +1,4 @@
+++++++++-item_movie.xml
+++++++++-item_favorite.xml
+++++++++-item_shimmer.xml
+++++++++\ No newline at end of file
++++++++++app/item_movie.xml
++++++++++app/item_favorite.xml
++++++++++app/item_shimmer.xml
++++++++++app2
+++++++++\ No newline at end of file
+++++++++diff --git a/xml_id_script.py b/xml_id_script.py
+++++++++index 5708213..f61f75e 100644
+++++++++--- a/xml_id_script.py
++++++++++++ b/xml_id_script.py
+++++++++@@ -18,8 +18,6 @@ afterPath = "after/"
+++++++++ pathBefore = "before"
+++++++++ pathAfter = "after"
+++++++++ 
+++++++++-
+++++++++-
+++++++++ def print_repository(repo):
+++++++++     print('Repo description: {}'.format(repo.description))
+++++++++     print('Repo active branch is {}'.format(repo.active_branch))
+++++++++@@ -38,8 +36,6 @@ def print_commit(commit):
+++++++++     print(str("count: {} and size: {}".format(commit.count(),
+++++++++                                               commit.size)))
+++++++++ 
+++++++++-# def print_diff(commitA, commitB):
+++++++++-#     print('-----')
+++++++++ 
+++++++++ def writeFile(input):
+++++++++     # fileName = "/temp/input.txt"
+++++++++@@ -62,53 +58,72 @@ def writeFile(input):
+++++++++     nameFileBefore = ""
+++++++++     nameFileCompare = ""
+++++++++ 
++++++++++    nameFileWithModul = ""
++++++++++
+++++++++     setIdAfter = set()
+++++++++     setIdBefore = set()
+++++++++ 
++++++++++    modul = ""
++++++++++
+++++++++     newId = ""
+++++++++ 
+++++++++-    fileCase = None
++++++++++    tempModul = list()
++++++++++    tempNameFile = set()
+++++++++ 
+++++++++     if(os.path.exists(testCase)):
+++++++++         with open(testCase, "r") as fCase:
+++++++++             strStrip = fCase.read().splitlines()
+++++++++             tempCase = set(strStrip)
+++++++++             print("tempCase: " + str(tempCase))
++++++++++        
++++++++++        z = open(testCase, "r")
++++++++++
++++++++++        for lineModul in z:
++++++++++            strOnlyModul = lineModul.replace("\n", "").split("/")[0]
++++++++++            stryOnlyName = lineModul.replace("\n", "").split("/")
++++++++++            tempModul.append(strOnlyModul)
++++++++++            if(len(stryOnlyName) > 1):
++++++++++                modulSlash = strOnlyModul + "/" + stryOnlyName[1]
++++++++++                tempNameFile.add(str(modulSlash))
++++++++++        print("tempModule: " + str(tempModul))
++++++++++        print("tempName: " + str(tempNameFile))
+++++++++ 
+++++++++ 
+++++++++     f = open(tempName, "r")
+++++++++     for line in f:
+++++++++         if(patternBeforeFile in line[:3]):
+++++++++             if patternLayout in line:
++++++++++                modul = str(line[6:].split("/")[0])
+++++++++                 nameFileBefore = getFile(patternLayout, patternBeforeFile, line, pathBefore)
+++++++++                 nameFileCompare = getNameFileXML(nameFileBefore)
+++++++++         
+++++++++         if(patternAfterFile in line[:3]):
+++++++++             if patternLayout in line:
++++++++++                modul = str(line[6:].split("/")[0])
+++++++++                 nameFileAfter = getFile(patternLayout, patternAfterFile, line, pathAfter)
+++++++++             elif patternRemoveFile in line:
+++++++++                 if nameFileCompare in tempCase:
+++++++++                         print("Previous file has removed with name : " + nameFileCompare)
+++++++++                         nameFileCompare = ""
+++++++++ 
+++++++++-        if(nameFileCompare in tempCase):
+++++++++-            if(patternBeforeIdView == line[:1] and notPatternBefore(line)):
++++++++++        if(modul in tempModul):
++++++++++            if(patternBeforeIdView == line[:1]):
+++++++++                 newId = getIdView(patternIdView, line)
+++++++++                 if(newId.strip()):
+++++++++                     setIdBefore.add(newId.strip())
+++++++++-                    createFile(pathBefore, nameFileBefore, newId)
++++++++++                    createFile(pathBefore, nameFileBefore, newId, modul)
+++++++++                     newId = ""
+++++++++         
+++++++++             if(patternAfterIdView == line[:1]):
+++++++++                 newId = getIdView(patternIdView, line)
+++++++++                 if(newId.strip()):
+++++++++                     setIdAfter.add(newId.strip())
+++++++++-                    createFile(pathAfter, nameFileAfter, newId)
++++++++++                    createFile(pathAfter, nameFileAfter, newId, modul)
+++++++++                     newId = ""
+++++++++ 
+++++++++-        
+++++++++-    setFileBefore = getFileFromPackage(pathBefore)
+++++++++-    setFileAfter = getFileFromPackage(pathAfter)
++++++++++
++++++++++    setFileBefore = getModulFromPackage(pathBefore)
++++++++++    setFileAfter = getModulFromPackage(pathAfter)
+++++++++ 
+++++++++     checkIdView(setFileBefore, setFileAfter, beforePath, afterPath)
+++++++++ 
+++++++++@@ -129,36 +144,49 @@ def checkIdView(beforeFile, afterFile, beforePath, afterPath):
+++++++++     if(len(beforeFile) == len(afterFile)):
+++++++++ 
+++++++++         for(before, after) in zip(beforeFile, afterFile):
+++++++++-            beforeX = getFileWithoutPath(before, beforePath)
+++++++++-            afterX = getFileWithoutPath(after, afterPath)
+++++++++ 
+++++++++-            print(beforeX)
+++++++++-            print(afterX)
+++++++++-            if(beforeX == afterX):
+++++++++-                beforeWithPath = getFileWithPath(beforeX, beforePath)
+++++++++-                afterWithPath = getFileWithPath(afterX, afterPath)
++++++++++            beforeSlash = before + "/"
++++++++++            afterSlash = after + "/"
++++++++++
++++++++++            beforeWithPath = getFileFromPackage(beforeSlash)
++++++++++            afterWithPath = getFileFromPackage(afterSlash)
++++++++++
++++++++++            # print(str(beforeWithPath))
++++++++++            # print(str(afterWithPath))
++++++++++
++++++++++            # print("before " + before)
++++++++++            # print("after " + after)
++++++++++
++++++++++            for(beforeFile, afterFile) in zip(beforeWithPath, afterWithPath):
++++++++++
++++++++++                if(beforeFile == afterFile):
++++++++++
++++++++++                    fileBeforePath = beforeSlash + beforeFile
++++++++++                    fileAfterPath = afterSlash + afterFile
+++++++++ 
+++++++++-                beforeF = open(beforeWithPath, "r")
+++++++++-                afterF = open(afterWithPath, "r")
++++++++++                    print("file before with path : " + fileBeforePath)
++++++++++                    print("file after with path : " + fileAfterPath)
+++++++++ 
+++++++++-                setIdAfter = set()
+++++++++-                setIdBefore = set()
++++++++++                    beforeF = open(fileBeforePath, "r")
++++++++++                    afterF = open(fileAfterPath, "r")
+++++++++ 
+++++++++-                for beforeLine in beforeF:
+++++++++-                    setIdBefore.add(getNameWithoutNewLine(beforeLine))
+++++++++-                
+++++++++-                for afterLine in afterF:
+++++++++-                    setIdAfter.add(getNameWithoutNewLine(afterLine))
++++++++++                    setIdAfter = set()
++++++++++                    setIdBefore = set()
+++++++++ 
+++++++++-                print(str(setIdBefore))
+++++++++-                print(str(setIdAfter))
++++++++++                    for beforeLine in beforeF:
++++++++++                        setIdBefore.add(getNameWithoutNewLine(beforeLine))
++++++++++                        
++++++++++                    for afterLine in afterF:
++++++++++                        setIdAfter.add(getNameWithoutNewLine(afterLine))
+++++++++ 
+++++++++-                for beforeIdView in setIdBefore:
+++++++++-                    if beforeIdView not in setIdAfter:
+++++++++-                        print("id view " + beforeIdView + " has been changed or removed from file " + getNameFileXML(beforeX))
++++++++++                    for beforeIdView in setIdBefore:
++++++++++                        if beforeIdView not in setIdAfter:
++++++++++                            pathModule = fileBeforePath.split("/")[1]
++++++++++                            fileModule = pathModule + "/" + getNameFileXML(beforeFile)
++++++++++                            print("id view " + beforeIdView + " has been changed or removed from file " +  fileModule)
+++++++++ 
+++++++++-                # print(str(setIdBefore))
+++++++++-                # print(str(setIdAfter))
++++++++++                    # print(str(setIdBefore))
++++++++++                    # print(str(setIdAfter))
+++++++++ 
+++++++++ def getNameWithoutNewLine(line):
+++++++++     line = line.replace("\n", "")
+++++++++@@ -172,14 +200,23 @@ def getFileWithoutPath(file, path):
+++++++++     file = file.replace(path, "")
+++++++++     return file
+++++++++ 
+++++++++-def getFileFromPackage(path):
++++++++++def getFileFromPackage(modul):
+++++++++     setFile = set()
++++++++++
++++++++++    for getfile in os.listdir(modul):
++++++++++        setFile.add(getfile)
++++++++++    
++++++++++    # print("file " + str(setFile))
++++++++++    return setFile
++++++++++
++++++++++def getModulFromPackage(path):
++++++++++    setModul = set()
+++++++++     for filename in os.listdir(path):
+++++++++         filePath = path + "/" + filename
+++++++++-        setFile.add(filePath.strip())
++++++++++        setModul.add(filePath)
+++++++++     
+++++++++-    print(setFile)
+++++++++-    return setFile
++++++++++    # print("package " + str(setModul))
++++++++++    return setModul
+++++++++ 
+++++++++ def setValueFromFile(file):
+++++++++     with open(file, "r") as fCase:
+++++++++@@ -202,21 +239,29 @@ def notPatternBefore(line):
+++++++++         return True
+++++++++     return False
+++++++++ 
+++++++++-def createFile(path, nameFile, input):
++++++++++def createFile(path, nameFile, input, modul):
++++++++++
++++++++++    nameFileModul = path + "/" + modul + "/" + nameFile
++++++++++    nameModul = path + "/" + modul
++++++++++
+++++++++     if not os.path.exists(path):
+++++++++-           os.mkdir(path)
++++++++++        os.mkdir(path)
++++++++++    
++++++++++    if not os.path.exists(nameModul):
++++++++++        os.mkdir(nameModul)
+++++++++ 
+++++++++-    if os.path.isfile(nameFile):
+++++++++-        with open(nameFile, 'a') as file:
++++++++++    if os.path.isfile(nameFileModul):
++++++++++        with open(nameFileModul, 'a') as file:
+++++++++             file.write("\n" + input)
+++++++++     else:
+++++++++-        with open(nameFile, 'w') as fileW:
++++++++++        with open(nameFileModul, 'w') as fileW:
+++++++++             fileW.write(input)
+++++++++         # myFile = open(nameFile, 'w')
+++++++++         # myFile.write(input)
+++++++++         # myFile.close()
+++++++++ 
+++++++++ def getFile(patternLayout, patternFile, line, path):
++++++++++
+++++++++     nameFile = ""
+++++++++     posisiPattern = line.find(patternLayout)
+++++++++     lengthPattern = len(patternLayout)
+++++++++@@ -224,15 +269,14 @@ def getFile(patternLayout, patternFile, line, path):
+++++++++ 
+++++++++     if patternFile is patternBeforeFile:
+++++++++         nameFileBefore = line[posisiFile:]
+++++++++-        pathBefore = path
+++++++++-        nameFile = pathBefore + "/" + nameFileBefore
++++++++++        nameFile = nameFileBefore
+++++++++     elif patternFile is patternAfterFile:
+++++++++         nameFileAfter = line[posisiFile:]
+++++++++-        pathAfter = path
+++++++++-        nameFile = pathAfter + "/" + nameFileAfter
++++++++++        nameFile = nameFileAfter
+++++++++     
+++++++++     nameFile = nameFile.replace("xml", "txt")
+++++++++     nameFile = nameFile.replace("\n", "")
++++++++++    # print(nameFile)
+++++++++     return nameFile
+++++++++ 
+++++++++ 
+++++++++@@ -245,15 +289,10 @@ def getIdView(patternIdView, line):
+++++++++         nameIdView = line[posisiIdView:]
+++++++++         nameLength = len(nameIdView)
+++++++++         newId = nameIdView[:nameLength-2]
+++++++++-        print(newId)
++++++++++        # print(newId)
+++++++++ 
+++++++++     return newId
+++++++++ 
+++++++++-# def checkIdView():
+++++++++-
+++++++++-# repo_path = os.getenv('GIT_REPO_PATH')
+++++++++-# print_repository(repo_path)
+++++++++-
+++++++++ # repo = git.Repo(os.getenv('GIT_REPO_PATH'))
+++++++++ # print repo.git.status()
+++++++++ 
+++++++++@@ -261,6 +300,9 @@ if __name__ == "__main__":
+++++++++     repo_path = os.getenv('GIT_REPO_PATH')
+++++++++     # Repo object used to programmatically interact with Git repositories
+++++++++     repo = Repo(repo_path)
++++++++++
++++++++++    defaultBranch = "master"
++++++++++    
+++++++++     # check that the repository loaded correctly
+++++++++     if not repo.bare:
+++++++++         print('Repo at {} successfully loaded.'.format(repo_path))
+++++++++@@ -293,12 +335,14 @@ if __name__ == "__main__":
+++++++++ 
+++++++++         # beforeC = repo.head.commit
+++++++++         # afterC = "77a38266633ec3d224f5de799788adec94432492"
++++++++++        # g = git.Git(repo_path)
++++++++++        # g.pull()
++++++++++        # commitMessages = g.log('%s..%s' % ("master", "sukasuka"), '--pretty=format:%ad %an - %s', '--abbrev-commit')
+++++++++ 
+++++++++-        writeFile(str(repo.git.diff('HEAD~1')))
++++++++++        writeFile(repo.git.diff("master", "sukasuka"))
++++++++++        # writeFile(commitMessages)
+++++++++         # writeFile(repo.git.diff("HEAD","HEAD~1"))
+++++++++-        # checkIdView()
+++++++++ 
+++++++++-        # pass
+++++++++         # commits = list(repo.iter_commits('master'))[:COMMITS_TO_PRINT]
+++++++++         # for commit in commits:
+++++++++         #     print_commit(commit)
++++++++diff --git a/test_case.txt b/test_case.txt
++++++++index bf18197..e67a6a6 100644
++++++++--- a/test_case.txt
+++++++++++ b/test_case.txt
++++++++@@ -1,3 +1,4 @@
++++++++-item_movie.xml
++++++++-item_favorite.xml
++++++++-item_shimmer.xml
++++++++\ No newline at end of file
+++++++++app/item_movie.xml
+++++++++app/item_favorite.xml
+++++++++app/item_shimmer.xml
+++++++++app2
++++++++\ No newline at end of file
++++++++diff --git a/xml_id_script.py b/xml_id_script.py
++++++++index 5708213..b497ecb 100644
++++++++--- a/xml_id_script.py
+++++++++++ b/xml_id_script.py
++++++++@@ -2,6 +2,8 @@ import os
++++++++ import shutil
++++++++ import os.path
++++++++ import git
+++++++++import optparse
+++++++++from optparse import OptionParser
++++++++ import itertools
++++++++ from git import Repo
++++++++ 
++++++++@@ -18,8 +20,6 @@ afterPath = "after/"
++++++++ pathBefore = "before"
++++++++ pathAfter = "after"
++++++++ 
++++++++-
++++++++-
++++++++ def print_repository(repo):
++++++++     print('Repo description: {}'.format(repo.description))
++++++++     print('Repo active branch is {}'.format(repo.active_branch))
++++++++@@ -38,8 +38,6 @@ def print_commit(commit):
++++++++     print(str("count: {} and size: {}".format(commit.count(),
++++++++                                               commit.size)))
++++++++ 
++++++++-# def print_diff(commitA, commitB):
++++++++-#     print('-----')
++++++++ 
++++++++ def writeFile(input):
++++++++     # fileName = "/temp/input.txt"
++++++++@@ -62,53 +60,72 @@ def writeFile(input):
++++++++     nameFileBefore = ""
++++++++     nameFileCompare = ""
++++++++ 
+++++++++    nameFileWithModul = ""
+++++++++
++++++++     setIdAfter = set()
++++++++     setIdBefore = set()
++++++++ 
+++++++++    modul = ""
+++++++++
++++++++     newId = ""
++++++++ 
++++++++-    fileCase = None
+++++++++    tempModul = list()
+++++++++    tempNameFile = set()
++++++++ 
++++++++     if(os.path.exists(testCase)):
++++++++         with open(testCase, "r") as fCase:
++++++++             strStrip = fCase.read().splitlines()
++++++++             tempCase = set(strStrip)
++++++++             print("tempCase: " + str(tempCase))
+++++++++        
+++++++++        z = open(testCase, "r")
+++++++++
+++++++++        for lineModul in z:
+++++++++            strOnlyModul = lineModul.replace("\n", "").split("/")[0]
+++++++++            stryOnlyName = lineModul.replace("\n", "").split("/")
+++++++++            tempModul.append(strOnlyModul)
+++++++++            if(len(stryOnlyName) > 1):
+++++++++                modulSlash = strOnlyModul + "/" + stryOnlyName[1]
+++++++++                tempNameFile.add(str(modulSlash))
+++++++++        print("tempModule: " + str(tempModul))
+++++++++        print("tempName: " + str(tempNameFile))
++++++++ 
++++++++ 
++++++++     f = open(tempName, "r")
++++++++     for line in f:
++++++++         if(patternBeforeFile in line[:3]):
++++++++             if patternLayout in line:
+++++++++                modul = str(line[6:].split("/")[0])
++++++++                 nameFileBefore = getFile(patternLayout, patternBeforeFile, line, pathBefore)
++++++++-                nameFileCompare = getNameFileXML(nameFileBefore)
+++++++++                nameFileCompare = modul + "/" + getNameFileXML(nameFileBefore)
++++++++         
++++++++         if(patternAfterFile in line[:3]):
++++++++             if patternLayout in line:
+++++++++                modul = str(line[6:].split("/")[0])
++++++++                 nameFileAfter = getFile(patternLayout, patternAfterFile, line, pathAfter)
++++++++             elif patternRemoveFile in line:
++++++++-                if nameFileCompare in tempCase:
+++++++++                if nameFileCompare in tempNameFile:
++++++++                         print("Previous file has removed with name : " + nameFileCompare)
++++++++                         nameFileCompare = ""
++++++++ 
++++++++-        if(nameFileCompare in tempCase):
++++++++-            if(patternBeforeIdView == line[:1] and notPatternBefore(line)):
+++++++++        if(modul in tempModul):
+++++++++            if(patternBeforeIdView == line[:1]):
++++++++                 newId = getIdView(patternIdView, line)
++++++++                 if(newId.strip()):
++++++++                     setIdBefore.add(newId.strip())
++++++++-                    createFile(pathBefore, nameFileBefore, newId)
+++++++++                    createFile(pathBefore, nameFileBefore, newId, modul)
++++++++                     newId = ""
++++++++         
++++++++             if(patternAfterIdView == line[:1]):
++++++++                 newId = getIdView(patternIdView, line)
++++++++                 if(newId.strip()):
++++++++                     setIdAfter.add(newId.strip())
++++++++-                    createFile(pathAfter, nameFileAfter, newId)
+++++++++                    createFile(pathAfter, nameFileAfter, newId, modul)
++++++++                     newId = ""
++++++++ 
++++++++-        
++++++++-    setFileBefore = getFileFromPackage(pathBefore)
++++++++-    setFileAfter = getFileFromPackage(pathAfter)
+++++++++
+++++++++    setFileBefore = getModulFromPackage(pathBefore)
+++++++++    setFileAfter = getModulFromPackage(pathAfter)
++++++++ 
++++++++     checkIdView(setFileBefore, setFileAfter, beforePath, afterPath)
++++++++ 
++++++++@@ -129,36 +146,49 @@ def checkIdView(beforeFile, afterFile, beforePath, afterPath):
++++++++     if(len(beforeFile) == len(afterFile)):
++++++++ 
++++++++         for(before, after) in zip(beforeFile, afterFile):
++++++++-            beforeX = getFileWithoutPath(before, beforePath)
++++++++-            afterX = getFileWithoutPath(after, afterPath)
++++++++ 
++++++++-            print(beforeX)
++++++++-            print(afterX)
++++++++-            if(beforeX == afterX):
++++++++-                beforeWithPath = getFileWithPath(beforeX, beforePath)
++++++++-                afterWithPath = getFileWithPath(afterX, afterPath)
+++++++++            beforeSlash = before + "/"
+++++++++            afterSlash = after + "/"
++++++++ 
++++++++-                beforeF = open(beforeWithPath, "r")
++++++++-                afterF = open(afterWithPath, "r")
+++++++++            beforeWithPath = getFileFromPackage(beforeSlash)
+++++++++            afterWithPath = getFileFromPackage(afterSlash)
++++++++ 
++++++++-                setIdAfter = set()
++++++++-                setIdBefore = set()
+++++++++            # print(str(beforeWithPath))
+++++++++            # print(str(afterWithPath))
++++++++ 
++++++++-                for beforeLine in beforeF:
++++++++-                    setIdBefore.add(getNameWithoutNewLine(beforeLine))
++++++++-                
++++++++-                for afterLine in afterF:
++++++++-                    setIdAfter.add(getNameWithoutNewLine(afterLine))
+++++++++            # print("before " + before)
+++++++++            # print("after " + after)
++++++++ 
++++++++-                print(str(setIdBefore))
++++++++-                print(str(setIdAfter))
+++++++++            for(beforeFile, afterFile) in zip(beforeWithPath, afterWithPath):
++++++++ 
++++++++-                for beforeIdView in setIdBefore:
++++++++-                    if beforeIdView not in setIdAfter:
++++++++-                        print("id view " + beforeIdView + " has been changed or removed from file " + getNameFileXML(beforeX))
+++++++++                if(beforeFile == afterFile):
++++++++ 
++++++++-                # print(str(setIdBefore))
++++++++-                # print(str(setIdAfter))
+++++++++                    fileBeforePath = beforeSlash + beforeFile
+++++++++                    fileAfterPath = afterSlash + afterFile
+++++++++
+++++++++                    # print("file before with path : " + fileBeforePath)
+++++++++                    # print("file after with path : " + fileAfterPath)
+++++++++
+++++++++                    beforeF = open(fileBeforePath, "r")
+++++++++                    afterF = open(fileAfterPath, "r")
+++++++++
+++++++++                    setIdAfter = set()
+++++++++                    setIdBefore = set()
+++++++++
+++++++++                    for beforeLine in beforeF:
+++++++++                        setIdBefore.add(getNameWithoutNewLine(beforeLine))
+++++++++                        
+++++++++                    for afterLine in afterF:
+++++++++                        setIdAfter.add(getNameWithoutNewLine(afterLine))
+++++++++
+++++++++                    for beforeIdView in setIdBefore:
+++++++++                        if beforeIdView not in setIdAfter:
+++++++++                            pathModule = fileBeforePath.split("/")[1]
+++++++++                            fileModule = pathModule + "/" + getNameFileXML(beforeFile)
+++++++++                            print("id view " + beforeIdView + " has been changed or removed from file " +  fileModule)
+++++++++
+++++++++                    # print(str(setIdBefore))
+++++++++                    # print(str(setIdAfter))
++++++++ 
++++++++ def getNameWithoutNewLine(line):
++++++++     line = line.replace("\n", "")
++++++++@@ -172,14 +202,23 @@ def getFileWithoutPath(file, path):
++++++++     file = file.replace(path, "")
++++++++     return file
++++++++ 
++++++++-def getFileFromPackage(path):
+++++++++def getFileFromPackage(modul):
++++++++     setFile = set()
+++++++++
+++++++++    for getfile in os.listdir(modul):
+++++++++        setFile.add(getfile)
+++++++++    
+++++++++    # print("file " + str(setFile))
+++++++++    return setFile
+++++++++
+++++++++def getModulFromPackage(path):
+++++++++    setModul = set()
++++++++     for filename in os.listdir(path):
++++++++         filePath = path + "/" + filename
++++++++-        setFile.add(filePath.strip())
+++++++++        setModul.add(filePath)
++++++++     
++++++++-    print(setFile)
++++++++-    return setFile
+++++++++    # print("package " + str(setModul))
+++++++++    return setModul
++++++++ 
++++++++ def setValueFromFile(file):
++++++++     with open(file, "r") as fCase:
++++++++@@ -202,21 +241,29 @@ def notPatternBefore(line):
++++++++         return True
++++++++     return False
++++++++ 
++++++++-def createFile(path, nameFile, input):
+++++++++def createFile(path, nameFile, input, modul):
+++++++++
+++++++++    nameFileModul = path + "/" + modul + "/" + nameFile
+++++++++    nameModul = path + "/" + modul
+++++++++
++++++++     if not os.path.exists(path):
++++++++-           os.mkdir(path)
+++++++++        os.mkdir(path)
+++++++++    
+++++++++    if not os.path.exists(nameModul):
+++++++++        os.mkdir(nameModul)
++++++++ 
++++++++-    if os.path.isfile(nameFile):
++++++++-        with open(nameFile, 'a') as file:
+++++++++    if os.path.isfile(nameFileModul):
+++++++++        with open(nameFileModul, 'a') as file:
++++++++             file.write("\n" + input)
++++++++     else:
++++++++-        with open(nameFile, 'w') as fileW:
+++++++++        with open(nameFileModul, 'w') as fileW:
++++++++             fileW.write(input)
++++++++         # myFile = open(nameFile, 'w')
++++++++         # myFile.write(input)
++++++++         # myFile.close()
++++++++ 
++++++++ def getFile(patternLayout, patternFile, line, path):
+++++++++
++++++++     nameFile = ""
++++++++     posisiPattern = line.find(patternLayout)
++++++++     lengthPattern = len(patternLayout)
++++++++@@ -224,15 +271,14 @@ def getFile(patternLayout, patternFile, line, path):
++++++++ 
++++++++     if patternFile is patternBeforeFile:
++++++++         nameFileBefore = line[posisiFile:]
++++++++-        pathBefore = path
++++++++-        nameFile = pathBefore + "/" + nameFileBefore
+++++++++        nameFile = nameFileBefore
++++++++     elif patternFile is patternAfterFile:
++++++++         nameFileAfter = line[posisiFile:]
++++++++-        pathAfter = path
++++++++-        nameFile = pathAfter + "/" + nameFileAfter
+++++++++        nameFile = nameFileAfter
++++++++     
++++++++     nameFile = nameFile.replace("xml", "txt")
++++++++     nameFile = nameFile.replace("\n", "")
+++++++++    # print(nameFile)
++++++++     return nameFile
++++++++ 
++++++++ 
++++++++@@ -245,15 +291,10 @@ def getIdView(patternIdView, line):
++++++++         nameIdView = line[posisiIdView:]
++++++++         nameLength = len(nameIdView)
++++++++         newId = nameIdView[:nameLength-2]
++++++++-        print(newId)
+++++++++        # print(newId)
++++++++ 
++++++++     return newId
++++++++ 
++++++++-# def checkIdView():
++++++++-
++++++++-# repo_path = os.getenv('GIT_REPO_PATH')
++++++++-# print_repository(repo_path)
++++++++-
++++++++ # repo = git.Repo(os.getenv('GIT_REPO_PATH'))
++++++++ # print repo.git.status()
++++++++ 
++++++++@@ -261,6 +302,9 @@ if __name__ == "__main__":
++++++++     repo_path = os.getenv('GIT_REPO_PATH')
++++++++     # Repo object used to programmatically interact with Git repositories
++++++++     repo = Repo(repo_path)
+++++++++
+++++++++    defaultBranch = "master"
+++++++++    
++++++++     # check that the repository loaded correctly
++++++++     if not repo.bare:
++++++++         print('Repo at {} successfully loaded.'.format(repo_path))
++++++++@@ -291,14 +335,25 @@ if __name__ == "__main__":
++++++++         a_commit = commits_list[-1]
++++++++         b_commit = "a4186acd2ad2a077a5887f8ac16c50a37ca872fc"
++++++++ 
+++++++++        parser = optparse.OptionParser()
+++++++++        parser.add_option('-t', '--target', dest='target', default="sukasuka", help="Set parameter branch")
+++++++++
+++++++++        (options, args) = parser.parse_args()
+++++++++
+++++++++        targetBranch = ""
+++++++++        if options.target:
+++++++++            targetBranch = options.target
+++++++++
++++++++         # beforeC = repo.head.commit
++++++++         # afterC = "77a38266633ec3d224f5de799788adec94432492"
+++++++++        # g = git.Git(repo_path)
+++++++++        # g.pull()
+++++++++        # commitMessages = g.log('%s..%s' % ("master", "sukasuka"), '--pretty=format:%ad %an - %s', '--abbrev-commit')
++++++++ 
++++++++-        writeFile(str(repo.git.diff('HEAD~1')))
+++++++++        writeFile(repo.git.diff("master", targetBranch))
 ++++++++        # writeFile(commitMessages)
 +++++++         # writeFile(repo.git.diff("HEAD","HEAD~1"))
 +++++++-        # checkIdView()
@@ -2425,32 +4032,33 @@ index 0000000..2a1d606
 +++++++         # for commit in commits:
 +++++++         #     print_commit(commit)
 ++++++diff --git a/test_case.txt b/test_case.txt
-++++++index bf18197..e67a6a6 100644
+++++++index bf18197..c8d819c 100644
 ++++++--- a/test_case.txt
 +++++++++ b/test_case.txt
-++++++@@ -1,3 +1,4 @@
+++++++@@ -1,3 +1,2 @@
 ++++++-item_movie.xml
 ++++++-item_favorite.xml
 ++++++-item_shimmer.xml
 ++++++\ No newline at end of file
-+++++++app/item_movie.xml
 +++++++app/item_favorite.xml
-+++++++app/item_shimmer.xml
 +++++++app2
 ++++++\ No newline at end of file
 ++++++diff --git a/xml_id_script.py b/xml_id_script.py
-++++++index 5708213..b497ecb 100644
+++++++index 5708213..f8a900d 100644
 ++++++--- a/xml_id_script.py
 +++++++++ b/xml_id_script.py
-++++++@@ -2,6 +2,8 @@ import os
+++++++@@ -2,8 +2,10 @@ import os
 ++++++ import shutil
 ++++++ import os.path
 ++++++ import git
+++++++-import itertools
 +++++++import optparse
 +++++++from optparse import OptionParser
-++++++ import itertools
 ++++++ from git import Repo
++++++++import time
 ++++++ 
+++++++ COMMITS_TO_PRINT = 5
+++++++ patternLayout = "res/layout/"
 ++++++@@ -18,8 +20,6 @@ afterPath = "after/"
 ++++++ pathBefore = "before"
 ++++++ pathAfter = "after"
@@ -2469,22 +4077,44 @@ index 0000000..2a1d606
 ++++++ 
 ++++++ def writeFile(input):
 ++++++     # fileName = "/temp/input.txt"
-++++++@@ -62,53 +60,72 @@ def writeFile(input):
-++++++     nameFileBefore = ""
-++++++     nameFileCompare = ""
+++++++@@ -49,14 +47,9 @@ def writeFile(input):
 ++++++ 
-+++++++    nameFileWithModul = ""
-+++++++
+++++++     if not os.path.exists(tempName):
+++++++         createDumpFile(tempName, input)
+++++++-    # elif os.path.exists(tempName):
+++++++-    #     removedPackFile()
+++++++-    #     createDumpFile(tempName, input)
+++++++-
+++++++-
+++++++-    tempStr = ""
+++++++-
+++++++-    inputLine = ""
++++++++    elif os.path.exists(tempName):
++++++++        removedPackFile(tempName, pathBefore, pathAfter)
++++++++        createDumpFile(tempName, input)
+++++++ 
+++++++     nameFileAfter = ""
+++++++     nameFileBefore = ""
+++++++@@ -64,53 +57,134 @@ def writeFile(input):
+++++++ 
 ++++++     setIdAfter = set()
 ++++++     setIdBefore = set()
-++++++ 
-+++++++    modul = ""
++++++++    setRemovedFile = set()
 +++++++
++++++++    setFileBefore = set()
++++++++    setFileAfter = set()
++++++++
++++++++    modul = ""
+++++++ 
 ++++++     newId = ""
 ++++++ 
 ++++++-    fileCase = None
 +++++++    tempModul = list()
 +++++++    tempNameFile = set()
++++++++    tempOnlyModul = set()
++++++++
++++++++    strLineRemove = ""
++++++++    isLineRemove = False
 ++++++ 
 ++++++     if(os.path.exists(testCase)):
 ++++++         with open(testCase, "r") as fCase:
@@ -2500,9 +4130,16 @@ index 0000000..2a1d606
 +++++++            tempModul.append(strOnlyModul)
 +++++++            if(len(stryOnlyName) > 1):
 +++++++                modulSlash = strOnlyModul + "/" + stryOnlyName[1]
-+++++++                tempNameFile.add(str(modulSlash))
-+++++++        print("tempModule: " + str(tempModul))
-+++++++        print("tempName: " + str(tempNameFile))
++++++++                tempNameFile.add(str(modulSlash.strip()))
++++++++            
++++++++            strOnlyModuleName = lineModul.replace("\n", "").split(" ")
++++++++            if(len(strOnlyModuleName) == 1 and len(stryOnlyName) == 1):
++++++++                tempOnlyModul.add(str(strOnlyModuleName[0]))
++++++++            
++++++++
++++++++        # print("tempModule: " + str(tempModul))
++++++++        # print("tempNameFile: " + str(tempNameFile))
++++++++        # print("tempOnlyModule: " + str(tempOnlyModul))
 ++++++ 
 ++++++ 
 ++++++     f = open(tempName, "r")
@@ -2513,6 +4150,7 @@ index 0000000..2a1d606
 ++++++                 nameFileBefore = getFile(patternLayout, patternBeforeFile, line, pathBefore)
 ++++++-                nameFileCompare = getNameFileXML(nameFileBefore)
 +++++++                nameFileCompare = modul + "/" + getNameFileXML(nameFileBefore)
++++++++                # print(nameFileCompare)
 ++++++         
 ++++++         if(patternAfterFile in line[:3]):
 ++++++             if patternLayout in line:
@@ -2520,140 +4158,243 @@ index 0000000..2a1d606
 ++++++                 nameFileAfter = getFile(patternLayout, patternAfterFile, line, pathAfter)
 ++++++             elif patternRemoveFile in line:
 ++++++-                if nameFileCompare in tempCase:
+++++++-                        print("Previous file has removed with name : " + nameFileCompare)
++++++++                strLineRemove = line[4:]
 +++++++                if nameFileCompare in tempNameFile:
-++++++                         print("Previous file has removed with name : " + nameFileCompare)
++++++++                        isLineRemove = True
++++++++                        # print(not isLineRemove)
++++++++                        
++++++++                        setRemovedFile.add(nameFileCompare)
++++++++                        # print("File has removed with name : " + nameFileCompare + " (d)")
++++++++                        # print(nameFileCompare)
 ++++++                         nameFileCompare = ""
++++++++                checkFileRemoved(setRemovedFile)
++++++++
++++++++            # print(line)
++++++++        # print(strLineRemove)
++++++++        # print(strLineRemove)
++++++++
++++++++        if(not isLineRemove):
++++++++            if(len(tempOnlyModul) == 0):
++++++++                if(nameFileCompare in tempNameFile):
++++++++                    # print(nameFileCompare)
++++++++                    # print(modul)
++++++++                    if(patternBeforeIdView == line[:1]):
++++++++                        newId = getIdView(patternIdView, line)
++++++++                        if(newId.strip()):
++++++++                            setIdBefore.add(newId.strip())
++++++++                            createFile(pathBefore, nameFileBefore, newId, modul)
++++++++                            newId = ""
++++++++                
++++++++                    if(patternAfterIdView == line[:1]):
++++++++                        newId = getIdView(patternIdView, line)
++++++++                        if(newId.strip()):
++++++++                            setIdAfter.add(newId.strip())
++++++++                            createFile(pathAfter, nameFileAfter, newId, modul)
++++++++                            newId = ""
++++++++                            nameFileCompare = ""
++++++++                            modul = ""
++++++++            
++++++++            elif(len(tempOnlyModul) > 0):
++++++++                # print(modul)
++++++++                if(modul in tempOnlyModul or nameFileCompare in tempNameFile):
++++++++                    # print(nameFileCompare)
++++++++                    # print(modul)
++++++++                    if(patternBeforeIdView == line[:1]):
++++++++                        newId = getIdView(patternIdView, line)
++++++++                        if(newId.strip()):
++++++++                            setIdBefore.add(newId.strip())
++++++++                            createFile(pathBefore, nameFileBefore, newId, modul)
++++++++                            newId = ""
++++++++                
++++++++                    if(patternAfterIdView == line[:1]):
++++++++                        newId = getIdView(patternIdView, line)
++++++++                        if(newId.strip()):
++++++++                            setIdAfter.add(newId.strip())
++++++++                            createFile(pathAfter, nameFileAfter, newId, modul)
++++++++                            newId = ""
++++++++                            nameFileCompare = ""
++++++++                            modul = ""
++++++++                
++++++++        isLineRemove = False
 ++++++ 
 ++++++-        if(nameFileCompare in tempCase):
 ++++++-            if(patternBeforeIdView == line[:1] and notPatternBefore(line)):
-+++++++        if(modul in tempModul):
-+++++++            if(patternBeforeIdView == line[:1]):
-++++++                 newId = getIdView(patternIdView, line)
-++++++                 if(newId.strip()):
-++++++                     setIdBefore.add(newId.strip())
+++++++-                newId = getIdView(patternIdView, line)
+++++++-                if(newId.strip()):
+++++++-                    setIdBefore.add(newId.strip())
 ++++++-                    createFile(pathBefore, nameFileBefore, newId)
-+++++++                    createFile(pathBefore, nameFileBefore, newId, modul)
-++++++                     newId = ""
-++++++         
-++++++             if(patternAfterIdView == line[:1]):
-++++++                 newId = getIdView(patternIdView, line)
-++++++                 if(newId.strip()):
-++++++                     setIdAfter.add(newId.strip())
-++++++-                    createFile(pathAfter, nameFileAfter, newId)
-+++++++                    createFile(pathAfter, nameFileAfter, newId, modul)
-++++++                     newId = ""
-++++++ 
+++++++-                    newId = ""
 ++++++-        
-++++++-    setFileBefore = getFileFromPackage(pathBefore)
-++++++-    setFileAfter = getFileFromPackage(pathAfter)
-+++++++
+++++++-            if(patternAfterIdView == line[:1]):
+++++++-                newId = getIdView(patternIdView, line)
+++++++-                if(newId.strip()):
+++++++-                    setIdAfter.add(newId.strip())
+++++++-                    createFile(pathAfter, nameFileAfter, newId)
+++++++-                    newId = ""
 +++++++    setFileBefore = getModulFromPackage(pathBefore)
 +++++++    setFileAfter = getModulFromPackage(pathAfter)
++++++++    checkIdView(setFileBefore, setFileAfter, beforePath, afterPath)
 ++++++ 
-++++++     checkIdView(setFileBefore, setFileAfter, beforePath, afterPath)
++++++++def checkFileRemoved(setFile):
++++++++    if setFile:
++++++++        print("\n====================================")
++++++++        print("File has removed with name : ")
+++++++         
+++++++-    setFileBefore = getFileFromPackage(pathBefore)
+++++++-    setFileAfter = getFileFromPackage(pathAfter)
+++++++-
+++++++-    checkIdView(setFileBefore, setFileAfter, beforePath, afterPath)
++++++++        for file in setFile:
++++++++            print("\n" + file + " (d)")
++++++++        
++++++++        print("====================================")
 ++++++ 
-++++++@@ -129,36 +146,49 @@ def checkIdView(beforeFile, afterFile, beforePath, afterPath):
-++++++     if(len(beforeFile) == len(afterFile)):
 ++++++ 
-++++++         for(before, after) in zip(beforeFile, afterFile):
+++++++ def createDumpFile(tempName, input):
+++++++@@ -119,46 +193,73 @@ def createDumpFile(tempName, input):
+++++++     # myFile = open(tempName, 'w')
+++++++     # myFile.close()
+++++++ 
+++++++-def removedPackFile():
+++++++-    shutil.rmtree("after")
+++++++-    shutil.rmtree("before")
+++++++-    os.remove("dump_input.txt")
++++++++def removedPackFile(tempName, pathBefore, pathAfter):
++++++++    if os.path.exists(pathBefore):
++++++++        shutil.rmtree(pathBefore)
++++++++    if os.path.exists(pathAfter):
++++++++        shutil.rmtree(pathAfter)
++++++++    if os.path.exists(tempName):
++++++++        os.remove(tempName)
+++++++     
+++++++ def checkIdView(beforeFile, afterFile, beforePath, afterPath):
+++++++ 
+++++++-    if(len(beforeFile) == len(afterFile)):
++++++++    setChangeId = set()
+++++++ 
+++++++-        for(before, after) in zip(beforeFile, afterFile):
 ++++++-            beforeX = getFileWithoutPath(before, beforePath)
 ++++++-            afterX = getFileWithoutPath(after, afterPath)
++++++++    if( len(beforeFile) > 0 and len(afterFile) > 0):
 ++++++ 
 ++++++-            print(beforeX)
 ++++++-            print(afterX)
 ++++++-            if(beforeX == afterX):
 ++++++-                beforeWithPath = getFileWithPath(beforeX, beforePath)
 ++++++-                afterWithPath = getFileWithPath(afterX, afterPath)
-+++++++            beforeSlash = before + "/"
-+++++++            afterSlash = after + "/"
++++++++        if(len(beforeFile) == len(afterFile)):
++++++++            print("\n====================================")
++++++++            print("Below id has been changed/removed : ")
 ++++++ 
 ++++++-                beforeF = open(beforeWithPath, "r")
 ++++++-                afterF = open(afterWithPath, "r")
-+++++++            beforeWithPath = getFileFromPackage(beforeSlash)
-+++++++            afterWithPath = getFileFromPackage(afterSlash)
++++++++            for(before, after) in zip(beforeFile, afterFile):
 ++++++ 
 ++++++-                setIdAfter = set()
 ++++++-                setIdBefore = set()
-+++++++            # print(str(beforeWithPath))
-+++++++            # print(str(afterWithPath))
++++++++                beforeSlash = before + "/"
++++++++                afterSlash = after + "/"
 ++++++ 
 ++++++-                for beforeLine in beforeF:
 ++++++-                    setIdBefore.add(getNameWithoutNewLine(beforeLine))
 ++++++-                
 ++++++-                for afterLine in afterF:
 ++++++-                    setIdAfter.add(getNameWithoutNewLine(afterLine))
-+++++++            # print("before " + before)
-+++++++            # print("after " + after)
++++++++                beforeWithPath = getFileFromPackage(beforeSlash)
++++++++                afterWithPath = getFileFromPackage(afterSlash)
++++++++
++++++++                # print(str(beforeWithPath))
++++++++                # print(str(afterWithPath))
++++++++
++++++++                # print("before " + before)
++++++++                # print("after " + after)
++++++++
++++++++                for(beforeFile, afterFile) in zip(beforeWithPath, afterWithPath):
++++++++
++++++++                    if(beforeFile == afterFile):
 ++++++ 
 ++++++-                print(str(setIdBefore))
 ++++++-                print(str(setIdAfter))
-+++++++            for(beforeFile, afterFile) in zip(beforeWithPath, afterWithPath):
++++++++                        fileBeforePath = beforeSlash + beforeFile
++++++++                        fileAfterPath = afterSlash + afterFile
++++++++
++++++++                        # print("file before with path : " + fileBeforePath)
++++++++                        # print("file after with path : " + fileAfterPath)
++++++++
++++++++                        beforeF = open(fileBeforePath, "r")
++++++++                        afterF = open(fileAfterPath, "r")
++++++++
++++++++                        setIdAfter = set()
++++++++                        setIdBefore = set()
++++++++
++++++++                        for beforeLine in beforeF:
++++++++                            setIdBefore.add(getNameWithoutNewLine(beforeLine))
++++++++                            
++++++++                        for afterLine in afterF:
++++++++                            setIdAfter.add(getNameWithoutNewLine(afterLine))
++++++++
++++++++                        for beforeIdView in setIdBefore:
++++++++                            if beforeIdView not in setIdAfter:
++++++++                                pathModule = fileBeforePath.split("/")[1]
++++++++                                fileModule = pathModule + "/" + getNameFileXML(beforeFile)
++++++++                                print("\n" + fileModule + ":")
++++++++                                print(beforeIdView + " (c/d)")
++++++++                            # print("id view " + beforeIdView + " has been changed or removed from file " +  fileModule)
++++++++
++++++++                    # print(str(setIdBefore))
++++++++                    # print(str(setIdAfter))
++++++++        print("====================================")
 ++++++ 
 ++++++-                for beforeIdView in setIdBefore:
 ++++++-                    if beforeIdView not in setIdAfter:
 ++++++-                        print("id view " + beforeIdView + " has been changed or removed from file " + getNameFileXML(beforeX))
-+++++++                if(beforeFile == afterFile):
 ++++++ 
 ++++++-                # print(str(setIdBefore))
 ++++++-                # print(str(setIdAfter))
-+++++++                    fileBeforePath = beforeSlash + beforeFile
-+++++++                    fileAfterPath = afterSlash + afterFile
-+++++++
-+++++++                    # print("file before with path : " + fileBeforePath)
-+++++++                    # print("file after with path : " + fileAfterPath)
-+++++++
-+++++++                    beforeF = open(fileBeforePath, "r")
-+++++++                    afterF = open(fileAfterPath, "r")
-+++++++
-+++++++                    setIdAfter = set()
-+++++++                    setIdBefore = set()
-+++++++
-+++++++                    for beforeLine in beforeF:
-+++++++                        setIdBefore.add(getNameWithoutNewLine(beforeLine))
-+++++++                        
-+++++++                    for afterLine in afterF:
-+++++++                        setIdAfter.add(getNameWithoutNewLine(afterLine))
-+++++++
-+++++++                    for beforeIdView in setIdBefore:
-+++++++                        if beforeIdView not in setIdAfter:
-+++++++                            pathModule = fileBeforePath.split("/")[1]
-+++++++                            fileModule = pathModule + "/" + getNameFileXML(beforeFile)
-+++++++                            print("id view " + beforeIdView + " has been changed or removed from file " +  fileModule)
-+++++++
-+++++++                    # print(str(setIdBefore))
-+++++++                    # print(str(setIdAfter))
 ++++++ 
 ++++++ def getNameWithoutNewLine(line):
 ++++++     line = line.replace("\n", "")
-++++++@@ -172,14 +202,23 @@ def getFileWithoutPath(file, path):
+++++++@@ -172,21 +273,32 @@ def getFileWithoutPath(file, path):
 ++++++     file = file.replace(path, "")
 ++++++     return file
 ++++++ 
 ++++++-def getFileFromPackage(path):
 +++++++def getFileFromPackage(modul):
 ++++++     setFile = set()
+++++++-    for filename in os.listdir(path):
+++++++-        filePath = path + "/" + filename
+++++++-        setFile.add(filePath.strip())
 +++++++
 +++++++    for getfile in os.listdir(modul):
 +++++++        setFile.add(getfile)
-+++++++    
-+++++++    # print("file " + str(setFile))
-+++++++    return setFile
-+++++++
-+++++++def getModulFromPackage(path):
-+++++++    setModul = set()
-++++++     for filename in os.listdir(path):
-++++++         filePath = path + "/" + filename
-++++++-        setFile.add(filePath.strip())
-+++++++        setModul.add(filePath)
 ++++++     
 ++++++-    print(setFile)
-++++++-    return setFile
++++++++    # print("file " + str(setFile))
+++++++     return setFile
+++++++ 
++++++++def getModulFromPackage(path):
++++++++    # print(path)
++++++++    setModul = set()
++++++++    if os.path.exists(path):
++++++++        for filename in os.listdir(path):
++++++++            filePath = path + "/" + filename
++++++++            setModul.add(filePath)
++++++++    
 +++++++    # print("package " + str(setModul))
 +++++++    return setModul
-++++++ 
++++++++
 ++++++ def setValueFromFile(file):
 ++++++     with open(file, "r") as fCase:
-++++++@@ -202,21 +241,29 @@ def notPatternBefore(line):
+++++++         strStrip = fCase.read().splitlines()
+++++++         tempCase = set(strStrip)
+++++++     
+++++++-    print(tempCase)
++++++++    # print(tempCase)
+++++++     return tempCase
+++++++ 
+++++++ 
+++++++@@ -202,21 +314,29 @@ def notPatternBefore(line):
 ++++++         return True
 ++++++     return False
 ++++++ 
@@ -2688,7 +4429,7 @@ index 0000000..2a1d606
 ++++++     nameFile = ""
 ++++++     posisiPattern = line.find(patternLayout)
 ++++++     lengthPattern = len(patternLayout)
-++++++@@ -224,15 +271,14 @@ def getFile(patternLayout, patternFile, line, path):
+++++++@@ -224,15 +344,14 @@ def getFile(patternLayout, patternFile, line, path):
 ++++++ 
 ++++++     if patternFile is patternBeforeFile:
 ++++++         nameFileBefore = line[posisiFile:]
@@ -2707,7 +4448,7 @@ index 0000000..2a1d606
 ++++++     return nameFile
 ++++++ 
 ++++++ 
-++++++@@ -245,15 +291,10 @@ def getIdView(patternIdView, line):
+++++++@@ -245,15 +364,10 @@ def getIdView(patternIdView, line):
 ++++++         nameIdView = line[posisiIdView:]
 ++++++         nameLength = len(nameIdView)
 ++++++         newId = nameIdView[:nameLength-2]
@@ -2724,37 +4465,46 @@ index 0000000..2a1d606
 ++++++ # repo = git.Repo(os.getenv('GIT_REPO_PATH'))
 ++++++ # print repo.git.status()
 ++++++ 
-++++++@@ -261,6 +302,9 @@ if __name__ == "__main__":
+++++++@@ -261,9 +375,10 @@ if __name__ == "__main__":
 ++++++     repo_path = os.getenv('GIT_REPO_PATH')
 ++++++     # Repo object used to programmatically interact with Git repositories
 ++++++     repo = Repo(repo_path)
-+++++++
-+++++++    defaultBranch = "master"
 +++++++    
 ++++++     # check that the repository loaded correctly
 ++++++     if not repo.bare:
-++++++         print('Repo at {} successfully loaded.'.format(repo_path))
-++++++@@ -291,14 +335,25 @@ if __name__ == "__main__":
+++++++-        print('Repo at {} successfully loaded.'.format(repo_path))
++++++++        # print('Repo at {} successfully loaded.'.format(repo_path))
+++++++         # print_repository(repo)
+++++++         # create list of commits then print some of them to stdout
+++++++         # hcommit = repo.head.commit
+++++++@@ -291,14 +406,32 @@ if __name__ == "__main__":
 ++++++         a_commit = commits_list[-1]
 ++++++         b_commit = "a4186acd2ad2a077a5887f8ac16c50a37ca872fc"
 ++++++ 
 +++++++        parser = optparse.OptionParser()
-+++++++        parser.add_option('-t', '--target', dest='target', default="sukasuka", help="Set parameter branch")
++++++++        parser.add_option('-d', '--default', dest='default', default="master", help="Set parameter default branch")
++++++++        parser.add_option('-t', '--target', dest='target', default=None, help="Set parameter target branch")
 +++++++
 +++++++        (options, args) = parser.parse_args()
 +++++++
 +++++++        targetBranch = ""
++++++++        defaultBranch = options.default
 +++++++        if options.target:
 +++++++            targetBranch = options.target
 +++++++
 ++++++         # beforeC = repo.head.commit
 ++++++         # afterC = "77a38266633ec3d224f5de799788adec94432492"
-+++++++        # g = git.Git(repo_path)
-+++++++        # g.pull()
-+++++++        # commitMessages = g.log('%s..%s' % ("master", "sukasuka"), '--pretty=format:%ad %an - %s', '--abbrev-commit')
++++++++        
++++++++        starTime = int(round(time.time() * 1000))
++++++++
++++++++        writeFile(repo.git.diff(defaultBranch, targetBranch))
++++++++
++++++++        endTime = int(round(time.time() * 1000))
++++++++
++++++++        elapsedTime = endTime - starTime
 ++++++ 
 ++++++-        writeFile(str(repo.git.diff('HEAD~1')))
-+++++++        writeFile(repo.git.diff("master", targetBranch))
++++++++        print("Elapsed time : " + str(elapsedTime) + " ms")
 +++++++        # writeFile(commitMessages)
 ++++++         # writeFile(repo.git.diff("HEAD","HEAD~1"))
 ++++++-        # checkIdView()
@@ -3695,7 +5445,7 @@ index 0000000..2a1d606
 ++++++app2
 +++++\ No newline at end of file
 +++++diff --git a/xml_id_script.py b/xml_id_script.py
-+++++index 5708213..f8a900d 100644
++++++index 5708213..df83018 100644
 +++++--- a/xml_id_script.py
 ++++++++ b/xml_id_script.py
 +++++@@ -2,8 +2,10 @@ import os
@@ -3746,7 +5496,7 @@ index 0000000..2a1d606
 +++++ 
 +++++     nameFileAfter = ""
 +++++     nameFileBefore = ""
-+++++@@ -64,53 +57,134 @@ def writeFile(input):
++++++@@ -64,53 +57,139 @@ def writeFile(input):
 +++++ 
 +++++     setIdAfter = set()
 +++++     setIdBefore = set()
@@ -3817,7 +5567,7 @@ index 0000000..2a1d606
 ++++++                        
 ++++++                        setRemovedFile.add(nameFileCompare)
 ++++++                        # print("File has removed with name : " + nameFileCompare + " (d)")
-++++++                        # print(nameFileCompare)
+++++++                        print(nameFileCompare)
 +++++                         nameFileCompare = ""
 ++++++                checkFileRemoved(setRemovedFile)
 ++++++
@@ -3834,17 +5584,19 @@ index 0000000..2a1d606
 ++++++                        newId = getIdView(patternIdView, line)
 ++++++                        if(newId.strip()):
 ++++++                            setIdBefore.add(newId.strip())
-++++++                            createFile(pathBefore, nameFileBefore, newId, modul)
-++++++                            newId = ""
-++++++                
+++++++                            createFile(pathBefore, nameFileBefore, newId, modul, False)
+++++++                                            
 ++++++                    if(patternAfterIdView == line[:1]):
 ++++++                        newId = getIdView(patternIdView, line)
 ++++++                        if(newId.strip()):
 ++++++                            setIdAfter.add(newId.strip())
-++++++                            createFile(pathAfter, nameFileAfter, newId, modul)
+++++++                            createFile(pathAfter, nameFileAfter, newId, modul, False)
 ++++++                            newId = ""
 ++++++                            nameFileCompare = ""
 ++++++                            modul = ""
+++++++                    elif(nameFileAfter and patternBeforeIdView != line[:1]):
+++++++                        createFile(pathAfter, nameFileAfter, "", modul, True)
+++++++
 ++++++            
 ++++++            elif(len(tempOnlyModul) > 0):
 ++++++                # print(modul)
@@ -3855,19 +5607,26 @@ index 0000000..2a1d606
 ++++++                        newId = getIdView(patternIdView, line)
 ++++++                        if(newId.strip()):
 ++++++                            setIdBefore.add(newId.strip())
-++++++                            createFile(pathBefore, nameFileBefore, newId, modul)
-++++++                            newId = ""
+++++++                            createFile(pathBefore, nameFileBefore, newId, modul, False)
+++++++
+++++++                    # if(nameFileAfter and patternAfterIdView != line[:1]):
 ++++++                
 ++++++                    if(patternAfterIdView == line[:1]):
 ++++++                        newId = getIdView(patternIdView, line)
 ++++++                        if(newId.strip()):
 ++++++                            setIdAfter.add(newId.strip())
-++++++                            createFile(pathAfter, nameFileAfter, newId, modul)
+++++++                            createFile(pathAfter, nameFileAfter, newId, modul, False)
 ++++++                            newId = ""
 ++++++                            nameFileCompare = ""
 ++++++                            modul = ""
-++++++                
+++++++                    elif(nameFileAfter and patternBeforeIdView != line[:1]):
+++++++                        createFile(pathAfter, nameFileAfter, "", modul, True)
+++++++
 ++++++        isLineRemove = False
+++++++
+++++++    setFileBefore = getModulFromPackage(pathBefore)
+++++++    setFileAfter = getModulFromPackage(pathAfter)
+++++++    checkIdView(setFileBefore, setFileAfter, beforePath, afterPath)
 +++++ 
 +++++-        if(nameFileCompare in tempCase):
 +++++-            if(patternBeforeIdView == line[:1] and notPatternBefore(line)):
@@ -3876,34 +5635,30 @@ index 0000000..2a1d606
 +++++-                    setIdBefore.add(newId.strip())
 +++++-                    createFile(pathBefore, nameFileBefore, newId)
 +++++-                    newId = ""
-+++++-        
+++++++def checkFileRemoved(setFile):
+++++++    if setFile:
+++++++        print("\n====================================")
+++++++        print("File has removed with name : ")
++++++         
 +++++-            if(patternAfterIdView == line[:1]):
 +++++-                newId = getIdView(patternIdView, line)
 +++++-                if(newId.strip()):
 +++++-                    setIdAfter.add(newId.strip())
 +++++-                    createFile(pathAfter, nameFileAfter, newId)
 +++++-                    newId = ""
-++++++    setFileBefore = getModulFromPackage(pathBefore)
-++++++    setFileAfter = getModulFromPackage(pathAfter)
-++++++    checkIdView(setFileBefore, setFileAfter, beforePath, afterPath)
-+++++ 
-++++++def checkFileRemoved(setFile):
-++++++    if setFile:
-++++++        print("\n====================================")
-++++++        print("File has removed with name : ")
++++++-
+++++++        for file in setFile:
+++++++            print("\n" + file + " (d)")
 +++++         
 +++++-    setFileBefore = getFileFromPackage(pathBefore)
 +++++-    setFileAfter = getFileFromPackage(pathAfter)
 +++++-
 +++++-    checkIdView(setFileBefore, setFileAfter, beforePath, afterPath)
-++++++        for file in setFile:
-++++++            print("\n" + file + " (d)")
-++++++        
 ++++++        print("====================================")
 +++++ 
 +++++ 
 +++++ def createDumpFile(tempName, input):
-+++++@@ -119,46 +193,73 @@ def createDumpFile(tempName, input):
++++++@@ -119,46 +198,73 @@ def createDumpFile(tempName, input):
 +++++     # myFile = open(tempName, 'w')
 +++++     # myFile.close()
 +++++ 
@@ -3964,15 +5719,15 @@ index 0000000..2a1d606
 ++++++                for(beforeFile, afterFile) in zip(beforeWithPath, afterWithPath):
 ++++++
 ++++++                    if(beforeFile == afterFile):
-+++++ 
-+++++-                print(str(setIdBefore))
-+++++-                print(str(setIdAfter))
+++++++
 ++++++                        fileBeforePath = beforeSlash + beforeFile
 ++++++                        fileAfterPath = afterSlash + afterFile
 ++++++
 ++++++                        # print("file before with path : " + fileBeforePath)
 ++++++                        # print("file after with path : " + fileAfterPath)
-++++++
++++++ 
++++++-                print(str(setIdBefore))
++++++-                print(str(setIdAfter))
 ++++++                        beforeF = open(fileBeforePath, "r")
 ++++++                        afterF = open(fileAfterPath, "r")
 ++++++
@@ -4006,7 +5761,7 @@ index 0000000..2a1d606
 +++++ 
 +++++ def getNameWithoutNewLine(line):
 +++++     line = line.replace("\n", "")
-+++++@@ -172,21 +273,32 @@ def getFileWithoutPath(file, path):
++++++@@ -172,21 +278,32 @@ def getFileWithoutPath(file, path):
 +++++     file = file.replace(path, "")
 +++++     return file
 +++++ 
@@ -4045,12 +5800,12 @@ index 0000000..2a1d606
 +++++     return tempCase
 +++++ 
 +++++ 
-+++++@@ -202,21 +314,29 @@ def notPatternBefore(line):
++++++@@ -202,21 +319,30 @@ def notPatternBefore(line):
 +++++         return True
 +++++     return False
 +++++ 
 +++++-def createFile(path, nameFile, input):
-++++++def createFile(path, nameFile, input, modul):
+++++++def createFile(path, nameFile, input, modul, isEmpty):
 ++++++
 ++++++    nameFileModul = path + "/" + modul + "/" + nameFile
 ++++++    nameModul = path + "/" + modul
@@ -4064,13 +5819,15 @@ index 0000000..2a1d606
 +++++ 
 +++++-    if os.path.isfile(nameFile):
 +++++-        with open(nameFile, 'a') as file:
++++++-            file.write("\n" + input)
 ++++++    if os.path.isfile(nameFileModul):
 ++++++        with open(nameFileModul, 'a') as file:
-+++++             file.write("\n" + input)
+++++++                file.write("\n" + input)
 +++++     else:
 +++++-        with open(nameFile, 'w') as fileW:
 ++++++        with open(nameFileModul, 'w') as fileW:
 +++++             fileW.write(input)
+++++++   
 +++++         # myFile = open(nameFile, 'w')
 +++++         # myFile.write(input)
 +++++         # myFile.close()
@@ -4080,7 +5837,7 @@ index 0000000..2a1d606
 +++++     nameFile = ""
 +++++     posisiPattern = line.find(patternLayout)
 +++++     lengthPattern = len(patternLayout)
-+++++@@ -224,15 +344,14 @@ def getFile(patternLayout, patternFile, line, path):
++++++@@ -224,15 +350,14 @@ def getFile(patternLayout, patternFile, line, path):
 +++++ 
 +++++     if patternFile is patternBeforeFile:
 +++++         nameFileBefore = line[posisiFile:]
@@ -4099,7 +5856,7 @@ index 0000000..2a1d606
 +++++     return nameFile
 +++++ 
 +++++ 
-+++++@@ -245,15 +364,10 @@ def getIdView(patternIdView, line):
++++++@@ -245,15 +370,10 @@ def getIdView(patternIdView, line):
 +++++         nameIdView = line[posisiIdView:]
 +++++         nameLength = len(nameIdView)
 +++++         newId = nameIdView[:nameLength-2]
@@ -4116,7 +5873,7 @@ index 0000000..2a1d606
 +++++ # repo = git.Repo(os.getenv('GIT_REPO_PATH'))
 +++++ # print repo.git.status()
 +++++ 
-+++++@@ -261,9 +375,10 @@ if __name__ == "__main__":
++++++@@ -261,9 +381,10 @@ if __name__ == "__main__":
 +++++     repo_path = os.getenv('GIT_REPO_PATH')
 +++++     # Repo object used to programmatically interact with Git repositories
 +++++     repo = Repo(repo_path)
@@ -4128,7 +5885,7 @@ index 0000000..2a1d606
 +++++         # print_repository(repo)
 +++++         # create list of commits then print some of them to stdout
 +++++         # hcommit = repo.head.commit
-+++++@@ -291,14 +406,32 @@ if __name__ == "__main__":
++++++@@ -291,14 +412,32 @@ if __name__ == "__main__":
 +++++         a_commit = commits_list[-1]
 +++++         b_commit = "a4186acd2ad2a077a5887f8ac16c50a37ca872fc"
 +++++ 
@@ -5084,7 +6841,7 @@ index 0000000..2a1d606
 +++++         # for commit in commits:
 +++++         #     print_commit(commit)
 ++++diff --git a/test_case.txt b/test_case.txt
-++++index bf18197..c8d819c 100644
+++++index bf18197..5944b6b 100644
 ++++--- a/test_case.txt
 +++++++ b/test_case.txt
 ++++@@ -1,3 +1,2 @@
@@ -5092,11 +6849,11 @@ index 0000000..2a1d606
 ++++-item_favorite.xml
 ++++-item_shimmer.xml
 ++++\ No newline at end of file
-+++++app/item_favorite.xml
++++++app
 +++++app2
 ++++\ No newline at end of file
 ++++diff --git a/xml_id_script.py b/xml_id_script.py
-++++index 5708213..df83018 100644
+++++index 5708213..1483e51 100644
 ++++--- a/xml_id_script.py
 +++++++ b/xml_id_script.py
 ++++@@ -2,8 +2,10 @@ import os
@@ -5147,7 +6904,7 @@ index 0000000..2a1d606
 ++++ 
 ++++     nameFileAfter = ""
 ++++     nameFileBefore = ""
-++++@@ -64,53 +57,139 @@ def writeFile(input):
+++++@@ -64,53 +57,145 @@ def writeFile(input):
 ++++ 
 ++++     setIdAfter = set()
 ++++     setIdBefore = set()
@@ -5215,69 +6972,13 @@ index 0000000..2a1d606
 +++++                if nameFileCompare in tempNameFile:
 +++++                        isLineRemove = True
 +++++                        # print(not isLineRemove)
-+++++                        
 +++++                        setRemovedFile.add(nameFileCompare)
 +++++                        # print("File has removed with name : " + nameFileCompare + " (d)")
-+++++                        print(nameFileCompare)
++++++                        # print(nameFileCompare)
++++++                        nameFileCompare = ""
++++++                elif modul in tempOnlyModul:
++++++                        setRemovedFile.add(nameFileCompare)
 ++++                         nameFileCompare = ""
-+++++                checkFileRemoved(setRemovedFile)
-+++++
-+++++            # print(line)
-+++++        # print(strLineRemove)
-+++++        # print(strLineRemove)
-+++++
-+++++        if(not isLineRemove):
-+++++            if(len(tempOnlyModul) == 0):
-+++++                if(nameFileCompare in tempNameFile):
-+++++                    # print(nameFileCompare)
-+++++                    # print(modul)
-+++++                    if(patternBeforeIdView == line[:1]):
-+++++                        newId = getIdView(patternIdView, line)
-+++++                        if(newId.strip()):
-+++++                            setIdBefore.add(newId.strip())
-+++++                            createFile(pathBefore, nameFileBefore, newId, modul, False)
-+++++                                            
-+++++                    if(patternAfterIdView == line[:1]):
-+++++                        newId = getIdView(patternIdView, line)
-+++++                        if(newId.strip()):
-+++++                            setIdAfter.add(newId.strip())
-+++++                            createFile(pathAfter, nameFileAfter, newId, modul, False)
-+++++                            newId = ""
-+++++                            nameFileCompare = ""
-+++++                            modul = ""
-+++++                    elif(nameFileAfter and patternBeforeIdView != line[:1]):
-+++++                        createFile(pathAfter, nameFileAfter, "", modul, True)
-+++++
-+++++            
-+++++            elif(len(tempOnlyModul) > 0):
-+++++                # print(modul)
-+++++                if(modul in tempOnlyModul or nameFileCompare in tempNameFile):
-+++++                    # print(nameFileCompare)
-+++++                    # print(modul)
-+++++                    if(patternBeforeIdView == line[:1]):
-+++++                        newId = getIdView(patternIdView, line)
-+++++                        if(newId.strip()):
-+++++                            setIdBefore.add(newId.strip())
-+++++                            createFile(pathBefore, nameFileBefore, newId, modul, False)
-+++++
-+++++                    # if(nameFileAfter and patternAfterIdView != line[:1]):
-+++++                
-+++++                    if(patternAfterIdView == line[:1]):
-+++++                        newId = getIdView(patternIdView, line)
-+++++                        if(newId.strip()):
-+++++                            setIdAfter.add(newId.strip())
-+++++                            createFile(pathAfter, nameFileAfter, newId, modul, False)
-+++++                            newId = ""
-+++++                            nameFileCompare = ""
-+++++                            modul = ""
-+++++                    elif(nameFileAfter and patternBeforeIdView != line[:1]):
-+++++                        createFile(pathAfter, nameFileAfter, "", modul, True)
-+++++
-+++++        isLineRemove = False
-+++++
-+++++    setFileBefore = getModulFromPackage(pathBefore)
-+++++    setFileAfter = getModulFromPackage(pathAfter)
-+++++    checkIdView(setFileBefore, setFileAfter, beforePath, afterPath)
 ++++ 
 ++++-        if(nameFileCompare in tempCase):
 ++++-            if(patternBeforeIdView == line[:1] and notPatternBefore(line)):
@@ -5286,30 +6987,92 @@ index 0000000..2a1d606
 ++++-                    setIdBefore.add(newId.strip())
 ++++-                    createFile(pathBefore, nameFileBefore, newId)
 ++++-                    newId = ""
-+++++def checkFileRemoved(setFile):
-+++++    if setFile:
-+++++        print("\n====================================")
-+++++        print("File has removed with name : ")
-++++         
+++++-        
 ++++-            if(patternAfterIdView == line[:1]):
 ++++-                newId = getIdView(patternIdView, line)
 ++++-                if(newId.strip()):
 ++++-                    setIdAfter.add(newId.strip())
 ++++-                    createFile(pathAfter, nameFileAfter, newId)
 ++++-                    newId = ""
-++++-
-+++++        for file in setFile:
-+++++            print("\n" + file + " (d)")
++++++                
++++++            # print(line)
++++++        # print(strLineRemove)
++++++        # print(strLineRemove)
++++++
++++++        if(not isLineRemove):
++++++            if(len(tempOnlyModul) == 0):
++++++
++++++                if(nameFileCompare in tempNameFile):
++++++                    # print(nameFileCompare)
++++++                    # print(modul)
++++++                    if(patternBeforeIdView == line[:1]):
++++++                        newId = getIdView(patternIdView, line)
++++++                        if(newId.strip()):
++++++                            setIdBefore.add(newId.strip())
++++++                            createFile(pathBefore, nameFileBefore, newId, modul)
++++++                            # newId = ""
++++++                                            
++++++                    if(patternAfterIdView == line[:1]):
++++++                        newId = getIdView(patternIdView, line)
++++++                        if(newId.strip()):
++++++                            setIdAfter.add(newId.strip())
++++++                            createFile(pathAfter, nameFileAfter, newId, modul)
++++++                            newId = ""
++++++                            # nameFileCompare = ""
++++++                            # modul = ""
++++++                    # elif(nameFileAfter and patternBeforeIdView != line[:1]):
++++++                    #     createFile(pathAfter, nameFileAfter, "", modul)
++++++
++++++            
++++++            elif(len(tempOnlyModul) > 0):
++++++                if('pbDetail' in line):
++++++                    print(line)
++++++                # print(modul)
++++++                if(modul in tempOnlyModul or nameFileCompare in tempNameFile):
++++++                    # print(nameFileCompare)
++++++                    # print(modul)
++++++                    if(patternBeforeIdView == line[:1]):
++++++                        newId = getIdView(patternIdView, line)
++++++                        if(newId.strip()):
++++++                            setIdBefore.add(newId.strip())
++++++                            createFile(pathBefore, nameFileBefore, newId, modul)
++++++                            # newId = ""
++++++
++++++                    # if(nameFileAfter and patternAfterIdView != line[:1]):
++++++                
++++++                    if(patternAfterIdView == line[:1]):
++++++                        newId = getIdView(patternIdView, line)
++++++                        if(newId.strip()):
++++++                            setIdAfter.add(newId.strip())
++++++                            createFile(pathAfter, nameFileAfter, newId, modul)
++++++                            newId = ""
++++++                            # nameFileCompare = ""
++++++                            # modul = ""
++++++
++++++        isLineRemove = False
++++++
++++++    checkFileRemoved(setRemovedFile)
++++++    setFileBefore = getModulFromPackage(pathBefore)
++++++    setFileAfter = getModulFromPackage(pathAfter)
++++++    checkIdView(setFileBefore, setFileAfter, beforePath, afterPath)
+++++ 
++++++def checkFileRemoved(setFile):
++++++    if setFile:
++++++        print("\n====================================")
++++++        print("File has removed with name : ")
 ++++         
 ++++-    setFileBefore = getFileFromPackage(pathBefore)
 ++++-    setFileAfter = getFileFromPackage(pathAfter)
 ++++-
 ++++-    checkIdView(setFileBefore, setFileAfter, beforePath, afterPath)
++++++        for f in setFile:
++++++            print("\n" + f)
++++++        
 +++++        print("====================================")
 ++++ 
 ++++ 
 ++++ def createDumpFile(tempName, input):
-++++@@ -119,46 +198,73 @@ def createDumpFile(tempName, input):
+++++@@ -119,46 +204,73 @@ def createDumpFile(tempName, input):
 ++++     # myFile = open(tempName, 'w')
 ++++     # myFile.close()
 ++++ 
@@ -5373,12 +7136,12 @@ index 0000000..2a1d606
 +++++
 +++++                        fileBeforePath = beforeSlash + beforeFile
 +++++                        fileAfterPath = afterSlash + afterFile
-+++++
-+++++                        # print("file before with path : " + fileBeforePath)
-+++++                        # print("file after with path : " + fileAfterPath)
 ++++ 
 ++++-                print(str(setIdBefore))
 ++++-                print(str(setIdAfter))
++++++                        # print("file before with path : " + fileBeforePath)
++++++                        # print("file after with path : " + fileAfterPath)
++++++
 +++++                        beforeF = open(fileBeforePath, "r")
 +++++                        afterF = open(fileAfterPath, "r")
 +++++
@@ -5396,7 +7159,7 @@ index 0000000..2a1d606
 +++++                                pathModule = fileBeforePath.split("/")[1]
 +++++                                fileModule = pathModule + "/" + getNameFileXML(beforeFile)
 +++++                                print("\n" + fileModule + ":")
-+++++                                print(beforeIdView + " (c/d)")
++++++                                print(beforeIdView)
 +++++                            # print("id view " + beforeIdView + " has been changed or removed from file " +  fileModule)
 +++++
 +++++                    # print(str(setIdBefore))
@@ -5412,7 +7175,7 @@ index 0000000..2a1d606
 ++++ 
 ++++ def getNameWithoutNewLine(line):
 ++++     line = line.replace("\n", "")
-++++@@ -172,21 +278,32 @@ def getFileWithoutPath(file, path):
+++++@@ -172,21 +284,32 @@ def getFileWithoutPath(file, path):
 ++++     file = file.replace(path, "")
 ++++     return file
 ++++ 
@@ -5451,12 +7214,12 @@ index 0000000..2a1d606
 ++++     return tempCase
 ++++ 
 ++++ 
-++++@@ -202,21 +319,30 @@ def notPatternBefore(line):
+++++@@ -202,21 +325,30 @@ def notPatternBefore(line):
 ++++         return True
 ++++     return False
 ++++ 
 ++++-def createFile(path, nameFile, input):
-+++++def createFile(path, nameFile, input, modul, isEmpty):
++++++def createFile(path, nameFile, input, modul):
 +++++
 +++++    nameFileModul = path + "/" + modul + "/" + nameFile
 +++++    nameModul = path + "/" + modul
@@ -5488,7 +7251,7 @@ index 0000000..2a1d606
 ++++     nameFile = ""
 ++++     posisiPattern = line.find(patternLayout)
 ++++     lengthPattern = len(patternLayout)
-++++@@ -224,15 +350,14 @@ def getFile(patternLayout, patternFile, line, path):
+++++@@ -224,15 +356,14 @@ def getFile(patternLayout, patternFile, line, path):
 ++++ 
 ++++     if patternFile is patternBeforeFile:
 ++++         nameFileBefore = line[posisiFile:]
@@ -5507,13 +7270,13 @@ index 0000000..2a1d606
 ++++     return nameFile
 ++++ 
 ++++ 
-++++@@ -245,15 +370,10 @@ def getIdView(patternIdView, line):
+++++@@ -245,15 +376,9 @@ def getIdView(patternIdView, line):
 ++++         nameIdView = line[posisiIdView:]
 ++++         nameLength = len(nameIdView)
 ++++         newId = nameIdView[:nameLength-2]
 ++++-        print(newId)
+++++-
 +++++        # print(newId)
-++++ 
 ++++     return newId
 ++++ 
 ++++-# def checkIdView():
@@ -5524,7 +7287,7 @@ index 0000000..2a1d606
 ++++ # repo = git.Repo(os.getenv('GIT_REPO_PATH'))
 ++++ # print repo.git.status()
 ++++ 
-++++@@ -261,9 +381,10 @@ if __name__ == "__main__":
+++++@@ -261,9 +386,10 @@ if __name__ == "__main__":
 ++++     repo_path = os.getenv('GIT_REPO_PATH')
 ++++     # Repo object used to programmatically interact with Git repositories
 ++++     repo = Repo(repo_path)
@@ -5536,7 +7299,7 @@ index 0000000..2a1d606
 ++++         # print_repository(repo)
 ++++         # create list of commits then print some of them to stdout
 ++++         # hcommit = repo.head.commit
-++++@@ -291,14 +412,32 @@ if __name__ == "__main__":
+++++@@ -291,14 +417,32 @@ if __name__ == "__main__":
 ++++         a_commit = commits_list[-1]
 ++++         b_commit = "a4186acd2ad2a077a5887f8ac16c50a37ca872fc"
 ++++ 
@@ -6492,7 +8255,7 @@ index 0000000..2a1d606
 ++++         # for commit in commits:
 ++++         #     print_commit(commit)
 +++diff --git a/test_case.txt b/test_case.txt
-+++index bf18197..5944b6b 100644
++++index bf18197..afc5612 100644
 +++--- a/test_case.txt
 ++++++ b/test_case.txt
 +++@@ -1,3 +1,2 @@
@@ -6500,11 +8263,11 @@ index 0000000..2a1d606
 +++-item_favorite.xml
 +++-item_shimmer.xml
 +++\ No newline at end of file
-++++app
 ++++app2
+++++app
 +++\ No newline at end of file
 +++diff --git a/xml_id_script.py b/xml_id_script.py
-+++index 5708213..1483e51 100644
++++index 5708213..76a3ac7 100644
 +++--- a/xml_id_script.py
 ++++++ b/xml_id_script.py
 +++@@ -2,8 +2,10 @@ import os
@@ -6555,7 +8318,7 @@ index 0000000..2a1d606
 +++ 
 +++     nameFileAfter = ""
 +++     nameFileBefore = ""
-+++@@ -64,53 +57,145 @@ def writeFile(input):
++++@@ -64,101 +57,234 @@ def writeFile(input):
 +++ 
 +++     setIdAfter = set()
 +++     setIdBefore = set()
@@ -6575,12 +8338,17 @@ index 0000000..2a1d606
 ++++
 ++++    strLineRemove = ""
 ++++    isLineRemove = False
+++++    nameFileRemoved = ""
+++++
+++++    starTime = None
+++++    endTime = None
 +++ 
 +++     if(os.path.exists(testCase)):
 +++         with open(testCase, "r") as fCase:
 +++             strStrip = fCase.read().splitlines()
 +++             tempCase = set(strStrip)
 +++             print("tempCase: " + str(tempCase))
++++-
 ++++        
 ++++        z = open(testCase, "r")
 ++++
@@ -6597,10 +8365,11 @@ index 0000000..2a1d606
 ++++                tempOnlyModul.add(str(strOnlyModuleName[0]))
 ++++            
 ++++
-++++        # print("tempModule: " + str(tempModul))
-++++        # print("tempNameFile: " + str(tempNameFile))
-++++        # print("tempOnlyModule: " + str(tempOnlyModul))
-+++ 
+++++        print("tempModule: " + str(tempModul))
+++++        print("tempNameFile: " + str(tempNameFile))
+++++        print("tempOnlyModule: " + str(tempOnlyModul))
+++++
+++++    starTime = time.time()
 +++ 
 +++     f = open(tempName, "r")
 +++     for line in f:
@@ -6610,27 +8379,23 @@ index 0000000..2a1d606
 +++                 nameFileBefore = getFile(patternLayout, patternBeforeFile, line, pathBefore)
 +++-                nameFileCompare = getNameFileXML(nameFileBefore)
 ++++                nameFileCompare = modul + "/" + getNameFileXML(nameFileBefore)
+++++                isLineRemove = False
+++++                nameFileRemoved = modul + "/" + getNameFileXML(nameFileBefore)
 ++++                # print(nameFileCompare)
 +++         
 +++         if(patternAfterFile in line[:3]):
+++++            # print(line[:3])
+++++            
+++++            strLineRemove = line[3:].strip()
+++++            # print("removed : " + strLineRemove)
 +++             if patternLayout in line:
 ++++                modul = str(line[6:].split("/")[0])
 +++                 nameFileAfter = getFile(patternLayout, patternAfterFile, line, pathAfter)
 +++             elif patternRemoveFile in line:
 +++-                if nameFileCompare in tempCase:
 +++-                        print("Previous file has removed with name : " + nameFileCompare)
-++++                strLineRemove = line[4:]
-++++                if nameFileCompare in tempNameFile:
-++++                        isLineRemove = True
-++++                        # print(not isLineRemove)
-++++                        setRemovedFile.add(nameFileCompare)
-++++                        # print("File has removed with name : " + nameFileCompare + " (d)")
-++++                        # print(nameFileCompare)
-++++                        nameFileCompare = ""
-++++                elif modul in tempOnlyModul:
-++++                        setRemovedFile.add(nameFileCompare)
-+++                         nameFileCompare = ""
-+++ 
++++-                        nameFileCompare = ""
++++-
 +++-        if(nameFileCompare in tempCase):
 +++-            if(patternBeforeIdView == line[:1] and notPatternBefore(line)):
 +++-                newId = getIdView(patternIdView, line)
@@ -6645,17 +8410,29 @@ index 0000000..2a1d606
 +++-                    setIdAfter.add(newId.strip())
 +++-                    createFile(pathAfter, nameFileAfter, newId)
 +++-                    newId = ""
-++++                
-++++            # print(line)
-++++        # print(strLineRemove)
-++++        # print(strLineRemove)
++++ 
++++-        
++++-    setFileBefore = getFileFromPackage(pathBefore)
++++-    setFileAfter = getFileFromPackage(pathAfter)
+++++                isLineRemove = False
+++++
+++++                if nameFileRemoved in tempNameFile:
+++++                        isLineRemove = True
+++++                        setRemovedFile.add(nameFileRemoved)
+++++                        nameFileRemoved = ""
+++++                elif modul in tempOnlyModul:
+++++                        isLineRemove = True
+++++                        setRemovedFile.add(nameFileRemoved)
+++++                        nameFileRemoved = ""
+++++
 ++++
 ++++        if(not isLineRemove):
+++++            # print(nameFileCompare)
+++++            
 ++++            if(len(tempOnlyModul) == 0):
-++++
 ++++                if(nameFileCompare in tempNameFile):
 ++++                    # print(nameFileCompare)
-++++                    # print(modul)
+++++                    # print(nameFileCompare)
 ++++                    if(patternBeforeIdView == line[:1]):
 ++++                        newId = getIdView(patternIdView, line)
 ++++                        if(newId.strip()):
@@ -6666,30 +8443,22 @@ index 0000000..2a1d606
 ++++                    if(patternAfterIdView == line[:1]):
 ++++                        newId = getIdView(patternIdView, line)
 ++++                        if(newId.strip()):
+++++                            # print(modul)
 ++++                            setIdAfter.add(newId.strip())
 ++++                            createFile(pathAfter, nameFileAfter, newId, modul)
 ++++                            newId = ""
 ++++                            # nameFileCompare = ""
-++++                            # modul = ""
-++++                    # elif(nameFileAfter and patternBeforeIdView != line[:1]):
-++++                    #     createFile(pathAfter, nameFileAfter, "", modul)
-++++
+++++                            nameFileRemoved = ""
+++++                            # isLineRemove = False
 ++++            
 ++++            elif(len(tempOnlyModul) > 0):
-++++                if('pbDetail' in line):
-++++                    print(line)
-++++                # print(modul)
+++++                # print(nameFileCompare)
 ++++                if(modul in tempOnlyModul or nameFileCompare in tempNameFile):
-++++                    # print(nameFileCompare)
-++++                    # print(modul)
 ++++                    if(patternBeforeIdView == line[:1]):
 ++++                        newId = getIdView(patternIdView, line)
 ++++                        if(newId.strip()):
 ++++                            setIdBefore.add(newId.strip())
 ++++                            createFile(pathBefore, nameFileBefore, newId, modul)
-++++                            # newId = ""
-++++
-++++                    # if(nameFileAfter and patternAfterIdView != line[:1]):
 ++++                
 ++++                    if(patternAfterIdView == line[:1]):
 ++++                        newId = getIdView(patternIdView, line)
@@ -6697,40 +8466,47 @@ index 0000000..2a1d606
 ++++                            setIdAfter.add(newId.strip())
 ++++                            createFile(pathAfter, nameFileAfter, newId, modul)
 ++++                            newId = ""
-++++                            # nameFileCompare = ""
-++++                            # modul = ""
+++++                            nameFileRemoved = ""
 ++++
-++++        isLineRemove = False
 ++++
+++++    
+++++    endTime = time.time()
+++++    print("Created file time : " + str(elapsedTime(starTime, endTime)) + " ms")
++++ 
+++++    # print(setRemovedFile)
 ++++    checkFileRemoved(setRemovedFile)
 ++++    setFileBefore = getModulFromPackage(pathBefore)
 ++++    setFileAfter = getModulFromPackage(pathAfter)
-++++    checkIdView(setFileBefore, setFileAfter, beforePath, afterPath)
++++     checkIdView(setFileBefore, setFileAfter, beforePath, afterPath)
 +++ 
 ++++def checkFileRemoved(setFile):
 ++++    if setFile:
 ++++        print("\n====================================")
-++++        print("File has removed with name : ")
-+++         
-+++-    setFileBefore = getFileFromPackage(pathBefore)
-+++-    setFileAfter = getFileFromPackage(pathAfter)
-+++-
-+++-    checkIdView(setFileBefore, setFileAfter, beforePath, afterPath)
+++++        print("The Files has been removed with name : ")
+++++        
 ++++        for f in setFile:
 ++++            print("\n" + f)
 ++++        
 ++++        print("====================================")
-+++ 
+++++
 +++ 
 +++ def createDumpFile(tempName, input):
-+++@@ -119,46 +204,73 @@ def createDumpFile(tempName, input):
-+++     # myFile = open(tempName, 'w')
-+++     # myFile.close()
++++     with open(tempName, 'w') as file:
++++         file.write(input)
++++-    # myFile = open(tempName, 'w')
++++-    # myFile.close()
 +++ 
 +++-def removedPackFile():
 +++-    shutil.rmtree("after")
 +++-    shutil.rmtree("before")
 +++-    os.remove("dump_input.txt")
+++++def elapsedTime(start, end):
+++++    starTime = int(round(start * 1000))
+++++    endTime = int(round(end * 1000))
+++++    elapsedTime = endTime - starTime
+++++
+++++    return elapsedTime
+++++
 ++++def removedPackFile(tempName, pathBefore, pathAfter):
 ++++    if os.path.exists(pathBefore):
 ++++        shutil.rmtree(pathBefore)
@@ -6740,38 +8516,37 @@ index 0000000..2a1d606
 ++++        os.remove(tempName)
 +++     
 +++ def checkIdView(beforeFile, afterFile, beforePath, afterPath):
+++++    starTime = None
+++++    endTime = None
+++++    setChangeId = set()
 +++ 
 +++-    if(len(beforeFile) == len(afterFile)):
-++++    setChangeId = set()
+++++    starTime = time.time()
+++++    if( len(beforeFile) > 0 and len(afterFile) > 0):
 +++ 
 +++-        for(before, after) in zip(beforeFile, afterFile):
 +++-            beforeX = getFileWithoutPath(before, beforePath)
 +++-            afterX = getFileWithoutPath(after, afterPath)
-++++    if( len(beforeFile) > 0 and len(afterFile) > 0):
+++++        if(len(beforeFile) == len(afterFile)):
 +++ 
 +++-            print(beforeX)
 +++-            print(afterX)
 +++-            if(beforeX == afterX):
 +++-                beforeWithPath = getFileWithPath(beforeX, beforePath)
 +++-                afterWithPath = getFileWithPath(afterX, afterPath)
-++++        if(len(beforeFile) == len(afterFile)):
-++++            print("\n====================================")
-++++            print("Below id has been changed/removed : ")
 +++ 
 +++-                beforeF = open(beforeWithPath, "r")
 +++-                afterF = open(afterWithPath, "r")
-++++            for(before, after) in zip(beforeFile, afterFile):
+++++            print("\n====================================")
+++++            print("Below id has been changed/removed : ")
 +++ 
 +++-                setIdAfter = set()
 +++-                setIdBefore = set()
+++++            for(before, after) in zip(beforeFile, afterFile):
+++++
 ++++                beforeSlash = before + "/"
 ++++                afterSlash = after + "/"
-+++ 
-+++-                for beforeLine in beforeF:
-+++-                    setIdBefore.add(getNameWithoutNewLine(beforeLine))
-+++-                
-+++-                for afterLine in afterF:
-+++-                    setIdAfter.add(getNameWithoutNewLine(afterLine))
+++++
 ++++                beforeWithPath = getFileFromPackage(beforeSlash)
 ++++                afterWithPath = getFileFromPackage(afterSlash)
 ++++
@@ -6782,16 +8557,11 @@ index 0000000..2a1d606
 ++++                # print("after " + after)
 ++++
 ++++                for(beforeFile, afterFile) in zip(beforeWithPath, afterWithPath):
-++++
+++++                    
 ++++                    if(beforeFile == afterFile):
 ++++
 ++++                        fileBeforePath = beforeSlash + beforeFile
 ++++                        fileAfterPath = afterSlash + afterFile
-+++ 
-+++-                print(str(setIdBefore))
-+++-                print(str(setIdAfter))
-++++                        # print("file before with path : " + fileBeforePath)
-++++                        # print("file after with path : " + fileAfterPath)
 ++++
 ++++                        beforeF = open(fileBeforePath, "r")
 ++++                        afterF = open(fileAfterPath, "r")
@@ -6815,7 +8585,19 @@ index 0000000..2a1d606
 ++++
 ++++                    # print(str(setIdBefore))
 ++++                    # print(str(setIdAfter))
-++++        print("====================================")
+++++    endTime = time.time()
+++++    print("====================================")
+++++        
+++++    print("Checking id view time : " + str(elapsedTime(starTime, endTime)) + " ms")
++++ 
++++-                for beforeLine in beforeF:
++++-                    setIdBefore.add(getNameWithoutNewLine(beforeLine))
++++-                
++++-                for afterLine in afterF:
++++-                    setIdAfter.add(getNameWithoutNewLine(afterLine))
++++ 
++++-                print(str(setIdBefore))
++++-                print(str(setIdAfter))
 +++ 
 +++-                for beforeIdView in setIdBefore:
 +++-                    if beforeIdView not in setIdAfter:
@@ -6826,7 +8608,7 @@ index 0000000..2a1d606
 +++ 
 +++ def getNameWithoutNewLine(line):
 +++     line = line.replace("\n", "")
-+++@@ -172,21 +284,32 @@ def getFileWithoutPath(file, path):
++++@@ -172,21 +298,32 @@ def getFileWithoutPath(file, path):
 +++     file = file.replace(path, "")
 +++     return file
 +++ 
@@ -6865,7 +8647,7 @@ index 0000000..2a1d606
 +++     return tempCase
 +++ 
 +++ 
-+++@@ -202,21 +325,30 @@ def notPatternBefore(line):
++++@@ -202,21 +339,30 @@ def notPatternBefore(line):
 +++         return True
 +++     return False
 +++ 
@@ -6902,7 +8684,7 @@ index 0000000..2a1d606
 +++     nameFile = ""
 +++     posisiPattern = line.find(patternLayout)
 +++     lengthPattern = len(patternLayout)
-+++@@ -224,15 +356,14 @@ def getFile(patternLayout, patternFile, line, path):
++++@@ -224,15 +370,14 @@ def getFile(patternLayout, patternFile, line, path):
 +++ 
 +++     if patternFile is patternBeforeFile:
 +++         nameFileBefore = line[posisiFile:]
@@ -6921,7 +8703,7 @@ index 0000000..2a1d606
 +++     return nameFile
 +++ 
 +++ 
-+++@@ -245,15 +376,9 @@ def getIdView(patternIdView, line):
++++@@ -245,15 +390,9 @@ def getIdView(patternIdView, line):
 +++         nameIdView = line[posisiIdView:]
 +++         nameLength = len(nameIdView)
 +++         newId = nameIdView[:nameLength-2]
@@ -6938,7 +8720,7 @@ index 0000000..2a1d606
 +++ # repo = git.Repo(os.getenv('GIT_REPO_PATH'))
 +++ # print repo.git.status()
 +++ 
-+++@@ -261,9 +386,10 @@ if __name__ == "__main__":
++++@@ -261,9 +400,10 @@ if __name__ == "__main__":
 +++     repo_path = os.getenv('GIT_REPO_PATH')
 +++     # Repo object used to programmatically interact with Git repositories
 +++     repo = Repo(repo_path)
@@ -6950,7 +8732,7 @@ index 0000000..2a1d606
 +++         # print_repository(repo)
 +++         # create list of commits then print some of them to stdout
 +++         # hcommit = repo.head.commit
-+++@@ -291,14 +417,32 @@ if __name__ == "__main__":
++++@@ -291,14 +431,30 @@ if __name__ == "__main__":
 +++         a_commit = commits_list[-1]
 +++         b_commit = "a4186acd2ad2a077a5887f8ac16c50a37ca872fc"
 +++ 
@@ -6968,16 +8750,14 @@ index 0000000..2a1d606
 +++         # beforeC = repo.head.commit
 +++         # afterC = "77a38266633ec3d224f5de799788adec94432492"
 ++++        
-++++        starTime = int(round(time.time() * 1000))
+++++        starTime = time.time()
 ++++
 ++++        writeFile(repo.git.diff(defaultBranch, targetBranch))
 ++++
-++++        endTime = int(round(time.time() * 1000))
-++++
-++++        elapsedTime = endTime - starTime
+++++        endTime = time.time()
 +++ 
 +++-        writeFile(str(repo.git.diff('HEAD~1')))
-++++        print("Elapsed time : " + str(elapsedTime) + " ms")
+++++        print("Total time : " + str(elapsedTime(starTime, endTime)) + " ms")
 ++++        # writeFile(commitMessages)
 +++         # writeFile(repo.git.diff("HEAD","HEAD~1"))
 +++-        # checkIdView()
@@ -10780,7 +12560,7 @@ index bf18197..afc5612 100644
 +app
 \ No newline at end of file
 diff --git a/xml_id_script.py b/xml_id_script.py
-index 5708213..76a3ac7 100644
+index 5708213..b446088 100644
 --- a/xml_id_script.py
 +++ b/xml_id_script.py
 @@ -2,8 +2,10 @@ import os
@@ -10795,16 +12575,26 @@ index 5708213..76a3ac7 100644
  
  COMMITS_TO_PRINT = 5
  patternLayout = "res/layout/"
-@@ -18,8 +20,6 @@ afterPath = "after/"
+@@ -12,13 +14,17 @@ patternBeforeFile = "---"
+ patternAfterFile = "+++"
+ patternBeforeIdView = "-"
+ patternAfterIdView = "+"
++patternRemoveIdView = "-"
++patternTagOpenIdView = "<"
++patternNotTagOpenIdView = "</"
++patternAddIdView = "+"
+ patternRemoveFile = "/dev/null"
+ beforePath = "before/"
+ afterPath = "after/"
  pathBefore = "before"
  pathAfter = "after"
  
 -
--
++patternGitDiff = "diff --git"
+ 
  def print_repository(repo):
      print('Repo description: {}'.format(repo.description))
-     print('Repo active branch is {}'.format(repo.active_branch))
-@@ -38,8 +38,6 @@ def print_commit(commit):
+@@ -38,8 +44,6 @@ def print_commit(commit):
      print(str("count: {} and size: {}".format(commit.count(),
                                                commit.size)))
  
@@ -10813,7 +12603,7 @@ index 5708213..76a3ac7 100644
  
  def writeFile(input):
      # fileName = "/temp/input.txt"
-@@ -49,14 +47,9 @@ def writeFile(input):
+@@ -49,14 +53,9 @@ def writeFile(input):
  
      if not os.path.exists(tempName):
          createDumpFile(tempName, input)
@@ -10831,7 +12621,7 @@ index 5708213..76a3ac7 100644
  
      nameFileAfter = ""
      nameFileBefore = ""
-@@ -64,101 +57,234 @@ def writeFile(input):
+@@ -64,101 +63,358 @@ def writeFile(input):
  
      setIdAfter = set()
      setIdBefore = set()
@@ -10855,6 +12645,26 @@ index 5708213..76a3ac7 100644
 +
 +    starTime = None
 +    endTime = None
++
++    afterNewId = ""
++    beforeNewId = ""
++
++    nameView = ""
++
++    isChangedId = bool
++    isRemovedId = bool
++    
++    dictBeforeChangedId = dict()
++    dictAfterChangedId = dict()
++    dictChangedId = dict()
++
++    dictBeforeDeletedId = dict()
++    dictAfterDeletedId = dict()
++
++    dictBeforeDeletedId = dict()
++    dictAfterDeletedId = dict()
++
++    count = 0
  
      if(os.path.exists(testCase)):
          with open(testCase, "r") as fCase:
@@ -10916,17 +12726,7 @@ index 5708213..76a3ac7 100644
 -                    setIdBefore.add(newId.strip())
 -                    createFile(pathBefore, nameFileBefore, newId)
 -                    newId = ""
--        
--            if(patternAfterIdView == line[:1]):
--                newId = getIdView(patternIdView, line)
--                if(newId.strip()):
--                    setIdAfter.add(newId.strip())
--                    createFile(pathAfter, nameFileAfter, newId)
--                    newId = ""
- 
--        
--    setFileBefore = getFileFromPackage(pathBefore)
--    setFileAfter = getFileFromPackage(pathAfter)
++
 +                isLineRemove = False
 +
 +                if nameFileRemoved in tempNameFile:
@@ -10940,58 +12740,138 @@ index 5708213..76a3ac7 100644
 +
 +
 +        if(not isLineRemove):
-+            # print(nameFileCompare)
 +            
 +            if(len(tempOnlyModul) == 0):
 +                if(nameFileCompare in tempNameFile):
-+                    # print(nameFileCompare)
-+                    # print(nameFileCompare)
++
++                    isChangedId = False
++
 +                    if(patternBeforeIdView == line[:1]):
-+                        newId = getIdView(patternIdView, line)
-+                        if(newId.strip()):
-+                            setIdBefore.add(newId.strip())
-+                            createFile(pathBefore, nameFileBefore, newId, modul)
++                        beforeNewId = getIdView(patternIdView, line)
++                        if(beforeNewId.strip()):
++                            setIdBefore.add(beforeNewId.strip())
++                            # createFile(pathBefore, nameFileBefore, newId, modul)
 +                            # newId = ""
++                            # print("before " + str(setIdBefore))
 +                                            
 +                    if(patternAfterIdView == line[:1]):
-+                        newId = getIdView(patternIdView, line)
-+                        if(newId.strip()):
-+                            # print(modul)
-+                            setIdAfter.add(newId.strip())
-+                            createFile(pathAfter, nameFileAfter, newId, modul)
-+                            newId = ""
-+                            # nameFileCompare = ""
++                        afterNewId = getIdView(patternIdView, line)
++                        if(afterNewId.strip()):
++                            setIdAfter.add(afterNewId.strip())
++                            # createFile(pathAfter, nameFileAfter, newId, modul)
++                            dictChangedId[beforeNewId] = afterNewId
++                            afterNewId = ""
++                            beforeNewId = ""
 +                            nameFileRemoved = ""
-+                            # isLineRemove = False
++                            isChangedId = True
++
++                    if(patternRemoveIdView == line[:1] and patternTagOpenIdView in line[1:]):
++                        isRemovedId = True
++                        nameView = getView(patternTagOpenIdView, line)
++                        # isLineRemove = False
++                        # print(line)
++                        print "test cuy " + nameView
++                        # continue
++                        # print(line)
++                        # next(f)/
++                    
++                    if(patternBeforeIdView in line[:1] and nameView):
++                        if(isRemovedId and not isChangedId):
++                            removeNewId = getIdView(patternIdView, line)
++                            if(removeNewId.strip()):  
++                                print "test " + removeNewId
++                                nameView = ""
++                                isRemovedId = False
++                                
 +            
 +            elif(len(tempOnlyModul) > 0):
 +                # print(nameFileCompare)
++                # isRemovedId = None
++
 +                if(modul in tempOnlyModul or nameFileCompare in tempNameFile):
++                    
++                    # print(isRemovedId)
++                    isChangedId = False
++
 +                    if(patternBeforeIdView == line[:1]):
-+                        newId = getIdView(patternIdView, line)
-+                        if(newId.strip()):
-+                            setIdBefore.add(newId.strip())
-+                            createFile(pathBefore, nameFileBefore, newId, modul)
++                        beforeNewId = getIdView(patternIdView, line)
++                        if(beforeNewId.strip()):
++                            setIdBefore.add(beforeNewId.strip())
++                            # createFile(pathBefore, nameFileBefore, newId, modul)
++
 +                
 +                    if(patternAfterIdView == line[:1]):
-+                        newId = getIdView(patternIdView, line)
-+                        if(newId.strip()):
-+                            setIdAfter.add(newId.strip())
-+                            createFile(pathAfter, nameFileAfter, newId, modul)
-+                            newId = ""
++                        afterNewId = getIdView(patternIdView, line)
++                        
++                        if(afterNewId.strip()):
++                            setIdAfter.add(afterNewId.strip())
++                            # createFile(pathAfter, nameFileAfter, newId, modul)
++                            # dictChangedId[]
++                            dictChangedId[beforeNewId] = afterNewId
++                            afterNewId = ""
++                            beforeNewId = ""
 +                            nameFileRemoved = ""
++                            isChangedId = True
++                            # print("after " + str(setIdAfter))
++                    
++                    # patternAA = "@@"
++                    if(patternRemoveIdView == line[:1] and patternTagOpenIdView in line and patternNotTagOpenIdView not in line):
++                        isRemovedId = True
++                        # print(line)
++                        nameView = getView(patternTagOpenIdView, line)
++                        print "test cuy " + nameView
++                    
++                        # print(str(next(f)))
++                        # print "test " + line
++                        # count = 0
 +
-+
++                    if(patternBeforeIdView in line[:1] and nameView):
++                        if(isRemovedId and not isChangedId):
++                            removeNewId = getIdView(patternIdView, line)
++                            if(removeNewId.strip()):  
++                                print "test " + removeNewId
++                                nameView = ""
++                                isRemovedId = False
++                    
++        if(patternGitDiff in line[:10] and dictChangedId):
++            dictBeforeChangedId = setDictIdView(dictBeforeChangedId, modul, nameFileBefore, dictChangedId)
++            dictChangedId = dict()
++        
++        # if(patternGitDiff in line[:10] and setIdAfter):
++        #     dictAfterChangedId = setDictIdView(dictAfterChangedId, modul, nameFileAfter, setIdAfter)
++        #     setIdAfter = set()
+         
+-            if(patternAfterIdView == line[:1]):
+-                newId = getIdView(patternIdView, line)
+-                if(newId.strip()):
+-                    setIdAfter.add(newId.strip())
+-                    createFile(pathAfter, nameFileAfter, newId)
+-                    newId = ""
+ 
++    # print("dictChange : " + str(dictBeforeChangedId))
++    # print("after : " + str(dictAfterChangedId))
+         
+-    setFileBefore = getFileFromPackage(pathBefore)
+-    setFileAfter = getFileFromPackage(pathAfter)
 +    
 +    endTime = time.time()
 +    print("Created file time : " + str(elapsedTime(starTime, endTime)) + " ms")
- 
++
 +    # print(setRemovedFile)
 +    checkFileRemoved(setRemovedFile)
-+    setFileBefore = getModulFromPackage(pathBefore)
-+    setFileAfter = getModulFromPackage(pathAfter)
-     checkIdView(setFileBefore, setFileAfter, beforePath, afterPath)
++    checkChangedIdView(dictBeforeChangedId)
++    # setFileBefore = getModulFromPackage(pathBefore)
++    # setFileAfter = getModulFromPackage(pathAfter)
++    # checkIdView(setFileBefore, setFileAfter, beforePath, afterPath)
++
++
++def setDictIdView(dictIdView, modul, nameFile, mapId):
++    nameFileModul =  modul + "/" + getNameFileXML(nameFile)
++    dictIdView[nameFileModul] = mapId
++    return dictIdView
++
  
+-    checkIdView(setFileBefore, setFileAfter, beforePath, afterPath)
 +def checkFileRemoved(setFile):
 +    if setFile:
 +        print("\n====================================")
@@ -11001,7 +12881,7 @@ index 5708213..76a3ac7 100644
 +            print("\n" + f)
 +        
 +        print("====================================")
-+
+ 
  
  def createDumpFile(tempName, input):
      with open(tempName, 'w') as file:
@@ -11027,6 +12907,43 @@ index 5708213..76a3ac7 100644
 +        shutil.rmtree(pathAfter)
 +    if os.path.exists(tempName):
 +        os.remove(tempName)
++
++def checkChangedIdView(dictBeforeChangedId):
++    starTime = None
++    endTime = None
++
++    starTime = time.time()
++
++    if(len(dictBeforeChangedId) > 0):
++
++        print("\n====================================")
++        print("Below id has been changed/removed : ")
++        
++        for beforeKeyFile, beforeValueFile in dictBeforeChangedId.items():
++
++            # beforeValue = sorted(beforeValue)
++            # afterValue = sorted(afterValue)
++            # print("before " + str(beforeValue))
++            # print("after " + str(afterValue))
++
++            for beforeValue, afterValue in beforeValueFile.items():
++
++                if(beforeValue != afterValue):
++                    print("\n" + beforeKeyFile + ":")
++                    print("(M) " + beforeValue + " -> " + afterValue)
++
++                # for beforeIdView in beforeValue:
++                #     if beforeIdView not in afterValue:
++                #         fileModule = beforeKey
++                #         print("\n" + fileModule + ":")
++                #         print(beforeIdView + " -> ")
++
++
++    endTime = time.time()
++    print("====================================")
++        
++    print("Checking id view time : " + str(elapsedTime(starTime, endTime)) + " ms")
++
      
  def checkIdView(beforeFile, afterFile, beforePath, afterPath):
 +    starTime = None
@@ -11047,25 +12964,34 @@ index 5708213..76a3ac7 100644
 -            if(beforeX == afterX):
 -                beforeWithPath = getFileWithPath(beforeX, beforePath)
 -                afterWithPath = getFileWithPath(afterX, afterPath)
- 
--                beforeF = open(beforeWithPath, "r")
--                afterF = open(afterWithPath, "r")
 +            print("\n====================================")
 +            print("Below id has been changed/removed : ")
  
+-                beforeF = open(beforeWithPath, "r")
+-                afterF = open(afterWithPath, "r")
++            for(before, after) in zip(beforeFile, afterFile):
+ 
 -                setIdAfter = set()
 -                setIdBefore = set()
-+            for(before, after) in zip(beforeFile, afterFile):
-+
 +                beforeSlash = before + "/"
 +                afterSlash = after + "/"
-+
+ 
+-                for beforeLine in beforeF:
+-                    setIdBefore.add(getNameWithoutNewLine(beforeLine))
+-                
+-                for afterLine in afterF:
+-                    setIdAfter.add(getNameWithoutNewLine(afterLine))
 +                beforeWithPath = getFileFromPackage(beforeSlash)
 +                afterWithPath = getFileFromPackage(afterSlash)
-+
+ 
+-                print(str(setIdBefore))
+-                print(str(setIdAfter))
 +                # print(str(beforeWithPath))
 +                # print(str(afterWithPath))
-+
+ 
+-                for beforeIdView in setIdBefore:
+-                    if beforeIdView not in setIdAfter:
+-                        print("id view " + beforeIdView + " has been changed or removed from file " + getNameFileXML(beforeX))
 +                # print("before " + before)
 +                # print("after " + after)
 +
@@ -11093,7 +13019,7 @@ index 5708213..76a3ac7 100644
 +                                pathModule = fileBeforePath.split("/")[1]
 +                                fileModule = pathModule + "/" + getNameFileXML(beforeFile)
 +                                print("\n" + fileModule + ":")
-+                                print(beforeIdView)
++                                print(beforeIdView + " -> ")
 +                            # print("id view " + beforeIdView + " has been changed or removed from file " +  fileModule)
 +
 +                    # print(str(setIdBefore))
@@ -11103,25 +13029,12 @@ index 5708213..76a3ac7 100644
 +        
 +    print("Checking id view time : " + str(elapsedTime(starTime, endTime)) + " ms")
  
--                for beforeLine in beforeF:
--                    setIdBefore.add(getNameWithoutNewLine(beforeLine))
--                
--                for afterLine in afterF:
--                    setIdAfter.add(getNameWithoutNewLine(afterLine))
- 
--                print(str(setIdBefore))
--                print(str(setIdAfter))
- 
--                for beforeIdView in setIdBefore:
--                    if beforeIdView not in setIdAfter:
--                        print("id view " + beforeIdView + " has been changed or removed from file " + getNameFileXML(beforeX))
- 
 -                # print(str(setIdBefore))
 -                # print(str(setIdAfter))
  
  def getNameWithoutNewLine(line):
      line = line.replace("\n", "")
-@@ -172,21 +298,32 @@ def getFileWithoutPath(file, path):
+@@ -172,21 +428,32 @@ def getFileWithoutPath(file, path):
      file = file.replace(path, "")
      return file
  
@@ -11160,7 +13073,7 @@ index 5708213..76a3ac7 100644
      return tempCase
  
  
-@@ -202,21 +339,30 @@ def notPatternBefore(line):
+@@ -202,21 +469,30 @@ def notPatternBefore(line):
          return True
      return False
  
@@ -11197,7 +13110,7 @@ index 5708213..76a3ac7 100644
      nameFile = ""
      posisiPattern = line.find(patternLayout)
      lengthPattern = len(patternLayout)
-@@ -224,15 +370,14 @@ def getFile(patternLayout, patternFile, line, path):
+@@ -224,17 +500,25 @@ def getFile(patternLayout, patternFile, line, path):
  
      if patternFile is patternBeforeFile:
          nameFileBefore = line[posisiFile:]
@@ -11215,8 +13128,19 @@ index 5708213..76a3ac7 100644
 +    # print(nameFile)
      return nameFile
  
++def getView(patternView, line):
++    view = ""
++    if (patternView in line):
++        posisiPatternView = line.find(patternView)
++        lengthPatternView = len(patternView)
++        posisiView = posisiPatternView + lengthPatternView
++        view = line[posisiView:]
++    
++    return view
  
-@@ -245,15 +390,9 @@ def getIdView(patternIdView, line):
+ def getIdView(patternIdView, line):
+     newId = ""
+@@ -245,15 +529,9 @@ def getIdView(patternIdView, line):
          nameIdView = line[posisiIdView:]
          nameLength = len(nameIdView)
          newId = nameIdView[:nameLength-2]
@@ -11233,7 +13157,7 @@ index 5708213..76a3ac7 100644
  # repo = git.Repo(os.getenv('GIT_REPO_PATH'))
  # print repo.git.status()
  
-@@ -261,9 +400,10 @@ if __name__ == "__main__":
+@@ -261,9 +539,10 @@ if __name__ == "__main__":
      repo_path = os.getenv('GIT_REPO_PATH')
      # Repo object used to programmatically interact with Git repositories
      repo = Repo(repo_path)
@@ -11245,7 +13169,7 @@ index 5708213..76a3ac7 100644
          # print_repository(repo)
          # create list of commits then print some of them to stdout
          # hcommit = repo.head.commit
-@@ -291,14 +431,30 @@ if __name__ == "__main__":
+@@ -291,18 +570,27 @@ if __name__ == "__main__":
          a_commit = commits_list[-1]
          b_commit = "a4186acd2ad2a077a5887f8ac16c50a37ca872fc"
  
@@ -11270,12 +13194,16 @@ index 5708213..76a3ac7 100644
 +        endTime = time.time()
  
 -        writeFile(str(repo.git.diff('HEAD~1')))
-+        print("Total time : " + str(elapsedTime(starTime, endTime)) + " ms")
-+        # writeFile(commitMessages)
-         # writeFile(repo.git.diff("HEAD","HEAD~1"))
+-        # writeFile(repo.git.diff("HEAD","HEAD~1"))
 -        # checkIdView()
++        print("Total time : " + str(elapsedTime(starTime, endTime)) + " ms")
  
 -        # pass
-         # commits = list(repo.iter_commits('master'))[:COMMITS_TO_PRINT]
-         # for commit in commits:
-         #     print_commit(commit)
+-        # commits = list(repo.iter_commits('master'))[:COMMITS_TO_PRINT]
+-        # for commit in commits:
+-        #     print_commit(commit)
+-        #     # print_diff
+-        #     pass
+     else:
+         print('Could not load repository at {} :('.format(repo_path))
+\ No newline at end of file

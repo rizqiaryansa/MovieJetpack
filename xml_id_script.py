@@ -16,7 +16,8 @@ patternBeforeIdView = "-"
 patternAfterIdView = "+"
 patternRemoveIdView = "-"
 patternTagOpenIdView = "<"
-patternNotTagOpenIdView = "</"
+patternTagCloseFullIdView = "</"
+patternTagCloseIdView = "/>"
 patternAddIdView = "+"
 patternRemoveFile = "/dev/null"
 beforePath = "before/"
@@ -64,6 +65,9 @@ def writeFile(input):
     setIdAfter = set()
     setIdBefore = set()
     setRemovedFile = set()
+    
+    setRemovedId = set()
+    setAddId = set()
 
     setFileBefore = set()
     setFileAfter = set()
@@ -93,13 +97,10 @@ def writeFile(input):
     
     dictBeforeChangedId = dict()
     dictAfterChangedId = dict()
+
+    dictAddId = dict()
     dictChangedId = dict()
-
-    dictBeforeDeletedId = dict()
-    dictAfterDeletedId = dict()
-
-    dictBeforeDeletedId = dict()
-    dictAfterDeletedId = dict()
+    dictDeletedId = dict()
 
     count = 0
 
@@ -189,23 +190,18 @@ def writeFile(input):
                             nameFileRemoved = ""
                             isChangedId = True
 
-                    if(patternRemoveIdView == line[:1] and patternTagOpenIdView in line[1:]):
+                    if(patternRemoveIdView == line[:1] and patternTagOpenIdView in line[1:] and not patternTagCloseFullIdView in line):
                         isRemovedId = True
                         nameView = getView(patternTagOpenIdView, line)
-                        # isLineRemove = False
-                        # print(line)
                         print "test cuy " + nameView
-                        # continue
-                        # print(line)
-                        # next(f)/
                     
                     if(patternBeforeIdView in line[:1] and nameView):
-                        if(isRemovedId and not isChangedId):
-                            removeNewId = getIdView(patternIdView, line)
-                            if(removeNewId.strip()):  
-                                print "test " + removeNewId
-                                nameView = ""
-                                isRemovedId = False
+                        removeNewId = getIdView(patternIdView, line)
+                        if(removeNewId.strip()):  
+                            print "test " + removeNewId
+                            setRemovedId.add(removeNewId)
+                            nameView = ""
+                            isRemovedId = False
                                 
             
             elif(len(tempOnlyModul) > 0):
@@ -236,36 +232,36 @@ def writeFile(input):
                             beforeNewId = ""
                             nameFileRemoved = ""
                             isChangedId = True
+                            setRemovedId = set()
                             # print("after " + str(setIdAfter))
                     
                     # patternAA = "@@"
-                    if(patternRemoveIdView == line[:1] and patternTagOpenIdView in line and patternNotTagOpenIdView not in line):
+                    if(patternRemoveIdView == line[:1] and patternTagOpenIdView in line and not patternTagCloseFullIdView in line):
                         isRemovedId = True
-                        # print(line)
                         nameView = getView(patternTagOpenIdView, line)
                         print "test cuy " + nameView
                     
-                        # print(str(next(f)))
-                        # print "test " + line
-                        # count = 0
-
                     if(patternBeforeIdView in line[:1] and nameView):
-                        if(isRemovedId and not isChangedId):
-                            removeNewId = getIdView(patternIdView, line)
-                            if(removeNewId.strip()):  
-                                print "test " + removeNewId
-                                nameView = ""
-                                isRemovedId = False
+                        removeNewId = getIdView(patternIdView, line)
+                        if(removeNewId.strip()):  
+                            print "test " + removeNewId
+                            setRemovedId.add(removeNewId)
+                            nameView = ""
+                            isRemovedId = False
+                
+                        if(nameFileCompare):
+                            dictDeletedId[nameFileCompare] = setRemovedId
+
                     
         if(patternGitDiff in line[:10] and dictChangedId):
             dictBeforeChangedId = setDictIdView(dictBeforeChangedId, modul, nameFileBefore, dictChangedId)
             dictChangedId = dict()
-        
+            # setRemovedId = set()        
         # if(patternGitDiff in line[:10] and setIdAfter):
         #     dictAfterChangedId = setDictIdView(dictAfterChangedId, modul, nameFileAfter, setIdAfter)
         #     setIdAfter = set()
         
-
+    print("dictDeleted " + str(dictDeletedId))
     # print("dictChange : " + str(dictBeforeChangedId))
     # print("after : " + str(dictAfterChangedId))
         
@@ -276,6 +272,7 @@ def writeFile(input):
     # print(setRemovedFile)
     checkFileRemoved(setRemovedFile)
     checkChangedIdView(dictBeforeChangedId)
+    checkIdRemoved(dictDeletedId)
     # setFileBefore = getModulFromPackage(pathBefore)
     # setFileAfter = getModulFromPackage(pathAfter)
     # checkIdView(setFileBefore, setFileAfter, beforePath, afterPath)
@@ -286,6 +283,18 @@ def setDictIdView(dictIdView, modul, nameFile, mapId):
     dictIdView[nameFileModul] = mapId
     return dictIdView
 
+def checkIdRemoved(dictDeletedId):
+    if len(dictDeletedId) > 0:
+        print("\n====================================")
+        print("The Id has been removed with name : ")
+        
+        for beforeKeyFile, beforeValueFile in dictDeletedId.items():
+            print("\n" + beforeKeyFile)
+
+            for value in beforeValueFile:
+                print("(D) " + value)
+        
+        print("====================================")
 
 def checkFileRemoved(setFile):
     if setFile:
@@ -293,7 +302,7 @@ def checkFileRemoved(setFile):
         print("The Files has been removed with name : ")
         
         for f in setFile:
-            print("\n" + f)
+            print("\n (D) " + f)
         
         print("====================================")
 
